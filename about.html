@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Al-furqan | Custom Signs & Signboards</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7F5434',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                        gray: '#E5E7EB',
+                        bronze: {
+                            light: '#DAA468',
+                            DEFAULT: '#A96C36',
+                            dark: '#7F5434'
+                        }
+                    },
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-parallax {
+            position: relative;
+            overflow: hidden;
+            background-color: #121212;
+        }
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+        .hero-overlay {
+            background: rgba(0,0,0,0.75);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .signboard-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(169, 108, 54, 0.25), transparent 70%);
+            opacity: 0;
+            z-index: 0;
+        }
+        .sign-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            background-color: rgba(169, 108, 54, 0.6);
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        .title-mask {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        
+        .bronze-text {
+            display: inline-block;
+            background: linear-gradient(
+                to right,
+                #614022 0%,
+                #DAA468 25%,
+                #F6E6C2 50%,
+                #DAA468 75%,
+                #614022 100%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+        }
+        
+        .bronze-shimmer {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg, 
+                rgba(255,255,255,0) 0%, 
+                rgba(255,255,255,0.1) 50%, 
+                rgba(255,255,255,0.3) 85%,
+                rgba(255,255,255,0) 100%
+            );
+            animation: shimmer 5s infinite;
+            transform: skewX(-20deg);
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+        
+        .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-cinzel font-bold">
+                Al-<span class="text-bronze">furqan</span>
+            </a>
+            <div class="lg:hidden cursor-pointer">
+                <i class='bx bx-menu text-2xl'></i>
+            </div>
+            <ul class="hidden lg:flex space-x-8">
+                <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
+                <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
+                <li><a href="about.html" class="hover:text-bronze transition-colors font-medium">About</a></li>
+                <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
+                <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero-parallax text-light py-16 px-4 relative min-h-[50vh] flex items-center">
+        <div class="parallax-layer sign-particles" id="particles"></div>
+        <div class="parallax-layer hero-overlay"></div>
+        <div class="signboard-glow"></div>
+        <div class="container mx-auto max-w-4xl text-center hero-content">
+            <h1 class="font-cinzel font-bold mb-4" id="hero-title">
+                <span class="block overflow-hidden">
+                    <span class="title-mask block opacity-0 text-4xl md:text-5xl" id="title-line1">
+                        <span class="bronze-text">About Us</span>
+                        <span class="bronze-shimmer"></span>
+                    </span>
+                </span>
+            </h1>
+            <p class="tagline text-xl opacity-0 text-bronze-light" id="hero-text">Learn more about our journey and commitment to excellence</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-16 px-4 relative overflow-hidden">
+        <div class="absolute w-32 h-32 bg-bronze/5 rounded-full -left-10 top-20 about-circle"></div>
+        <div class="absolute w-40 h-40 bg-bronze/5 rounded-full -right-10 bottom-20 about-circle"></div>
+        <div class="container mx-auto max-w-6xl relative">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="overflow-hidden">
+                        <h2 class="text-2xl font-cinzel font-bold mb-4 opacity-0" id="story-title">Our Story</h2>
+                    </div>
+                    <p class="mb-6 opacity-0" id="story-text">Founded in 2010, we've been at the forefront of the signage industry, creating stunning neon signs and signboards that help businesses stand out. Our journey began with a simple mission: to transform ordinary spaces into extraordinary experiences through innovative signage solutions.</p>
+                    
+                    <div class="overflow-hidden">
+                        <h2 class="text-2xl font-cinzel font-bold mb-4 opacity-0" id="mission-title">Our Mission</h2>
+                    </div>
+                    <p class="mb-6 opacity-0" id="mission-text">We strive to deliver high-quality, custom signage solutions that not only enhance our clients' brand visibility but also create lasting impressions. Our commitment to excellence and innovation drives us to push the boundaries of what's possible in signage design.</p>
+                    
+                    <div class="overflow-hidden">
+                        <h2 class="text-2xl font-cinzel font-bold mb-4 opacity-0" id="vision-title">Our Vision</h2>
+                    </div>
+                    <p class="opacity-0" id="vision-text">To be the leading provider of custom signage solutions, known for our innovative designs, exceptional quality, and outstanding customer service. We aim to help businesses across the globe make their mark with stunning, effective signage.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg opacity-0" id="about-image">
+                    <img src="assets/images/hero-bg.jpg" alt="Our Story" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 px-4 bg-gray-50 relative overflow-hidden">
+        <div class="absolute w-36 h-36 bg-bronze/5 rounded-full -right-10 top-20 team-circle"></div>
+        <div class="absolute w-44 h-44 bg-bronze/5 rounded-full -left-16 bottom-20 team-circle"></div>
+        <div class="container mx-auto max-w-6xl relative">
+            <div class="overflow-hidden">
+                <h2 class="text-3xl font-cinzel font-bold text-center mb-12 opacity-0" id="team-title">Our Team</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-1">
+                    <img src="assets/images/male_placeholder.jpg" alt="Muhammad Ali Akbar, Designer of Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">Muhammad Ali Akbar</h3>
+                        <p class="text-bronze">Designer</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-2">
+                    <img src="assets/images/male_placeholder.jpg" alt="Jey Marrakesh, Marketing Manager of Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">Jey Marrakesh</h3>
+                        <p class="text-bronze">Marketing Manager</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-3">
+                    <img src="assets/images/male_placeholder.jpg" alt="David Dee, Engineer at Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">David Dee</h3>
+                        <p class="text-bronze">Engineer</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-4">
+                    <img src="assets/images/male_placeholder.jpg" alt="Saeed Ghana, Team Member of Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">Saeed Ghana</h3>
+                        <p class="text-bronze">Team Member</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-5">
+                    <img src="assets/images/male_placeholder.jpg" alt="Fahad Khan, Labour at Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">Fahad Khan</h3>
+                        <p class="text-bronze">Labour</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-6">
+                    <img src="assets/images/male_placeholder.jpg" alt="Sehrosh, Labour at Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-1">Sehrosh</h3>
+                        <p class="text-bronze">Labour</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-16 px-4 relative overflow-hidden">
+        <div class="absolute w-40 h-40 bg-bronze/5 rounded-full -left-16 top-10 values-circle"></div>
+        <div class="container mx-auto max-w-6xl relative">
+            <div class="overflow-hidden">
+                <h2 class="text-3xl font-cinzel font-bold text-center mb-12 opacity-0" id="values-title">Our Values</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-8 rounded-lg border border-bronze/20 hover:shadow-lg transition-shadow opacity-0 values-card" id="values-card-1">
+                    <div class="icon-wrapper w-16 h-16 flex items-center justify-center rounded-full bg-bronze/10 mx-auto mb-4 scale-0">
+                        <i class='bx bx-medal text-bronze text-3xl'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Quality</h3>
+                    <div class="h-[1px] w-0 bg-bronze/30 mx-auto my-2 values-card-line"></div>
+                    <p class="text-gray-600">We never compromise on quality, ensuring every sign meets our high standards.</p>
+                </div>
+                <div class="text-center p-8 rounded-lg border border-bronze/20 hover:shadow-lg transition-shadow opacity-0 values-card" id="values-card-2">
+                    <div class="icon-wrapper w-16 h-16 flex items-center justify-center rounded-full bg-bronze/10 mx-auto mb-4 scale-0">
+                        <i class='bx bx-bulb text-bronze text-3xl'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Innovation</h3>
+                    <div class="h-[1px] w-0 bg-bronze/30 mx-auto my-2 values-card-line"></div>
+                    <p class="text-gray-600">We constantly explore new techniques and materials to stay ahead.</p>
+                </div>
+                <div class="text-center p-8 rounded-lg border border-bronze/20 hover:shadow-lg transition-shadow opacity-0 values-card" id="values-card-3">
+                    <div class="icon-wrapper w-16 h-16 flex items-center justify-center rounded-full bg-bronze/10 mx-auto mb-4 scale-0">
+                        <i class='bx bx-heart text-bronze text-3xl'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Customer Focus</h3>
+                    <div class="h-[1px] w-0 bg-bronze/30 mx-auto my-2 values-card-line"></div>
+                    <p class="text-gray-600">Your satisfaction is our top priority in every project we undertake.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bronze text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <a href="index.html" class="text-2xl font-cinzel font-bold mb-4 inline-block">
+                        Al-<span class="text-primary">furqan</span>
+                    </a>
+                    <p>Custom Signs & Signboards</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="products.html" class="hover:text-primary transition-colors">Products</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <p class="mb-2">Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6afa8a0a986a7aaeba0b3b4b7a7a8e8a5a9ab">[email&#160;protected]</a></p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-white/10">
+                <p>&copy; 2024 Al-furqan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn">
+        <i class='bx bx-up-arrow-alt text-2xl'></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.bx-menu');
+        const navMenu = document.querySelector('ul');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('hidden');
+                navMenu.classList.toggle('flex');
+                navMenu.classList.toggle('flex-col');
+                navMenu.classList.toggle('absolute');
+                navMenu.classList.toggle('top-16');
+                navMenu.classList.toggle('left-0');
+                navMenu.classList.toggle('w-full');
+                navMenu.classList.toggle('bg-white');
+                navMenu.classList.toggle('p-4');
+                navMenu.classList.toggle('shadow-md');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                    navMenu.classList.add('hidden');
+                    navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'p-4', 'shadow-md');
+                }
+            });
+        }
+
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+            // Particles for header
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 6 + 2}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particlesContainer.appendChild(particle);
+            }
+
+            gsap.to('.particle', {
+                opacity: 0.7,
+                stagger: 0.1,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+
+            document.querySelectorAll('.particle').forEach(particle => {
+                gsap.to(particle, {
+                    x: `${Math.random() * 100 - 50}px`,
+                    y: `${Math.random() * 100 - 50}px`,
+                    duration: Math.random() * 10 + 5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+            });
+
+            // Header animations
+            const headerTl = gsap.timeline();
+            headerTl.to('.signboard-glow', { opacity: 0.8, duration: 1.5, ease: "power2.inOut" }, 0);
+            headerTl.to('#title-line1', { opacity: 1, duration: 1.2, ease: "power3.out" }, 0.3);
+            headerTl.to('#hero-text', { opacity: 1, duration: 1, ease: "power2.out" }, 1.2);
+
+            const shimmerTl = gsap.timeline({ repeat: -1, repeatDelay: 3 });
+            document.querySelectorAll('.bronze-shimmer').forEach(shimmer => {
+                shimmerTl.fromTo(shimmer, { left: '-100%' }, { left: '200%', duration: 2, ease: "power1.inOut" });
+            });
+
+            // About content animations
+            const aboutTl = gsap.timeline({
+                scrollTrigger: { trigger: ".py-16", start: "top 80%", toggleActions: "play none none none" }
+            });
+            aboutTl.fromTo(".about-circle", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, stagger: 0.3, ease: "elastic.out(1, 0.5)" }, 0);
+            aboutTl.to("#story-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.2);
+            aboutTl.to("#story-text", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.8);
+            aboutTl.to("#mission-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 1.1);
+            aboutTl.to("#mission-text", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 1.4);
+            aboutTl.to("#vision-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 1.7);
+            aboutTl.to("#vision-text", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 2.0);
+            aboutTl.to("#about-image", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, 0.8);
+
+            // Team section animations
+            const teamTl = gsap.timeline({
+                scrollTrigger: { trigger: ".bg-gray-50", start: "top 80%", toggleActions: "play none none none" }
+            });
+            teamTl.fromTo(".team-circle", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, stagger: 0.3, ease: "elastic.out(1, 0.5)" }, 0);
+            teamTl.to("#team-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.2);
+            teamTl.to(".team-card", { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: "back.out(1.2)" }, 0.8);
+
+            // Values section animations
+            const valuesTl = gsap.timeline({
+                scrollTrigger: { trigger: ".values-section", start: "top 80%", toggleActions: "play none none none" }
+            });
+            valuesTl.fromTo(".values-circle", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out(1, 0.5)" }, 0);
+            valuesTl.to("#values-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.2);
+
+            document.querySelectorAll(".values-card").forEach((card, index) => {
+                const cardTl = gsap.timeline({
+                    scrollTrigger: { trigger: card, start: "top 85%" }
+                });
+                cardTl.to(card, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" })
+                    .to(card.querySelector(".icon-wrapper"), { scale: 1, duration: 0.6, ease: "back.out(2.5)" }, "-=0.3")
+                    .to(card.querySelector(".values-card-line"), { width: "60%", duration: 0.4, ease: "power1.inOut" }, "-=0.2");
+
+                card.addEventListener("mouseenter", () => {
+                    gsap.to(card, { y: -15, boxShadow: "0 15px 30px rgba(127, 84, 52, 0.15)", duration: 0.4, ease: "power2.out" });
+                    gsap.to(card.querySelector(".icon-wrapper"), { scale: 1.15, backgroundColor: "rgba(169, 108, 54, 0.2)", duration: 0.3 });
+                    gsap.to(card.querySelector(".values-card-line"), { width: "80%", duration: 0.3 });
+                });
+
+                card.addEventListener("mouseleave", () => {
+                    gsap.to(card, { y: 0, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)", duration: 0.4, ease: "power2.out" });
+                    gsap.to(card.querySelector(".icon-wrapper"), { scale: 1, backgroundColor: "rgba(169, 108, 54, 0.1)", duration: 0.3 });
+                    gsap.to(card.querySelector(".values-card-line"), { width: "60%", duration: 0.3 });
+                });
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.remove('opacity-0', 'invisible');
+                    scrollTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'invisible');
+                    scrollTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+</html>

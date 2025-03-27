@@ -44,21 +44,105 @@
         .bronze-shimmer { position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%); animation: shimmer 5s infinite; transform: skewX(-20deg); }
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 200%; } }
         .tagline { font-family: 'Montserrat', sans-serif; font-weight: 300; letter-spacing: 2px; }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            z-index: 50;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f3f4f6;
+            color: #4b5563;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            color: #7F5434;
+            background-color: #f9fafb;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .grid-cols-3, .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            .py-20, .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .text-4xl, .text-5xl {
+                font-size: 1.75rem;
+            }
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-cinzel font-bold">Al-<span class="text-bronze">furqan</span></a>
-            <div class="lg:hidden cursor-pointer"><i class='bx bx-menu text-2xl'></i></div>
+            <a href="index.html" class="text-2xl font-cinzel font-bold">
+                Al-<span class="text-bronze">furqan</span>
+            </a>
+            <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
+                <i class='bx bx-menu text-2xl'></i>
+            </div>
             <ul class="hidden lg:flex space-x-8">
                 <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
                 <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
                 <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
                 <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
                 <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
+                <li><a href="gallery.html" class="hover:text-bronze transition-colors font-medium">Gallery</a></li>
             </ul>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="gallery.html" class="font-medium">Gallery</a>
+            </div>
         </nav>
     </header>
 
@@ -87,21 +171,21 @@
         <div class="container mx-auto max-w-6xl">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 gallery-item">
-                    <img src="assets/images/sign1.jpg" alt="Signboard 1" class="w-full h-64 object-cover">
+                    <img src="assets/images/sign1.jpg" alt="Signboard 1" class="w-full h-64 object-cover" loading="lazy">
                     <div class="p-4">
                         <h3 class="font-semibold text-lg">Neon Sign</h3>
                         <p class="text-gray-600">Bright and bold neon signage.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 gallery-item">
-                    <img src="assets/images/sign2.jpg" alt="Signboard 2" class="w-full h-64 object-cover">
+                    <img src="assets/images/sign2.jpg" alt="Signboard 2" class="w-full h-64 object-cover" loading="lazy">
                     <div class="p-4">
                         <h3 class="font-semibold text-lg">Acrylic Sign</h3>
                         <p class="text-gray-600">Sleek and modern design.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 gallery-item">
-                    <img src="assets/images/sign3.jpg" alt="Signboard 3" class="w-full h-64 object-cover">
+                    <img src="assets/images/sign3.jpg" alt="Signboard 3" class="w-full h-64 object-cover" loading="lazy">
                     <div class="p-4">
                         <h3 class="font-semibold text-lg">LED Display</h3>
                         <p class="text-gray-600">Vivid and energy-efficient.</p>
@@ -285,11 +369,26 @@
     <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn"><i class='bx bx-up-arrow-alt text-2xl'></i></button>
 
     <script>
-        // Mobile Nav, Scroll to Top (same as contact.html)
-        const navToggle = document.querySelector('.bx-menu');
-        const navMenu = document.querySelector('ul');
-        navToggle.addEventListener('click', () => { navMenu.classList.toggle('hidden'); navMenu.classList.toggle('flex'); navMenu.classList.toggle('flex-col'); navMenu.classList.toggle('absolute'); navMenu.classList.toggle('top-16'); navMenu.classList.toggle('left-0'); navMenu.classList.toggle('w-full'); navMenu.classList.toggle('bg-white'); navMenu.classList.toggle('p-4'); navMenu.classList.toggle('shadow-md'); });
-        document.addEventListener('click', (e) => { if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) { navMenu.classList.add('hidden'); navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'p-4', 'shadow-md'); } });
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('#mobile-menu-toggle');
+        const navMenu = document.querySelector('#mobile-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navMenu.classList.contains('active') && 
+                    !navMenu.contains(e.target) && 
+                    !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+
+        // Scroll to Top
         const scrollTopBtn = document.getElementById('scrollTopBtn');
         window.addEventListener('scroll', () => { if (window.pageYOffset > 300) { scrollTopBtn.classList.remove('opacity-0', 'invisible'); scrollTopBtn.classList.add('opacity-100', 'visible'); } else { scrollTopBtn.classList.add('opacity-0', 'invisible'); scrollTopBtn.classList.remove('opacity-100', 'visible'); } });
         scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });

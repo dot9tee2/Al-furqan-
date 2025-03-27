@@ -62,14 +62,96 @@
         .fit-out-card:hover .decorative-line {
             width: 100px;
         }
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            z-index: 50;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f3f4f6;
+            color: #4b5563;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            color: #7F5434;
+            background-color: #f9fafb;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            .md\:grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            .md\:grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            .py-20, .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .service-card {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .text-4xl, .text-5xl {
+                font-size: 1.75rem;
+            }
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-cinzel font-bold">Al-<span class="text-bronze">furqan</span></a>
-            <div class="lg:hidden cursor-pointer"><i class='bx bx-menu text-2xl'></i></div>
+            <a href="index.html" class="text-2xl font-cinzel font-bold">
+                Al-<span class="text-bronze">furqan</span>
+            </a>
+            <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
+                <i class='bx bx-menu text-2xl'></i>
+            </div>
             <ul class="hidden lg:flex space-x-8">
                 <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
                 <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
@@ -77,6 +159,14 @@
                 <li><a href="services.html" class="hover:text-bronze transition-colors font-medium">Services</a></li>
                 <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
             </ul>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="font-medium">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </nav>
     </header>
 
@@ -505,25 +595,20 @@
     <!-- JavaScript -->
     <script>
         // Mobile Navigation Toggle
-        const navToggle = document.querySelector('.bx-menu');
-        const navMenu = document.querySelector('ul');
+        const navToggle = document.querySelector('#mobile-menu-toggle');
+        const navMenu = document.querySelector('#mobile-menu');
+
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('hidden');
-                navMenu.classList.toggle('flex');
-                navMenu.classList.toggle('flex-col');
-                navMenu.classList.toggle('absolute');
-                navMenu.classList.toggle('top-16');
-                navMenu.classList.toggle('left-0');
-                navMenu.classList.toggle('w-full');
-                navMenu.classList.toggle('bg-white');
-                navMenu.classList.toggle('p-4');
-                navMenu.classList.toggle('shadow-md');
+                navMenu.classList.toggle('active');
             });
+
+            // Close mobile menu when clicking outside
             document.addEventListener('click', (e) => {
-                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-                    navMenu.classList.add('hidden');
-                    navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'p-4', 'shadow-md');
+                if (navMenu.classList.contains('active') && 
+                    !navMenu.contains(e.target) && 
+                    !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
                 }
             });
         }

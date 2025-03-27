@@ -44,21 +44,111 @@
         .bronze-shimmer { position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%); animation: shimmer 5s infinite; transform: skewX(-20deg); }
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 200%; } }
         .tagline { font-family: 'Montserrat', sans-serif; font-weight: 300; letter-spacing: 2px; }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            z-index: 50;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f3f4f6;
+            color: #4b5563;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            color: #7F5434;
+            background-color: #f9fafb;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .py-20, .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .faq-container {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .text-4xl, .text-5xl {
+                font-size: 1.75rem;
+            }
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            .faq-accordion-btn {
+                padding: 1rem;
+            }
+            .faq-accordion-content {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-cinzel font-bold">Al-<span class="text-bronze">furqan</span></a>
-            <div class="lg:hidden cursor-pointer"><i class='bx bx-menu text-2xl'></i></div>
+            <a href="index.html" class="text-2xl font-cinzel font-bold">
+                Al-<span class="text-bronze">furqan</span>
+            </a>
+            <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
+                <i class='bx bx-menu text-2xl'></i>
+            </div>
             <ul class="hidden lg:flex space-x-8">
                 <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
                 <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
                 <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
                 <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
                 <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
+                <li><a href="faqs.html" class="hover:text-bronze transition-colors font-medium">FAQs</a></li>
             </ul>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="faqs.html" class="font-medium">FAQs</a>
+            </div>
         </nav>
     </header>
 
@@ -285,40 +375,52 @@
     <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn"><i class='bx bx-up-arrow-alt text-2xl'></i></button>
 
     <script>
-        // Mobile Nav, Scroll to Top (same as contact.html)
-        const navToggle = document.querySelector('.bx-menu');
-        const navMenu = document.querySelector('ul');
-        navToggle.addEventListener('click', () => { navMenu.classList.toggle('hidden'); navMenu.classList.toggle('flex'); navMenu.classList.toggle('flex-col'); navMenu.classList.toggle('absolute'); navMenu.classList.toggle('top-16'); navMenu.classList.toggle('left-0'); navMenu.classList.toggle('w-full'); navMenu.classList.toggle('bg-white'); navMenu.classList.toggle('p-4'); navMenu.classList.toggle('shadow-md'); });
-        document.addEventListener('click', (e) => { if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) { navMenu.classList.add('hidden'); navMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'p-4', 'shadow-md'); } });
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', () => { if (window.pageYOffset > 300) { scrollTopBtn.classList.remove('opacity-0', 'invisible'); scrollTopBtn.classList.add('opacity-100', 'visible'); } else { scrollTopBtn.classList.add('opacity-0', 'invisible'); scrollTopBtn.classList.remove('opacity-100', 'visible'); } });
-        scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('#mobile-menu-toggle');
+        const navMenu = document.querySelector('#mobile-menu');
 
-        // GSAP Animations
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navMenu.classList.contains('active') && 
+                    !navMenu.contains(e.target) && 
+                    !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+
+        // FAQ Accordion
         document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-            const heroTl = gsap.timeline();
-            heroTl.to('.signboard-glow', { opacity: 0.8, duration: 1.5, ease: "power2.inOut" }, 0);
-            heroTl.to('#title-line1', { opacity: 1, duration: 1.2, ease: "power3.out" }, 0.3);
-            heroTl.to('#hero-text', { opacity: 1, duration: 1, ease: "power2.out" }, 1.2);
-            const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 30; i++) { const particle = document.createElement('div'); particle.classList.add('particle'); particle.style.width = `${Math.random() * 6 + 2}px`; particle.style.height = particle.style.width; particle.style.left = `${Math.random() * 100}%`; particle.style.top = `${Math.random() * 100}%`; particlesContainer.appendChild(particle); }
-            gsap.to('.particle', { opacity: 0.7, stagger: 0.1, duration: 0.5, ease: "power2.out" });
-            document.querySelectorAll('.particle').forEach(particle => { gsap.to(particle, { x: `${Math.random() * 100 - 50}px`, y: `${Math.random() * 100 - 50}px`, duration: Math.random() * 10 + 5, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
-            gsap.to('.parallax-layer', { y: (i) => -ScrollTrigger.maxScroll(window) * 0.2, ease: "none", scrollTrigger: { trigger: ".hero-parallax", start: "top top", end: "bottom top", scrub: true } });
-            document.querySelector('.hero-parallax').addEventListener('mousemove', (e) => { const xPos = (e.clientX / window.innerWidth) * 100; const yPos = (e.clientY / window.innerHeight) * 100; gsap.to('.signboard-glow', { background: `radial-gradient(circle at ${xPos}% ${yPos}%, rgba(169, 108, 54, 0.3), transparent 70%)`, duration: 0.5 }); });
-
-            // FAQs Animations
-            gsap.to(".faq-circle", { scale: 1, opacity: 1, duration: 1.2, stagger: 0.3, ease: "elastic.out(1, 0.5)", scrollTrigger: { trigger: ".faq-section", start: "top 80%" } });
-            gsap.to(".faq-item", { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: "back.out(1.2)", scrollTrigger: { trigger: ".faq-section", start: "top 75%" } });
-            document.querySelectorAll('[data-faq]').forEach(faq => {
-                const button = faq.querySelector('button');
-                const content = faq.querySelector('div');
+            // Existing code for FAQs
+            
+            // Set up FAQ accordions
+            const accordionButtons = document.querySelectorAll('.faq-accordion-btn');
+            accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('.bx');
+                    
+                    // Toggle current accordion
                     content.classList.toggle('hidden');
-                    button.querySelector('i').classList.toggle('bx-chevron-down');
-                    button.querySelector('i').classList.toggle('bx-chevron-up');
-                    gsap.fromTo(content, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: 0.5, ease: "power2.out" });
+                    icon.classList.toggle('bx-plus');
+                    icon.classList.toggle('bx-minus');
+                    
+                    // Close other accordions
+                    accordionButtons.forEach(otherButton => {
+                        if (otherButton !== button) {
+                            const otherContent = otherButton.nextElementSibling;
+                            const otherIcon = otherButton.querySelector('.bx');
+                            
+                            otherContent.classList.add('hidden');
+                            otherIcon.classList.remove('bx-minus');
+                            otherIcon.classList.add('bx-plus');
+                        }
+                    });
                 });
             });
         });

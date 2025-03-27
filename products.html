@@ -115,6 +115,81 @@
         font-weight: 300;
         letter-spacing: 2px;
       }
+      /* Mobile Menu Styles */
+      .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 50;
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #f3f4f6;
+        color: #4b5563;
+        transition: all 0.2s ease;
+      }
+
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+
+      .mobile-menu a:hover {
+        color: #7F5434;
+        background-color: #f9fafb;
+      }
+
+      /* Responsive Media Queries */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .grid-cols-3 {
+          grid-template-columns: 1fr;
+        }
+        .md\:grid-cols-2 {
+          grid-template-columns: 1fr;
+        }
+        .md\:grid-cols-3 {
+          grid-template-columns: 1fr;
+        }
+        .py-20, .py-16 {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+        .px-8 {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .text-4xl, .text-5xl {
+          font-size: 1.75rem;
+        }
+        .py-16 {
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+      }
     </style>
   </head>
   <body class="font-sans text-gray-800">
@@ -122,7 +197,9 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
       <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="text-2xl font-cinzel font-bold">Al-<span class="text-bronze">furqan</span></a>
-        <div class="lg:hidden cursor-pointer"><i class="bx bx-menu text-2xl"></i></div>
+        <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
+          <i class='bx bx-menu text-2xl'></i>
+        </div>
         <ul class="hidden lg:flex space-x-8">
           <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
           <li><a href="products.html" class="hover:text-bronze transition-colors font-medium">Products</a></li>
@@ -130,6 +207,14 @@
           <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
           <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
         </ul>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="index.html">Home</a>
+          <a href="products.html" class="font-medium">Products</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </nav>
     </header>
 
@@ -161,7 +246,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Neon Signs -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/product1.webp" alt="Neon Signs" class="w-full h-64 object-cover" />
+            <img src="assets/products/product1.webp" alt="Neon Signs" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Neon Signs</h3>
               <p class="text-gray-600 mb-4">Vibrant and eye-catching neon signs.</p>
@@ -170,7 +255,7 @@
           </div>
           <!-- Acrylic Signs -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/product2.webp" alt="Acrylic Signs" class="w-full h-64 object-cover" />
+            <img src="assets/products/product2.webp" alt="Acrylic Signs" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Acrylic Signs</h3>
               <p class="text-gray-600 mb-4">Durable and stylish acrylic signage.</p>
@@ -179,7 +264,7 @@
           </div>
           <!-- LED Signs -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/product3.webp" alt="LED Signs" class="w-full h-64 object-cover" />
+            <img src="assets/products/product3.webp" alt="LED Signs" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">LED Signs</h3>
               <p class="text-gray-600 mb-4">Bright and efficient LED displays.</p>
@@ -188,7 +273,7 @@
           </div>
           <!-- Signboards -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/signboard.webp" alt="Signboards" class="w-full h-64 object-cover" />
+            <img src="assets/products/signboard.webp" alt="Signboards" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Signboards</h3>
               <p class="text-gray-600 mb-4">Custom signboards for outdoor advertising and business identification.</p>
@@ -197,7 +282,7 @@
           </div>
           <!-- Back LED Lights -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/back-led-lights.webp" alt="Back LED Lights" class="w-full h-64 object-cover" />
+            <img src="assets/products/back-led-lights.webp" alt="Back LED Lights" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Back LED Lights</h3>
               <p class="text-gray-600 mb-4">Backlit signs with LED illumination for enhanced visibility.</p>
@@ -206,7 +291,7 @@
           </div>
           <!-- 3D Letters -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/3d-letters.webp" alt="3D Letters" class="w-full h-64 object-cover" />
+            <img src="assets/products/3d-letters.webp" alt="3D Letters" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Letters</h3>
               <p class="text-gray-600 mb-4">Three-dimensional letters for impactful branding.</p>
@@ -215,7 +300,7 @@
           </div>
           <!-- Stainless Steel Back Side Light -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/stainless-steel-back-side-light.webp" alt="Stainless Steel Back Side Light" class="w-full h-64 object-cover" />
+            <img src="assets/products/stainless-steel-back-side-light.webp" alt="Stainless Steel Back Side Light" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Stainless Steel Back Side Light</h3>
               <p class="text-gray-600 mb-4">Durable stainless steel backlit signs.</p>
@@ -224,7 +309,7 @@
           </div>
           <!-- 3D Profile Letter Signage -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/3d-profile-letter-signage.webp" alt="3D Profile Letter Signage" class="w-full h-64 object-cover" />
+            <img src="assets/products/3d-profile-letter-signage.webp" alt="3D Profile Letter Signage" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Profile Letter Signage</h3>
               <p class="text-gray-600 mb-4">Profiled 3D letters for a unique look.</p>
@@ -233,7 +318,7 @@
           </div>
           <!-- Cladding Work and Signage -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/cladding-work-signage.webp" alt="Cladding Work and Signage" class="w-full h-64 object-cover" />
+            <img src="assets/products/cladding-work-signage.webp" alt="Cladding Work and Signage" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Cladding Work and Signage</h3>
               <p class="text-gray-600 mb-4">Integrated signage solutions with building cladding.</p>
@@ -242,7 +327,7 @@
           </div>
           <!-- Kiosk Stall Signage -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/kiosk-stall-signage.webp" alt="Kiosk Stall Signage" class="w-full h-64 object-cover" />
+            <img src="assets/products/kiosk-stall-signage.webp" alt="Kiosk Stall Signage" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Kiosk Stall Signage</h3>
               <p class="text-gray-600 mb-4">Custom signage for kiosks and stalls.</p>
@@ -251,7 +336,7 @@
           </div>
           <!-- 3D Signage -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/3d-signage.webp" alt="3D Signage" class="w-full h-64 object-cover" />
+            <img src="assets/products/3d-signage.webp" alt="3D Signage" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Signage</h3>
               <p class="text-gray-600 mb-4">Advanced 3D signage solutions.</p>
@@ -260,7 +345,7 @@
           </div>
           <!-- Video Screens -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/video-screens.webp" alt="Video Screens" class="w-full h-64 object-cover" />
+            <img src="assets/products/video-screens.webp" alt="Video Screens" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Video Screens</h3>
               <p class="text-gray-600 mb-4">Digital video screens for dynamic advertising.</p>
@@ -269,7 +354,7 @@
           </div>
           <!-- LED Letters -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/led-letters.webp" alt="LED Letters" class="w-full h-64 object-cover" />
+            <img src="assets/products/led-letters.webp" alt="LED Letters" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">LED Letters</h3>
               <p class="text-gray-600 mb-4">Energy-efficient LED illuminated letters.</p>
@@ -278,7 +363,7 @@
           </div>
           <!-- Brass Letters -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/brass-letters.webp" alt="Brass Letters" class="w-full h-64 object-cover" />
+            <img src="assets/products/brass-letters.webp" alt="Brass Letters" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Brass Letters</h3>
               <p class="text-gray-600 mb-4">Classic brass letters for a timeless appearance.</p>
@@ -459,27 +544,26 @@
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
+      // Mobile Navigation Toggle
+      const navToggle = document.querySelector('#mobile-menu-toggle');
+      const navMenu = document.querySelector('#mobile-menu');
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+          }
+        });
+      }
+
       // Mobile Nav, Scroll to Top
-      const navToggle = document.querySelector(".bx-menu");
-      const navMenu = document.querySelector("ul");
-      navToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("hidden");
-        navMenu.classList.toggle("flex");
-        navMenu.classList.toggle("flex-col");
-        navMenu.classList.toggle("absolute");
-        navMenu.classList.toggle("top-16");
-        navMenu.classList.toggle("left-0");
-        navMenu.classList.toggle("w-full");
-        navMenu.classList.toggle("bg-white");
-        navMenu.classList.toggle("p-4");
-        navMenu.classList.toggle("shadow-md");
-      });
-      document.addEventListener("click", (e) => {
-        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-          navMenu.classList.add("hidden");
-          navMenu.classList.remove("flex", "flex-col", "absolute", "top-16", "left-0", "w-full", "bg-white", "p-4", "shadow-md");
-        }
-      });
       const scrollTopBtn = document.getElementById("scrollTopBtn");
       window.addEventListener("scroll", () => {
         if (window.pageYOffset > 300) {

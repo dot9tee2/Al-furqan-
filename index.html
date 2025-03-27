@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Al-furqan | Custom Signs & Signboards</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -206,6 +210,94 @@
       .testimonials-slider .splide__track {
         padding: 1rem 0;
       }
+
+      /* Flip Card Styles */
+      .flip-card {
+        perspective: 1000px;
+        min-height: 400px;
+        height: 100%;
+        display: block;
+        position: relative;
+        margin-bottom: 2rem;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .flip-card-front {
+        background: white;
+      }
+
+      .flip-card-back {
+        transform: rotateY(180deg);
+        background: #A96C36;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+
+      /* Showcase section specific styles */
+      #showcase .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+
+      .showcase-item {
+        opacity: 1 !important; /* Force visibility */
+        transform: translateY(0) !important;
+      }
+
+      .showcase-overlay {
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      .flip-card:hover .showcase-overlay {
+        opacity: 1;
+      }
+
+      /* Image container styles */
+      .h-56 {
+        height: 224px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .h-56 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.5s ease;
+      }
+
+      .flip-card:hover .h-56 img {
+        transform: scale(1.1);
+      }
     </style>
   </head>
   <body class="font-sans text-gray-800">
@@ -288,8 +380,7 @@
           class="text-white/80 mb-8 max-w-2xl mx-auto opacity-0 text-sm"
           id="hero-subtext"
         >
-          Crafting exceptional signboards that capture attention and reflect
-          your unique brand identity
+        Find Your Sign, Make it Shine
         </p>
         <div class="flex flex-wrap justify-center gap-4 mb-12">
           <a
@@ -354,7 +445,7 @@
             class="bg-white shadow-lg p-8 rounded-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group"
           >
             <div class="w-20 h-20 bg-bronze/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-bronze/20 transition-colors duration-300">
-              <i class="bx bx-design text-4xl text-bronze"></i>
+              <i class="bx bx-palette text-4xl text-bronze"></i>
             </div>
             <h3 class="text-2xl font-semibold mb-4 text-gray-800">Custom Design</h3>
             <p class="text-gray-600">
@@ -393,7 +484,7 @@
           </div>
         </div>
         <div class="text-center mt-12 opacity-0" id="fitout-service-cta">
-          <a href="#contact" class="inline-flex items-center px-8 py-4 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors duration-300 shadow-lg hover:shadow-xl">
+          <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors duration-300 shadow-lg hover:shadow-xl">
             Get a Free Quote
             <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
           </a>
@@ -559,7 +650,7 @@
               <i class="bx bx-badge-check text-bronze text-3xl"></i>
             </div>
             <h3 class="text-lg font-semibold mb-2">Experience</h3>
-            <div class="h-[1px] w-0 bg-bronze/30 mx-auto my-2 card-line"></div>
+            <div class="h-[1px] w-0 bg-bronze/30 mx-auto mb-4 card-line"></div>
             <p class="text-gray-600">
               Years of industry expertise crafting premium signage
             </p>
@@ -574,7 +665,7 @@
               <i class="bx bx-star text-bronze text-3xl"></i>
             </div>
             <h3 class="text-lg font-semibold mb-2">Excellence</h3>
-            <div class="h-[1px] w-0 bg-bronze/30 mx-auto my-2 card-line"></div>
+            <div class="h-[1px] w-0 bg-bronze/30 mx-auto mb-4 card-line"></div>
             <p class="text-gray-600">
               Committed to delivering nothing but the best for our clients
             </p>
@@ -589,7 +680,7 @@
               <i class="bx bx-detail text-bronze text-3xl"></i>
             </div>
             <h3 class="text-lg font-semibold mb-2">Attention to Detail</h3>
-            <div class="h-[1px] w-0 bg-bronze/30 mx-auto my-2 card-line"></div>
+            <div class="h-[1px] w-0 bg-bronze/30 mx-auto mb-4 card-line"></div>
             <p class="text-gray-600">
               Every sign is meticulously crafted with precision and care
             </p>
@@ -620,81 +711,48 @@
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Product 1 -->
-          <div
-            class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card"
-            id="product-card-1"
-          >
-            <div class="h-48 bg-gray relative overflow-hidden">
-              <div
-                class="absolute inset-0 product-overlay bg-bronze/10 opacity-0"
-              ></div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card" id="product-card-1">
+            <div class="h-64 relative overflow-hidden">
+              <img src="assets/products/cladding-work-signage.webp" alt="Premium Business Signs" class="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-2">Premium Business Signs</h3>
-              <div
-                class="h-[1px] w-0 bg-bronze/30 my-2 product-card-line"
-              ></div>
+              <div class="h-[1px] w-0 bg-bronze/30 my-2 product-card-line"></div>
               <p class="text-gray-600 mb-4">
-                Elegant, durable custom signs that make your business stand out
-                with sophisticated styling and premium materials.
+                Elegant, durable custom signs that make your business stand out with sophisticated styling and premium materials.
               </p>
-              <a
-                href="contact.html"
-                class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn"
-                >Request a Quote</a
-              >
+              <a href="contact.html" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
             </div>
           </div>
           <!-- Product 2 -->
-          <div
-            class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card"
-            id="product-card-2"
-          >
-            <div class="h-48 bg-gray relative overflow-hidden">
-              <div
-                class="absolute inset-0 product-overlay bg-bronze/10 opacity-0"
-              ></div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card" id="product-card-2">
+            <div class="h-64 relative overflow-hidden">
+              <img src="assets/products/product3.webp" alt="Dynamic LED Displays" class="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-2">Dynamic LED Displays</h3>
-              <div
-                class="h-[1px] w-0 bg-bronze/30 my-2 product-card-line"
-              ></div>
+              <div class="h-[1px] w-0 bg-bronze/30 my-2 product-card-line"></div>
               <p class="text-gray-600 mb-4">
-                Eye-catching LED signboards with programmable effects that
-                attract attention day and night while reducing energy costs.
+                Eye-catching LED signboards with programmable effects that attract attention day and night while reducing energy costs.
               </p>
-              <a
-                href="contact.html"
-                class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn"
-                >Request a Quote</a
-              >
+              <a href="contact.html" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
             </div>
           </div>
           <!-- Product 3 -->
-          <div
-            class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card"
-            id="product-card-3"
-          >
-            <div class="h-48 bg-gray relative overflow-hidden">
-              <div
-                class="absolute inset-0 product-overlay bg-bronze/10 opacity-0"
-              ></div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card" id="product-card-3">
+            <div class="h-64 relative overflow-hidden">
+              <img src="assets/products/product2.webp" alt="Luxury Acrylic Signage" class="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-2">Luxury Acrylic Signage</h3>
-              <div
-                class="h-[1px] w-0 bg-bronze/30 my-2 product-card-line"
-              ></div>
+              <div class="h-[1px] w-0 bg-bronze/30 my-2 product-card-line"></div>
               <p class="text-gray-600 mb-4">
-                Modern, sophisticated acrylic signs with depth and dimension
-                that create a premium impression for high-end establishments.
+                Modern, sophisticated acrylic signs with depth and dimension that create a premium impression for high-end establishments.
               </p>
-              <a
-                href="contact.html"
-                class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn"
-                >Request a Quote</a
-              >
+              <a href="contact.html" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
             </div>
           </div>
         </div>
@@ -918,90 +976,145 @@
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Project 1 -->
-          <div
-            class="bg-white rounded-lg overflow-hidden shadow-md opacity-0 showcase-item"
-            id="showcase-1"
-          >
-            <div class="h-56 bg-gray-200 relative">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 showcase-overlay"
-              ></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-semibold text-lg mb-1">Luxury Hotel Signage</h3>
-              <p class="text-sm text-gray-500 mb-3">
-                Custom bronze-finish entrance sign with integrated lighting
-              </p>
-              <div class="flex gap-2">
-                <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded"
-                  >Hotel</span
-                >
-                <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded"
-                  >Luxury</span
-                >
+          <div class="flip-card opacity-0 showcase-item" id="showcase-1">
+            <div class="flip-card-inner">
+              <div class="flip-card-front bg-white rounded-lg overflow-hidden shadow-md">
+                <div class="h-56 relative overflow-hidden">
+                  <img src="assets/projects/hotel-signage.webp" alt="Luxury Hotel Signage" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 showcase-overlay"></div>
+                </div>
+                <div class="p-5">
+                  <h3 class="font-semibold text-lg mb-1">Luxury Hotel Signage</h3>
+                  <p class="text-sm text-gray-500 mb-3">
+                    Custom bronze-finish entrance sign with integrated lighting
+                  </p>
+                  <div class="flex gap-2">
+                    <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">Hotel</span>
+                    <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">Luxury</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back bg-bronze text-white rounded-lg p-6 flex flex-col justify-center">
+                <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Custom bronze-finish entrance sign</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Integrated LED lighting system</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Weather-resistant materials</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Remote control operation</span>
+                  </li>
+                </ul>
+                <div class="mt-4 text-xs text-white/80">
+                  <p>Location: Dubai Marina</p>
+                  <p>Completion: 2023</p>
+                </div>
               </div>
             </div>
           </div>
+
           <!-- Project 2 -->
-          <div
-            class="bg-white rounded-lg overflow-hidden shadow-md opacity-0 showcase-item"
-            id="showcase-2"
-          >
-            <div class="h-56 bg-gray-200 relative">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 showcase-overlay"
-              ></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-semibold text-lg mb-1">Retail Chain Rebrand</h3>
-              <p class="text-sm text-gray-500 mb-3">
-                Nationwide implementation of new illuminated storefront signs
-              </p>
-              <div class="flex gap-2">
-                <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded"
-                  >Retail</span
-                >
-                <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded"
-                  >LED</span
-                >
+          <div class="flip-card opacity-0 showcase-item" id="showcase-2">
+            <div class="flip-card-inner">
+              <div class="flip-card-front bg-white rounded-lg overflow-hidden shadow-md">
+                <div class="h-56 relative overflow-hidden">
+                  <img src="assets/projects/retail-signage.webp" alt="Retail Chain Rebrand" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 showcase-overlay"></div>
+                </div>
+                <div class="p-5">
+                  <h3 class="font-semibold text-lg mb-1">Retail Chain Rebrand</h3>
+                  <p class="text-sm text-gray-500 mb-3">
+                    Nationwide implementation of new illuminated storefront signs
+                  </p>
+                  <div class="flex gap-2">
+                    <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">Retail</span>
+                    <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">LED</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back bg-bronze text-white rounded-lg p-6 flex flex-col justify-center">
+                <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>50+ store locations nationwide</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Smart LED control system</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Energy-efficient lighting</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Centralized management</span>
+                  </li>
+                </ul>
+                <div class="mt-4 text-xs text-white/80">
+                  <p>Client: Major Retail Chain</p>
+                  <p>Completion: 2024</p>
+                </div>
               </div>
             </div>
           </div>
+
           <!-- Project 3 -->
-          <div
-            class="bg-white rounded-lg overflow-hidden shadow-md opacity-0 showcase-item"
-            id="showcase-3"
-          >
-            <div class="h-56 bg-gray-200 relative">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 showcase-overlay"
-              ></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-semibold text-lg mb-1">Corporate Headquarters</h3>
-              <p class="text-sm text-gray-500 mb-3">
-                Modern acrylic lobby sign with 3D dimensional elements
-              </p>
-              <div class="flex gap-2">
-                <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded"
-                  >Corporate</span
-                >
-                <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded"
-                  >Interior</span
-                >
+          <div class="flip-card opacity-0 showcase-item" id="showcase-3">
+            <div class="flip-card-inner">
+              <div class="flip-card-front bg-white rounded-lg overflow-hidden shadow-md">
+                <div class="h-56 relative overflow-hidden">
+                  <img src="assets/projects/corporate-signage.webp" alt="Corporate Headquarters" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 showcase-overlay"></div>
+                </div>
+                <div class="p-5">
+                  <h3 class="font-semibold text-lg mb-1">Corporate Headquarters</h3>
+                  <p class="text-sm text-gray-500 mb-3">
+                    Modern acrylic lobby sign with 3D dimensional elements
+                  </p>
+                  <div class="flex gap-2">
+                    <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">Corporate</span>
+                    <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">Interior</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card-back bg-bronze text-white rounded-lg p-6 flex flex-col justify-center">
+                <h3 class="text-xl font-semibold mb-4">Project Details</h3>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>3D layered acrylic design</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Custom color matching</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Anti-glare coating</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bx bx-check-circle"></i>
+                    <span>Easy maintenance system</span>
+                  </li>
+                </ul>
+                <div class="mt-4 text-xs text-white/80">
+                  <p>Location: Business Bay</p>
+                  <p>Completion: 2023</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="text-center mt-10">
-          <a
-            href="projects.html"
-            class="inline-flex items-center text-bronze hover:text-bronze-dark transition-colors opacity-0"
-            id="view-more-projects"
-          >
-            View All Projects
-            <i class="bx bx-right-arrow-alt ml-1"></i>
-          </a>
         </div>
       </div>
     </section>
@@ -1097,7 +1210,7 @@
         </div>
         <div class="text-center mt-8">
           <a
-            href="faq.html"
+            href="faqs.html"
             class="inline-flex items-center text-bronze hover:text-bronze-dark transition-colors opacity-0"
             id="view-more-faq"
           >
@@ -1221,13 +1334,6 @@
                   href="services.html"
                   class="hover:text-white/70 transition-colors"
                   >Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="projects.html"
-                  class="hover:text-white/70 transition-colors"
-                  >Projects</a
                 >
               </li>
               <li>
@@ -1386,6 +1492,48 @@
             opacity: 1,
             duration: 1,
             delay: 2,
+            ease: "power2.out",
+          });
+
+          // Showcase section animations
+          gsap.to("#showcase-title", {
+            scrollTrigger: { trigger: "#showcase", start: "top 80%" },
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+
+          gsap.to("#showcase-text", {
+            scrollTrigger: { trigger: "#showcase", start: "top 80%" },
+            opacity: 1,
+            duration: 0.8,
+            delay: 0.2,
+            ease: "power2.out",
+          });
+
+          gsap.to(".showcase-item", {
+            scrollTrigger: { trigger: "#showcase", start: "top 70%" },
+            opacity: 1,
+            y: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+
+          gsap.to(".showcase-overlay", {
+            scrollTrigger: { trigger: "#showcase", start: "top 70%" },
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1.2,
+            delay: 0.4,
+            ease: "power2.out",
+          });
+
+          gsap.to("#view-more-projects", {
+            scrollTrigger: { trigger: "#showcase", start: "top 60%" },
+            opacity: 1,
+            duration: 0.8,
+            delay: 0.8,
             ease: "power2.out",
           });
 

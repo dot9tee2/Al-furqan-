@@ -43,6 +43,24 @@
         .bronze-shimmer { position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%); animation: shimmer 5s infinite; transform: skewX(-20deg); }
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 200%; } }
         .tagline { font-family: 'Montserrat', sans-serif; font-weight: 300; letter-spacing: 2px; }
+        .fit-out-card {
+            transition: all 0.3s ease;
+        }
+        .fit-out-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        .fit-out-card:hover .feature-icon {
+            background-color: rgba(169, 108, 54, 0.2);
+        }
+        .decorative-line {
+            transition: width 0.3s ease;
+        }
+        .fit-out-card:hover .decorative-line {
+            width: 100px;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800">
@@ -75,69 +93,415 @@
                     </span>
                 </span>
             </h1>
-            <p class="tagline text-xl mb-8 max-w-2xl mx-auto opacity-0 text-bronze-light" id="hero-text">Comprehensive signage solutions for your business</p>
+            <p class="tagline text-xl mb-8 max-w-2xl mx-auto opacity-0 text-bronze-light" id="hero-text">
+                Comprehensive signage solutions to elevate your brand and business.
+            </p>
+            <a href="#contact-form" class="bg-bronze text-white px-6 py-3 rounded-full font-semibold hover:bg-bronze-dark transition opacity-0" id="hero-cta">
+                Get a Quote
+            </a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-16 px-4 relative overflow-hidden">
-        <div class="absolute w-32 h-32 bg-bronze/5 rounded-full -left-10 top-20 service-circle"></div>
-        <div class="absolute w-40 h-40 bg-bronze/5 rounded-full -right-10 bottom-20 service-circle"></div>
+    <!-- Featured Fit-Out Services Section -->
+    <section class="py-20 px-4 bg-gradient-to-b from-bronze/5 to-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-bronze/5 rounded-full -z-10 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-48 h-48 bg-bronze/5 rounded-full -z-10 blur-3xl"></div>
         <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="text-bronze font-medium">Featured Service</span>
+                <h2 class="text-4xl font-cinzel font-bold mt-2 mb-6">Premium Fit-Out Services</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Elevate your space with our comprehensive fit-out solutions. From concept to completion, 
+                    we transform ordinary spaces into extraordinary environments that reflect your brand's essence.
+                </p>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Design & Planning -->
+                <div class="bg-white p-8 rounded-xl shadow-lg fit-out-card">
+                    <div class="w-20 h-20 feature-icon bg-bronze/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="bx bx-palette text-4xl text-bronze"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Design & Planning</h3>
+                    <div class="h-1 w-20 bg-bronze/30 mb-4 decorative-line"></div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Custom interior design concepts</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>3D visualization & space planning</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Material & finish selection</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Brand integration strategy</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Construction & Implementation -->
+                <div class="bg-white p-8 rounded-xl shadow-lg fit-out-card">
+                    <div class="w-20 h-20 feature-icon bg-bronze/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="bx bx-building-house text-4xl text-bronze"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Construction</h3>
+                    <div class="h-1 w-20 bg-bronze/30 mb-4 decorative-line"></div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Full structural modifications</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Custom furniture & fixtures</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Electrical & lighting systems</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Premium finish installation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Project Management -->
+                <div class="bg-white p-8 rounded-xl shadow-lg fit-out-card">
+                    <div class="w-20 h-20 feature-icon bg-bronze/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="bx bx-time-five text-4xl text-bronze"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Project Management</h3>
+                    <div class="h-1 w-20 bg-bronze/30 mb-4 decorative-line"></div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Timeline & budget control</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Quality assurance</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Progress monitoring</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="bx bx-check-circle text-bronze mt-1"></i>
+                            <span>Compliance management</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-cinzel font-bold mb-6">Why Choose Our Fit-Out Services?</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="w-8 h-8 bg-bronze/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="bx bx-badge-check text-bronze"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">End-to-End Solution</h4>
+                                    <p class="text-gray-600">Complete project management from design to execution</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-8 h-8 bg-bronze/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="bx bx-star text-bronze"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Premium Quality</h4>
+                                    <p class="text-gray-600">High-end materials and superior craftsmanship</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-8 h-8 bg-bronze/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="bx bx-time text-bronze"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Timely Delivery</h4>
+                                    <p class="text-gray-600">Efficient execution with strict timeline adherence</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-600 mb-6">Ready to transform your space?</p>
+                        <a href="#contact-form" class="inline-flex items-center px-8 py-4 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors duration-300">
+                            Schedule a Consultation
+                            <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Services Section -->
+    <section class="py-16 px-4 relative overflow-hidden service-section">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-cinzel font-bold mb-4">Signage Services</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive signage solutions to enhance your brand visibility and create lasting impressions.
+                </p>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Custom Sign Design -->
                 <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
                     <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                         <i class='bx bx-bulb text-bronze text-2xl'></i>
                     </div>
-                    <h3 class="font-semibold text-xl mb-2">Design</h3>
-                    <p class="text-gray-600">Custom signage design tailored to your brand.</p>
+                    <h3 class="font-semibold text-xl mb-2">Custom Sign Design</h3>
+                    <p class="text-gray-600">Work with our expert designers to create bespoke signs that reflect your brand's identity and vision.</p>
                 </div>
+                <!-- Service 2: Sign Manufacturing -->
                 <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
                     <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                         <i class='bx bx-cog text-bronze text-2xl'></i>
                     </div>
-                    <h3 class="font-semibold text-xl mb-2">Fabrication</h3>
-                    <p class="text-gray-600">High-quality signboard manufacturing.</p>
+                    <h3 class="font-semibold text-xl mb-2">Sign Manufacturing</h3>
+                    <p class="text-gray-600">High-quality production using premium materials like brass, acrylic, and stainless steel for durable signs.</p>
                 </div>
+                <!-- Service 3: Installation Services -->
                 <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
                     <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                         <i class='bx bx-wrench text-bronze text-2xl'></i>
                     </div>
-                    <h3 class="font-semibold text-xl mb-2">Installation</h3>
-                    <p class="text-gray-600">Professional installation services.</p>
+                    <h3 class="font-semibold text-xl mb-2">Installation Services</h3>
+                    <p class="text-gray-600">Professional installation to ensure your signs are securely and perfectly placed at your location.</p>
+                </div>
+                <!-- Service 4: Consultation & Branding -->
+                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
+                    <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i class='bx bx-briefcase text-bronze text-2xl'></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">Consultation & Branding</h3>
+                    <p class="text-gray-600">Expert guidance to choose the right signage solutions that enhance your brand visibility.</p>
+                </div>
+                <!-- Service 5: Maintenance & Repair -->
+                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
+                    <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i class='bx bx-tools text-bronze text-2xl'></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">Maintenance & Repair</h3>
+                    <p class="text-gray-600">Keep your signs looking new with our maintenance and repair services for long-lasting performance.</p>
+                </div>
+                <!-- Service 6: Digital Signage Solutions -->
+                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
+                    <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i class='bx bx-video text-bronze text-2xl'></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">Digital Signage Solutions</h3>
+                    <p class="text-gray-600">Dynamic video screens and LED displays to create engaging and modern advertising solutions.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="bg-gray-100 py-16 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="font-cinzel text-3xl font-bold text-center text-bronze mb-8 opacity-0" id="contact-title">Get in Touch</h2>
+            <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md opacity-0" id="contact-form-content">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-bronze" required></textarea>
+                </div>
+                <button type="submit" class="bg-bronze text-white px-6 py-3 rounded-full font-semibold hover:bg-bronze-dark transition w-full">
+                    Send Message
+                </button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-bronze text-white pt-16 pb-8">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <a href="index.html" class="text-2xl font-bold mb-4 inline-block">Al-<span class="text-primary">furqan</span></a>
-                    <p>Custom Signs & Signboards</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="products.html" class="hover:text-primary transition-colors">Products</a></li>
-                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-                    <p class="mb-2">Email: <a href="mailto:info@alfurqan.com">info@alfurqan.com</a></p>
-                    <p>Phone: (123) 456-7890</p>
-                </div>
+          <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+              <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
+                Al-<span class="text-white">furqan</span>
+              </a>
+              <p class="mb-4">
+                Premium Custom Signs & Signboards for Businesses That Demand
+                Excellence
+              </p>
+              <div class="flex gap-4 mt-4">
+                <a
+                  href="#"
+                  class="hover:text-white/70 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <i class="bx bxl-facebook text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover:text-white/70 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <i class="bx bxl-instagram text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover:text-white/70 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <i class="bx bxl-linkedin text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover:text-white/70 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <i class="bx bxl-twitter text-2xl"></i>
+                </a>
+              </div>
             </div>
-            <div class="text-center pt-8 border-t border-white/10">
-                <p>© 2024 Al-furqan. All rights reserved.</p>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="index.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="products.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Products</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="about.html"
+                    class="hover:text-white/70 transition-colors"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="projects.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Projects</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="contact.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
             </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Our Services</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Custom Signage</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >LED Signs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Acrylic Signs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Metal Signs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Installation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Maintenance</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <i class="bx bx-map text-xl mt-0.5"></i>
+                  <span
+                    >123 Business Avenue, Suite 456<br />Dubai, United Arab
+                    Emirates</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="bx bx-phone text-xl"></i>
+                  <span>+971 (4) 123-4567</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="bx bx-envelope text-xl"></i>
+                  <span>info@al-furqan.com</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="bx bx-time text-xl"></i>
+                  <span>Mon-Fri: 9AM-6PM</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center pt-8 border-t border-white/10">
+            <p>
+              &copy; 2024 Al-furqan Business International. All rights reserved.
+            </p>
+          </div>
         </div>
-    </footer>
+      </footer>
 
     <!-- Scroll to Top Button -->
     <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn">
@@ -196,6 +560,7 @@
             heroTl.to('.signboard-glow', { opacity: 0.8, duration: 1.5, ease: "power2.inOut" }, 0);
             heroTl.to('#title-line1', { opacity: 1, duration: 1.2, ease: "power3.out" }, 0.3);
             heroTl.to('#hero-text', { opacity: 1, duration: 1, ease: "power2.out" }, 1.2);
+            heroTl.to('#hero-cta', { opacity: 1, duration: 1, ease: "power2.out" }, 1.5);
 
             // Particles
             const particlesContainer = document.getElementById('particles');
@@ -264,6 +629,22 @@
                 card.addEventListener("mouseleave", () => {
                     gsap.to(card, { y: 0, scale: 1, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)", duration: 0.4, ease: "power2.out" });
                 });
+            });
+
+            // Contact Form Animations
+            gsap.to("#contact-title", {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: { trigger: "#contact-form", start: "top 75%" }
+            });
+            gsap.to("#contact-form-content", {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: { trigger: "#contact-form", start: "top 75%" }
             });
         });
     </script>

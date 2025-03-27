@@ -42,20 +42,31 @@ document.addEventListener('DOMContentLoaded', () => {
         particlesContainer.appendChild(particle);
     }
     
-    // Animate particles to match bronze color scheme
+    // Animate particles to match bronze color scheme with increased opacity and pulsing effect
     gsap.to('.particle', {
-        opacity: 0.7,
+        opacity: 1,
         stagger: 0.1,
         duration: 0.5,
         ease: "power2.out"
     });
     
-    // Random floating animation for particles
+    // Random floating animation for particles with faster movement and pulsing effect
     document.querySelectorAll('.particle').forEach(particle => {
+        // Main floating animation
         gsap.to(particle, {
             x: `${Math.random() * 100 - 50}px`,
             y: `${Math.random() * 100 - 50}px`,
-            duration: Math.random() * 10 + 5,
+            duration: Math.random() * 5 + 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        // Pulsing glow effect
+        gsap.to(particle, {
+            opacity: 0.8,
+            scale: 1.2,
+            duration: Math.random() * 2 + 1,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut"

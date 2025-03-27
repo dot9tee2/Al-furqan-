@@ -218,50 +218,45 @@
         <div class="absolute w-36 h-36 bg-bronze/5 rounded-full -right-10 top-20 team-circle"></div>
         <div class="absolute w-44 h-44 bg-bronze/5 rounded-full -left-16 bottom-20 team-circle"></div>
         <div class="container mx-auto max-w-6xl relative">
-            <div class="overflow-hidden">
-                <h2 class="text-3xl font-cinzel font-bold text-center mb-12 opacity-0" id="team-title">Our Team</h2>
+            <div class="text-center mb-16">
+                <span class="text-bronze font-medium">Our People</span>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-6 opacity-0" id="team-title">Meet Our Team</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Our success is built on the dedication and expertise of our talented team members who work together to deliver excellence.
+                </p>
             </div>
+
+            <!-- Team Group Photo -->
+            <div class="mb-16 relative rounded-xl overflow-hidden shadow-2xl opacity-0" id="team-photo-container">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <img src="assets/images/team.jpeg" alt="Al-furqan Team" class="w-full h-[500px] object-cover" loading="lazy">
+                <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h3 class="text-2xl font-cinzel font-semibold mb-2">The Al-furqan Family</h3>
+                    <p class="text-white/90 max-w-2xl">A diverse team of professionals united by our commitment to excellence and innovation in signage solutions.</p>
+                </div>
+            </div>
+
+            <!-- Team Members Grid -->
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-1">
-                    <img src="assets/images/male_placeholder.jpg" alt="Muhammad Ali Akbar, Designer of Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <img src="assets/images/male_placeholder.jpg" alt="Muhammad Ali Akbar" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-1">Muhammad Ali Akbar</h3>
                         <p class="text-bronze">Designer</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-2">
-                    <img src="assets/images/male_placeholder.jpg" alt="Jey Marrakesh, Marketing Manager of Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <img src="assets/images/male_placeholder.jpg" alt="Jey Marrakesh" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-1">Jey Marrakesh</h3>
                         <p class="text-bronze">Marketing Manager</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-3">
-                    <img src="assets/images/male_placeholder.jpg" alt="David Dee, Engineer at Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    <img src="assets/images/male_placeholder.jpg" alt="David Dee" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-1">David Dee</h3>
                         <p class="text-bronze">Engineer</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-4">
-                    <img src="assets/images/male_placeholder.jpg" alt="Saeed Ghana, Team Member of Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-1">Saeed Ghana</h3>
-                        <p class="text-bronze">Team Member</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-5">
-                    <img src="assets/images/male_placeholder.jpg" alt="Fahad Khan, Labour at Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-1">Fahad Khan</h3>
-                        <p class="text-bronze">Labour</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center group hover:shadow-xl transition-shadow opacity-0 team-card" id="team-card-6">
-                    <img src="assets/images/male_placeholder.jpg" alt="Sehrosh, Labour at Al-furqan Business" class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-1">Sehrosh</h3>
-                        <p class="text-bronze">Labour</p>
                     </div>
                 </div>
             </div>
@@ -304,36 +299,175 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-bronze text-white pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <a href="index.html" class="text-2xl font-cinzel font-bold mb-4 inline-block">
-                        Al-<span class="text-primary">furqan</span>
-                    </a>
-                    <p>Custom Signs & Signboards</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="products.html" class="hover:text-primary transition-colors">Products</a></li>
-                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-                    <p class="mb-2">Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6afa8a0a986a7aaeba0b3b4b7a7a8e8a5a9ab">[email&#160;protected]</a></p>
-                    <p>Phone: (123) 456-7890</p>
-                </div>
-            </div>
-            <div class="text-center pt-8 border-t border-white/10">
-                <p>&copy; 2024 Al-furqan. All rights reserved.</p>
-            </div>
+   <!-- Footer -->
+   <footer class="bg-bronze text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
+            Al-<span class="text-white">furqan</span>
+          </a>
+          <p class="mb-4">
+            Premium Custom Signs & Signboards for Businesses That Demand
+            Excellence
+          </p>
+          <div class="flex gap-4 mt-4">
+            <a
+              href="#"
+              class="hover:text-white/70 transition-colors"
+              aria-label="Facebook"
+            >
+              <i class="bx bxl-facebook text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="hover:text-white/70 transition-colors"
+              aria-label="Instagram"
+            >
+              <i class="bx bxl-instagram text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="hover:text-white/70 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <i class="bx bxl-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="hover:text-white/70 transition-colors"
+              aria-label="Twitter"
+            >
+              <i class="bx bxl-twitter text-2xl"></i>
+            </a>
+          </div>
         </div>
-    </footer>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-white/70 transition-colors"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="products.html"
+                class="hover:text-white/70 transition-colors"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="hover:text-white/70 transition-colors"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="hover:text-white/70 transition-colors"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="projects.html"
+                class="hover:text-white/70 transition-colors"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="hover:text-white/70 transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Our Services</h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="services.html"
+                class="hover:text-white/70 transition-colors"
+                >Custom Signage</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="hover:text-white/70 transition-colors"
+                >LED Signs</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="hover:text-white/70 transition-colors"
+                >Acrylic Signs</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="hover:text-white/70 transition-colors"
+                >Metal Signs</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="hover:text-white/70 transition-colors"
+                >Installation</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="hover:text-white/70 transition-colors"
+                >Maintenance</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <i class="bx bx-map text-xl mt-0.5"></i>
+              <span
+                >123 Business Avenue, Suite 456<br />Dubai, United Arab
+                Emirates</span
+              >
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bx bx-phone text-xl"></i>
+              <span>+971 (4) 123-4567</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bx bx-envelope text-xl"></i>
+              <span>info@al-furqan.com</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bx bx-time text-xl"></i>
+              <span>Mon-Fri: 9AM-6PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center pt-8 border-t border-white/10">
+        <p>
+          &copy; 2024 Al-furqan Business International. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
 
     <!-- Scroll to Top Button -->
     <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn">
@@ -429,11 +563,12 @@
 
             // Team section animations
             const teamTl = gsap.timeline({
-                scrollTrigger: { trigger: ".bg-gray-50", start: "top 80%", toggleActions: "play none none none" }
+                scrollTrigger: { trigger: ".bg-gray-50", start: "top 80%" }
             });
             teamTl.fromTo(".team-circle", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, stagger: 0.3, ease: "elastic.out(1, 0.5)" }, 0);
             teamTl.to("#team-title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.2);
-            teamTl.to(".team-card", { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: "back.out(1.2)" }, 0.8);
+            teamTl.to("#team-photo-container", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, 0.5);
+            teamTl.to(".team-card", { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: "back.out(1.2)" }, 1);
 
             // Values section animations
             const valuesTl = gsap.timeline({

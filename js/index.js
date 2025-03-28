@@ -45,18 +45,15 @@ function updateFrameRate() {
     return frameRate < 30;
 }
 
-// GSAP Animations
 document.addEventListener('DOMContentLoaded', () => {
     // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger, TextPlugin);
-    
-    // Determine number of particles based on device capability
-    const particleCount = isLowEndDevice() ? 10 : 20;
-    
-    // Create particles for background effect
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initialize particles
     const particlesContainer = document.getElementById('particles');
     if (particlesContainer) {
-        for (let i = 0; i < particleCount; i++) {
+        const particles = [];
+        for (let i = 0; i < 30; i++) {
             const particle = document.createElement('div');
             particle.classList.add('particle');
             particle.style.width = `${Math.random() * 6 + 2}px`;
@@ -64,20 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
             particle.style.left = `${Math.random() * 100}%`;
             particle.style.top = `${Math.random() * 100}%`;
             particlesContainer.appendChild(particle);
+            particles.push(particle);
         }
-        
-        // Animate particles to match bronze color scheme with increased opacity and pulsing effect
+
         gsap.to('.particle', {
-            opacity: 1,
+            opacity: 0.7,
             stagger: 0.1,
             duration: 0.5,
             ease: "power2.out"
         });
-        
-        // Random floating animation for particles with faster movement and pulsing effect
-        const particles = document.querySelectorAll('.particle');
+
         particles.forEach(particle => {
-            // Main floating animation
             gsap.to(particle, {
                 x: `${Math.random() * 80 - 40}px`,
                 y: `${Math.random() * 80 - 40}px`,
@@ -86,149 +80,215 @@ document.addEventListener('DOMContentLoaded', () => {
                 yoyo: true,
                 ease: "sine.inOut"
             });
+        });
+    }
 
-            // Pulsing glow effect - only on higher-end devices
-            if (!isLowEndDevice()) {
-                gsap.to(particle, {
-                    opacity: 0.8,
-                    scale: 1.2,
-                    duration: Math.random() * 2 + 1,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
-            }
-        });
-    }
-    
     // Hero section animations
-    const heroTl = gsap.timeline();
-    
-    // Glow effect animation
-    const signboardGlow = document.querySelector('.signboard-glow');
-    if (signboardGlow) {
-        heroTl.to(signboardGlow, {
-            opacity: 0.8,
-            duration: 1.5,
-            ease: "power2.inOut"
-        }, 0);
-    }
-    
-    // Animate bronze title with shimmer effect
-    const titleLine1 = document.getElementById('title-line1');
-    if (titleLine1) {
-        heroTl.to(titleLine1, {
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out"
-        }, 0.3);
-    }
-    
-    const titleLine2 = document.getElementById('title-line2');
-    if (titleLine2) {
-        heroTl.to(titleLine2, {
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out"
-        }, 0.7);
-    }
-    
-    // Create the bronze shimmer effect cycling
-    const shimmerTl = gsap.timeline({repeat: -1, repeatDelay: 3});
-    document.querySelectorAll('.bronze-shimmer').forEach((shimmer, i) => {
-        shimmerTl.fromTo(shimmer, 
-            {left: '-100%'},
-            {left: '200%', duration: 2, ease: "power1.inOut"}, 
-            i * 0.5);
-    });
-    
-    // Text fade in with special effect
-    const heroText = document.getElementById('hero-text');
-    if (heroText) {
-        heroTl.to(heroText, {
-            opacity: 1,
-            duration: 1,
-            ease: "power2.out"
-        }, 1.2);
-    }
-    
-    // Buttons fade in
-    heroTl.to('#btn-products, #btn-contact', {
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.6,
-        ease: "power2.out"
-    }, 1.5);
-    
-    // Features fade in
-    heroTl.to('#feature-1, #feature-2, #feature-3', {
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.6,
-        ease: "power2.out"
-    }, 1.8);
-    
-    // Scroll indicator fade in
-    const scrollIndicator = document.getElementById('scroll-indicator');
-    if (scrollIndicator) {
-        heroTl.to(scrollIndicator, {
-            opacity: 1,
-            duration: 0.6,
-            ease: "power2.out"
-        }, 2.2);
-    }
-    
-    // Add light traces that follow mouse movement (signboard lighting effect)
     const heroSection = document.querySelector('.hero-parallax');
-    
-    if (heroSection && !isLowEndDevice()) {
-        let ticking = false;
-        heroSection.addEventListener('mousemove', (e) => {
-            if (!ticking) {
-                // Use requestAnimationFrame to optimize performance
-                window.requestAnimationFrame(() => {
-                    // Update glow position based on mouse
-                    const glowElement = document.querySelector('.signboard-glow');
-                    if (glowElement) {
-                        const xPos = (e.clientX / window.innerWidth) * 100;
-                        const yPos = (e.clientY / window.innerHeight) * 100;
-                        
-                        gsap.to(glowElement, {
-                            background: `radial-gradient(circle at ${xPos}% ${yPos}%, rgba(169, 108, 54, 0.3), transparent 70%)`,
-                            duration: 0.5
-                        });
-                    }
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-    }
-    
-    // Parallax effect on scroll - only for devices that can handle it
-    if (!isLowEndDevice()) {
-        gsap.to('.parallax-layer', {
-            y: (i, el) => -ScrollTrigger.maxScroll(window) * 0.2,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".hero-parallax",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            }
+    if (heroSection) {
+        const heroTl = gsap.timeline();
+        
+        // Scroll indicator animation
+        const scrollIndicator = document.getElementById('scroll-indicator');
+        if (scrollIndicator) {
+            gsap.to(scrollIndicator, {
+                scrollTrigger: { 
+                    trigger: ".hero-parallax", 
+                    start: "top 80%" 
+                },
+                opacity: 1,
+                duration: 1,
+                delay: 2,
+                ease: "power2.out"
+            });
+        }
+
+        // Showcase section animations
+        const showcaseTitle = document.getElementById('showcase-title');
+        if (showcaseTitle) {
+            gsap.to(showcaseTitle, {
+                scrollTrigger: { 
+                    trigger: "#showcase", 
+                    start: "top 80%" 
+                },
+                opacity: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        }
+
+        const showcaseText = document.getElementById('showcase-text');
+        if (showcaseText) {
+            gsap.to(showcaseText, {
+                scrollTrigger: { 
+                    trigger: "#showcase", 
+                    start: "top 80%" 
+                },
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.2,
+                ease: "power2.out"
+            });
+        }
+
+        const showcaseItems = document.querySelectorAll('.showcase-item');
+        if (showcaseItems.length > 0) {
+            gsap.to(showcaseItems, {
+                scrollTrigger: { 
+                    trigger: "#showcase", 
+                    start: "top 70%" 
+                },
+                opacity: 1,
+                y: 0,
+                stagger: 0.2,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        }
+
+        const showcaseOverlays = document.querySelectorAll('.showcase-overlay');
+        if (showcaseOverlays.length > 0) {
+            gsap.to(showcaseOverlays, {
+                scrollTrigger: { 
+                    trigger: "#showcase", 
+                    start: "top 70%" 
+                },
+                opacity: 1,
+                stagger: 0.2,
+                duration: 1.2,
+                delay: 0.4,
+                ease: "power2.out"
+            });
+        }
+
+        const viewMoreProjects = document.getElementById('view-more-projects');
+        if (viewMoreProjects) {
+            gsap.to(viewMoreProjects, {
+                scrollTrigger: { 
+                    trigger: "#showcase", 
+                    start: "top 60%" 
+                },
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.8,
+                ease: "power2.out"
+            });
+        }
+
+        // Glow effect animation
+        const signboardGlow = document.querySelector('.signboard-glow');
+        if (signboardGlow) {
+            heroTl.to(signboardGlow, {
+                opacity: 0.8,
+                duration: 1.5,
+                ease: "power2.inOut"
+            }, 0);
+        }
+        
+        // Animate bronze title with shimmer effect
+        const titleLine1 = document.getElementById('title-line1');
+        if (titleLine1) {
+            heroTl.to(titleLine1, {
+                opacity: 1,
+                duration: 1.2,
+                ease: "power3.out"
+            }, 0.3);
+        }
+        
+        const titleLine2 = document.getElementById('title-line2');
+        if (titleLine2) {
+            heroTl.to(titleLine2, {
+                opacity: 1,
+                duration: 1.2,
+                ease: "power3.out"
+            }, 0.7);
+        }
+        
+        // Create the bronze shimmer effect cycling
+        const shimmerTl = gsap.timeline({repeat: -1, repeatDelay: 3});
+        document.querySelectorAll('.bronze-shimmer').forEach((shimmer, i) => {
+            shimmerTl.fromTo(shimmer, 
+                {left: '-100%'},
+                {left: '200%', duration: 2, ease: "power1.inOut"}, 
+                i * 0.5);
         });
         
-        // Fade out elements on scroll
-        gsap.to('.hero-content', {
-            y: -50,
-            opacity: 0.5,
-            scrollTrigger: {
-                trigger: ".hero-parallax",
-                start: "top top",
-                end: "center top",
-                scrub: true
-            }
-        });
+        // Text fade in with special effect
+        const heroText = document.getElementById('hero-text');
+        if (heroText) {
+            heroTl.to(heroText, {
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out"
+            }, 1.2);
+        }
+        
+        // Buttons fade in
+        heroTl.to('#btn-products, #btn-contact', {
+            opacity: 1,
+            stagger: 0.2,
+            duration: 0.6,
+            ease: "power2.out"
+        }, 1.5);
+        
+        // Features fade in
+        heroTl.to('#feature-1, #feature-2, #feature-3', {
+            opacity: 1,
+            stagger: 0.2,
+            duration: 0.6,
+            ease: "power2.out"
+        }, 1.8);
+        
+        // Add light traces that follow mouse movement (signboard lighting effect)
+        if (!isLowEndDevice()) {
+            let ticking = false;
+            heroSection.addEventListener('mousemove', (e) => {
+                if (!ticking) {
+                    // Use requestAnimationFrame to optimize performance
+                    window.requestAnimationFrame(() => {
+                        // Update glow position based on mouse
+                        const glowElement = document.querySelector('.signboard-glow');
+                        if (glowElement) {
+                            const xPos = (e.clientX / window.innerWidth) * 100;
+                            const yPos = (e.clientY / window.innerHeight) * 100;
+                            
+                            gsap.to(glowElement, {
+                                background: `radial-gradient(circle at ${xPos}% ${yPos}%, rgba(169, 108, 54, 0.3), transparent 70%)`,
+                                duration: 0.5
+                            });
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+        
+        // Parallax effect on scroll - only for devices that can handle it
+        if (!isLowEndDevice()) {
+            gsap.to('.parallax-layer', {
+                y: (i, el) => -ScrollTrigger.maxScroll(window) * 0.2,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".hero-parallax",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+            
+            // Fade out elements on scroll
+            gsap.to('.hero-content', {
+                y: -50,
+                opacity: 0.5,
+                scrollTrigger: {
+                    trigger: ".hero-parallax",
+                    start: "top top",
+                    end: "center top",
+                    scrub: true
+                }
+            });
+        }
     }
     
     // About section animations

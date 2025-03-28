@@ -31,6 +31,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
         .hero-parallax { position: relative; overflow: hidden; background-color: #121212; }
         .parallax-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; will-change: transform; }
@@ -114,6 +116,275 @@
                 padding-bottom: 2rem;
             }
         }
+
+        /* Swiper Carousel Styles */
+        .featured-carousel {
+            padding: 2rem 0;
+        }
+
+        .featured-carousel .swiper-slide {
+            height: auto;
+        }
+
+        .featured-carousel .swiper-button-next,
+        .featured-carousel .swiper-button-prev {
+            color: #7F5434;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-carousel .swiper-button-next:after,
+        .featured-carousel .swiper-button-prev:after {
+            font-size: 1.2rem;
+        }
+
+        .featured-carousel .swiper-pagination-bullet {
+            background: #7F5434;
+            opacity: 0.5;
+        }
+
+        .featured-carousel .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        .featured-carousel .swiper-slide {
+            transition: transform 0.3s ease;
+        }
+
+        .featured-carousel .swiper-slide:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Image loading optimizations */
+        .image-container {
+            position: relative;
+            background-color: #f3f4f6;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .image-container img.loaded {
+            opacity: 1;
+        }
+
+        .image-container img.error {
+            opacity: 0.5;
+        }
+
+        .loading-spinner {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .image-container img.loaded + .loading-spinner {
+            opacity: 0;
+        }
+
+        /* Performance optimizations */
+        .gallery-item {
+            will-change: transform;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced hover effects */
+        .gallery-item {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Loading state for buttons */
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Optimize animations */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Responsive image loading */
+        @media (max-width: 768px) {
+            .image-container {
+                height: 60vh;
+            }
+        }
+
+        /* Add skeleton loading effect */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Video Screening Section Styles */
+        .video-screening-carousel .swiper-slide {
+            transition: all 0.3s ease;
+            transform: scale(0.95);
+        }
+
+        .video-screening-carousel .swiper-slide-active {
+            transform: scale(1);
+        }
+
+        .video-screening-carousel .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #A96C36;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .video-screening-carousel .swiper-pagination-bullet-active {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .video-screening-carousel .swiper-button-next:after,
+        .video-screening-carousel .swiper-button-prev:after {
+            font-size: 1.2rem;
+        }
+
+        .video-screening-carousel .swiper-slide {
+            padding: 1rem;
+        }
+
+        .video-screening-carousel .swiper-slide > div {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .video-screening-carousel .swiper-slide:hover > div {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-screening-carousel .swiper-slide img {
+            transition: all 0.5s ease;
+        }
+
+        .video-screening-carousel .swiper-slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .video-screening-carousel .swiper-slide .absolute {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .video-screening-carousel .swiper-slide:hover .absolute {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .video-screening-carousel .swiper-button-next,
+            .video-screening-carousel .swiper-button-prev {
+                display: none;
+            }
+        }
+
+        /* Acrylic Signs Section Styles */
+        .acrylic-carousel .swiper-slide {
+            transition: all 0.3s ease;
+            transform: scale(0.95);
+        }
+
+        .acrylic-carousel .swiper-slide-active {
+            transform: scale(1);
+        }
+
+        .acrylic-carousel .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #A96C36;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .acrylic-carousel .swiper-pagination-bullet-active {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .acrylic-carousel .swiper-button-next:after,
+        .acrylic-carousel .swiper-button-prev:after {
+            font-size: 1.2rem;
+        }
+
+        .acrylic-carousel .swiper-slide {
+            padding: 1rem;
+        }
+
+        .acrylic-carousel .swiper-slide > div {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .acrylic-carousel .swiper-slide:hover > div {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .acrylic-carousel .swiper-slide img {
+            transition: all 0.5s ease;
+        }
+
+        .acrylic-carousel .swiper-slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .acrylic-carousel .swiper-slide .absolute {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .acrylic-carousel .swiper-slide:hover .absolute {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .acrylic-carousel .swiper-button-next,
+            .acrylic-carousel .swiper-button-prev {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800">
@@ -131,8 +402,8 @@
                 <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
                 <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
                 <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
+                <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
                 <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
-                <li><a href="gallery.html" class="hover:text-bronze transition-colors font-medium">Gallery</a></li>
             </ul>
             <!-- Mobile Menu -->
             <div class="mobile-menu" id="mobile-menu">
@@ -140,8 +411,8 @@
                 <a href="products.html">Products</a>
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
                 <a href="contact.html">Contact</a>
-                <a href="gallery.html" class="font-medium">Gallery</a>
             </div>
         </nav>
     </header>
@@ -164,206 +435,317 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="py-16 px-4 relative overflow-hidden">
-        <div class="absolute w-32 h-32 bg-bronze/5 rounded-full -left-10 top-20 gallery-circle"></div>
-        <div class="absolute w-40 h-40 bg-bronze/5 rounded-full -right-10 bottom-20 gallery-circle"></div>
+    <!-- Featured Carousel Section -->
+    <section class="py-16 px-4 bg-gray-50 relative overflow-hidden">
         <div class="container mx-auto max-w-6xl">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 gallery-item">
-                    <img src="assets/images/sign1.jpg" alt="Signboard 1" class="w-full h-64 object-cover" loading="lazy">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg">Neon Sign</h3>
-                        <p class="text-gray-600">Bright and bold neon signage.</p>
+            <div class="text-center mb-12">
+                <span class="text-bronze font-medium">Featured Work</span>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">Our Latest Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our most recent and impressive signboard installations and custom signage solutions.</p>
+            </div>
+            
+            <!-- Swiper Carousel -->
+            <div class="swiper featured-carousel opacity-0" id="featured-carousel">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.42 AM (1).jpeg" alt="Featured Project 1" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Premium Signboard</h3>
+                                    <p class="text-white/90">Custom illuminated signage with premium finish</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.26.00 AM (1).jpeg" alt="Featured Project 2" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Video Display Installation</h3>
+                                    <p class="text-white/90">High-resolution LED video display for dynamic content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.44 AM.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
+                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 gallery-item">
-                    <img src="assets/images/sign2.jpg" alt="Signboard 2" class="w-full h-64 object-cover" loading="lazy">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg">Acrylic Sign</h3>
-                        <p class="text-gray-600">Sleek and modern design.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 gallery-item">
-                    <img src="assets/images/sign3.jpg" alt="Signboard 3" class="w-full h-64 object-cover" loading="lazy">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-lg">LED Display</h3>
-                        <p class="text-gray-600">Vivid and energy-efficient.</p>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
 
-<!-- Footer -->
-<footer class="bg-bronze text-white pt-16 pb-8">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
-        <div>
-          <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
-            Al-<span class="text-white">furqan</span>
-          </a>
-          <p class="mb-4">
-            Premium Custom Signs & Signboards for Businesses That Demand
-            Excellence
-          </p>
-          <div class="flex gap-4 mt-4">
-            <a
-              href="#"
-              class="hover:text-white/70 transition-colors"
-              aria-label="Facebook"
-            >
-              <i class="bx bxl-facebook text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              class="hover:text-white/70 transition-colors"
-              aria-label="Instagram"
-            >
-              <i class="bx bxl-instagram text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              class="hover:text-white/70 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <i class="bx bxl-linkedin text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              class="hover:text-white/70 transition-colors"
-              aria-label="Twitter"
-            >
-              <i class="bx bxl-twitter text-2xl"></i>
-            </a>
+    <!-- Signboard Section -->
+    <section class="py-16 px-4 bg-white relative overflow-hidden">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <span class="text-bronze font-medium">Our Work</span>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">Signboard Collection</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our diverse collection of custom signboards and signage solutions.</p>
+            </div>
+            
+            <!-- Pinterest-style Grid for Signboards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="signboard-grid">
+                <!-- Images will be loaded dynamically via JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="load-more-signboards" class="bg-bronze hover:bg-bronze-dark text-white px-8 py-3 rounded-lg transition-colors duration-300">
+                    Load More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Screening Section -->
+    <section class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYuMjUgMzUuMjVhMS4yNSAxLjI1IDAgMCAxIDEuMjUtMS4yNWgxLjI1YTEuMjUgMS4yNSAwIDAgMSAxLjI1IDEuMjV2MS4yNWExLjI1IDEuMjUgMCAwIDEtMS4yNSAxLjI1aC0xLjI1YTEuMjUgMS4yNSAwIDAgMS0xLjI1LTEuMjV2LTEuMjV6IiBmaWxsPSIjRTlFN0VCIi8+PC9nPjwvc3ZnPg==')] opacity-5"></div>
+        <div class="container mx-auto max-w-6xl relative">
+            <div class="text-center mb-16">
+                <span class="text-bronze font-medium tracking-wider uppercase text-sm">Our Work</span>
+                <h2 class="text-4xl font-cinzel font-bold mt-4 mb-6 relative inline-block">
+                    Video Screening Projects
+                    <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-bronze"></span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">Showcasing our video screening and digital display installations.</p>
+            </div>
+            
+            <!-- Carousel for Video Screening -->
+            <div class="swiper video-screening-carousel opacity-0 relative" id="video-screening-carousel">
+                <div class="swiper-wrapper">
+                    <!-- Slides will be loaded dynamically -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next !text-bronze !bg-white !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300"></div>
+                <div class="swiper-button-prev !text-bronze !bg-white !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="py-16 px-4 bg-white relative overflow-hidden">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <span class="text-bronze font-medium">Our Process</span>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">Installation Gallery</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Behind the scenes of our professional installation process.</p>
+            </div>
+            
+            <!-- Grid for Installation Process -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="installation-grid">
+                <!-- Images will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Acrylic Signs Section -->
+    <section class="py-20 px-4 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYuMjUgMzUuMjVhMS4yNSAxLjI1IDAgMCAxIDEuMjUtMS4yNWgxLjI1YTEuMjUgMS4yNSAwIDAgMSAxLjI1IDEuMjV2MS4yNWExLjI1IDEuMjUgMCAwIDEtMS4yNSAxLjI1aC0xLjI1YTEuMjUgMS4yNSAwIDAgMS0xLjI1LTEuMjV2LTEuMjV6IiBmaWxsPSIjRTlFN0VCIi8+PC9nPjwvc3ZnPg==')] opacity-5"></div>
+        <div class="container mx-auto max-w-6xl relative">
+            <div class="text-center mb-16">
+                <span class="text-bronze font-medium tracking-wider uppercase text-sm">Our Work</span>
+                <h2 class="text-4xl font-cinzel font-bold mt-4 mb-6 relative inline-block">
+                    Acrylic Signs Collection
+                    <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-bronze"></span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">Discover our elegant acrylic signage solutions crafted for modern businesses.</p>
+            </div>
+            
+            <!-- Carousel for Acrylic Signs -->
+            <div class="swiper acrylic-carousel opacity-0 relative" id="acrylic-carousel">
+                <div class="swiper-wrapper">
+                    <!-- Slides will be loaded dynamically -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next !text-bronze !bg-white !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300"></div>
+                <div class="swiper-button-prev !text-bronze !bg-white !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bronze text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+              <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
+                Al-<span class="text-white">furqan</span>
+              </a>
+              <p class="mb-4">
+                Premium Custom Signs & Signboards for Businesses That Demand
+                Excellence
+              </p>
+              <div class="flex gap-4 mt-4">
+                <a
+                  href="#"
+                  class="hover:text-white/70 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <i class="bx bxl-facebook text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover:text-white/70 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <i class="bx bxl-instagram text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover:text-white/70 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <i class="bx bxl-linkedin text-2xl"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover:text-white/70 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <i class="bx bxl-twitter text-2xl"></i>
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="index.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="products.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Products</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="about.html"
+                    class="hover:text-white/70 transition-colors"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="projects.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Projects</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="contact.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Our Services</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Custom Signage</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >LED Signs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Acrylic Signs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Metal Signs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Installation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="hover:text-white/70 transition-colors"
+                    >Maintenance</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <i class="bx bx-map text-xl mt-0.5"></i>
+                  <span
+                    >123 Business Avenue, Suite 456<br />Dubai, United Arab
+                    Emirates</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="bx bx-phone text-xl"></i>
+                  <span>+971 (4) 123-4567</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="bx bx-envelope text-xl"></i>
+                  <span>info@al-furqan.com</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="bx bx-time text-xl"></i>
+                  <span>Mon-Fri: 9AM-6PM</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center pt-8 border-t border-white/10">
+            <p>
+              &copy; 2024 Al-furqan Business International. All rights reserved.
+            </p>
           </div>
         </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="index.html"
-                class="hover:text-white/70 transition-colors"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="products.html"
-                class="hover:text-white/70 transition-colors"
-                >Products</a
-              >
-            </li>
-            <li>
-              <a
-                href="about.html"
-                class="hover:text-white/70 transition-colors"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="projects.html"
-                class="hover:text-white/70 transition-colors"
-                >Projects</a
-              >
-            </li>
-            <li>
-              <a
-                href="contact.html"
-                class="hover:text-white/70 transition-colors"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Our Services</h3>
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Custom Signage</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >LED Signs</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Acrylic Signs</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Metal Signs</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Installation</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Maintenance</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <i class="bx bx-map text-xl mt-0.5"></i>
-              <span
-                >123 Business Avenue, Suite 456<br />Dubai, United Arab
-                Emirates</span
-              >
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bx-phone text-xl"></i>
-              <span>+971 (4) 123-4567</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bx-envelope text-xl"></i>
-              <span>info@al-furqan.com</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bx-time text-xl"></i>
-              <span>Mon-Fri: 9AM-6PM</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="text-center pt-8 border-t border-white/10">
-        <p>
-          &copy; 2024 Al-furqan Business International. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
+      </footer>
 
     <!-- Scroll to Top -->
     <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn"><i class='bx bx-up-arrow-alt text-2xl'></i></button>
@@ -388,32 +770,619 @@
             });
         }
 
-        // Scroll to Top
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', () => { if (window.pageYOffset > 300) { scrollTopBtn.classList.remove('opacity-0', 'invisible'); scrollTopBtn.classList.add('opacity-100', 'visible'); } else { scrollTopBtn.classList.add('opacity-0', 'invisible'); scrollTopBtn.classList.remove('opacity-100', 'visible'); } });
-        scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        // Initialize Swiper
+        document.addEventListener('DOMContentLoaded', () => {
+            const featuredCarousel = new Swiper('#featured-carousel', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+                on: {
+                    init: function() {
+                        // Remove opacity-0 class and add opacity-100
+                        const carousel = document.querySelector('#featured-carousel');
+                        if (carousel) {
+                            carousel.classList.remove('opacity-0');
+                            carousel.classList.add('opacity-100');
+                        }
+                    }
+                }
+            });
 
-        // GSAP Animations
+            // GSAP animation for the featured carousel
+            gsap.from('#featured-carousel', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '#featured-carousel',
+                    start: 'top 80%',
+                }
+            });
+        });
+
+        // Initialize all Swiper instances
+        const swipers = {
+            videoScreening: new Swiper('.video-screening-carousel', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: false,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 2,
+                    },
+                },
+            }),
+            acrylic: new Swiper('.acrylic-carousel', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: false,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 2,
+                    },
+                },
+            })
+        };
+
+        // Add to your existing GSAP animations
         document.addEventListener('DOMContentLoaded', () => {
             gsap.registerPlugin(ScrollTrigger);
             const heroTl = gsap.timeline();
             heroTl.to('.signboard-glow', { opacity: 0.8, duration: 1.5, ease: "power2.inOut" }, 0);
             heroTl.to('#title-line1', { opacity: 1, duration: 1.2, ease: "power3.out" }, 0.3);
             heroTl.to('#hero-text', { opacity: 1, duration: 1, ease: "power2.out" }, 1.2);
+            
+            // Particles animation
             const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 30; i++) { const particle = document.createElement('div'); particle.classList.add('particle'); particle.style.width = `${Math.random() * 6 + 2}px`; particle.style.height = particle.style.width; particle.style.left = `${Math.random() * 100}%`; particle.style.top = `${Math.random() * 100}%`; particlesContainer.appendChild(particle); }
-            gsap.to('.particle', { opacity: 0.7, stagger: 0.1, duration: 0.5, ease: "power2.out" });
-            document.querySelectorAll('.particle').forEach(particle => { gsap.to(particle, { x: `${Math.random() * 100 - 50}px`, y: `${Math.random() * 100 - 50}px`, duration: Math.random() * 10 + 5, repeat: -1, yoyo: true, ease: "sine.inOut" }); });
-            gsap.to('.parallax-layer', { y: (i) => -ScrollTrigger.maxScroll(window) * 0.2, ease: "none", scrollTrigger: { trigger: ".hero-parallax", start: "top top", end: "bottom top", scrub: true } });
-            document.querySelector('.hero-parallax').addEventListener('mousemove', (e) => { const xPos = (e.clientX / window.innerWidth) * 100; const yPos = (e.clientY / window.innerHeight) * 100; gsap.to('.signboard-glow', { background: `radial-gradient(circle at ${xPos}% ${yPos}%, rgba(169, 108, 54, 0.3), transparent 70%)`, duration: 0.5 }); });
+            if (particlesContainer) {
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    particle.style.width = `${Math.random() * 6 + 2}px`;
+                    particle.style.height = particle.style.width;
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.top = `${Math.random() * 100}%`;
+                    particlesContainer.appendChild(particle);
+                }
+                
+                gsap.to('.particle', { opacity: 0.7, stagger: 0.1, duration: 0.5, ease: "power2.out" });
+                
+                document.querySelectorAll('.particle').forEach(particle => {
+                    gsap.to(particle, {
+                        x: `${Math.random() * 100 - 50}px`,
+                        y: `${Math.random() * 100 - 50}px`,
+                        duration: Math.random() * 10 + 5,
+                        repeat: -1,
+                        yoyo: true,
+                        ease: "sine.inOut"
+                    });
+                });
+            }
 
-            // Gallery Animations
-            gsap.to(".gallery-circle", { scale: 1, opacity: 1, duration: 1.2, stagger: 0.3, ease: "elastic.out(1, 0.5)", scrollTrigger: { trigger: ".gallery-section", start: "top 80%" } });
-            gsap.to(".gallery-item", { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: "back.out(1.2)", scrollTrigger: { trigger: ".gallery-section", start: "top 75%" } });
-            document.querySelectorAll(".gallery-item").forEach(item => {
-                item.addEventListener("mouseenter", () => { gsap.to(item, { scale: 1.05, boxShadow: "0 15px 30px rgba(127, 84, 52, 0.15)", duration: 0.4, ease: "power2.out" }); });
-                item.addEventListener("mouseleave", () => { gsap.to(item, { scale: 1, boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)", duration: 0.4, ease: "power2.out" }); });
+            // Parallax effect
+            gsap.to('.parallax-layer', {
+                y: (i) => -ScrollTrigger.maxScroll(window) * 0.2,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".hero-parallax",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
             });
+
+            // Mouse move effect for signboard glow
+            const heroParallax = document.querySelector('.hero-parallax');
+            if (heroParallax) {
+                heroParallax.addEventListener('mousemove', (e) => {
+                    const xPos = (e.clientX / window.innerWidth) * 100;
+                    const yPos = (e.clientY / window.innerHeight) * 100;
+                    gsap.to('.signboard-glow', {
+                        background: `radial-gradient(circle at ${xPos}% ${yPos}%, rgba(169, 108, 54, 0.3), transparent 70%)`,
+                        duration: 0.5
+                    });
+                });
+            }
+
+            // Gallery item animations
+            document.querySelectorAll(".gallery-item").forEach(item => {
+                gsap.to(item, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "back.out(1.2)",
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top 90%"
+                    }
+                });
+
+                item.addEventListener("mouseenter", () => {
+                    gsap.to(item, {
+                        scale: 1.05,
+                        boxShadow: "0 15px 30px rgba(127, 84, 52, 0.15)",
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                });
+
+                item.addEventListener("mouseleave", () => {
+                    gsap.to(item, {
+                        scale: 1,
+                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)",
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                });
+            });
+
+            // Animate all carousels on scroll
+            Object.values(swipers).forEach(swiper => {
+                if (swiper && swiper.el) {
+                    gsap.to(swiper.el, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: swiper.el,
+                            start: "top 80%",
+                        }
+                    });
+                }
+            });
+        });
+
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => { if (window.pageYOffset > 300) { scrollTopBtn.classList.remove('opacity-0', 'invisible'); scrollTopBtn.classList.add('opacity-100', 'visible'); } else { scrollTopBtn.classList.add('opacity-0', 'invisible'); scrollTopBtn.classList.remove('opacity-100', 'visible'); } });
+        scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        // Gallery filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-bronze', 'text-white'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-gray-100', 'text-gray-700'));
+                    
+                    // Add active class to clicked button
+                    button.classList.remove('bg-gray-100', 'text-gray-700');
+                    button.classList.add('active', 'bg-bronze', 'text-white');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Animate gallery items on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0');
+                        entry.target.classList.add('opacity-100');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            galleryItems.forEach(item => observer.observe(item));
+        });
+
+        // Enhanced gallery item creation with loading state
+        function createGalleryItem(image, title, description) {
+            return `
+                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative group">
+                        <img src="${image}" 
+                             alt="${title}" 
+                             class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl font-cinzel font-semibold mb-2">${title}</h3>
+                                <p class="text-white/90">${description}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Create carousel slide with simplified loading
+        function createCarouselSlide(image) {
+            return `
+                <div class="swiper-slide">
+                    <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                        <img src="${image.src}" 
+                             alt="${image.title}" 
+                             class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-2xl font-cinzel font-semibold mb-2">${image.title}</h3>
+                                <p class="text-white/90">${image.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Simplified image loading optimization
+        function optimizeImageLoading() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (!img.complete) {
+                            img.style.opacity = '0';
+                            img.onload = () => {
+                                img.style.opacity = '1';
+                            };
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.1
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Enhanced load more functionality with loading state
+        function setupLoadMore() {
+            const loadMoreBtn = document.getElementById('load-more-signboards');
+            if (loadMoreBtn) {
+                let currentIndex = 6;
+                let isLoading = false;
+
+                loadMoreBtn.addEventListener('click', async () => {
+                    if (isLoading) return;
+                    
+                    isLoading = true;
+                    loadMoreBtn.disabled = true;
+                    loadMoreBtn.innerHTML = '<span class="animate-spin mr-2">⌛</span> Loading...';
+
+                    try {
+                        const nextImages = signboardImages.slice(currentIndex, currentIndex + 6);
+                        if (nextImages.length > 0) {
+                            // Simulate network delay for smooth loading
+                            await new Promise(resolve => setTimeout(resolve, 500));
+                            
+                            nextImages.forEach(image => {
+                                signboardGrid.insertAdjacentHTML('beforeend', createGalleryItem(image.src, image.title, image.description));
+                            });
+                            
+                            // Animate new items
+                            gsap.to('.gallery-item', {
+                                opacity: 1,
+                                y: 0,
+                                duration: 0.8,
+                                stagger: 0.2,
+                                ease: "back.out(1.2)",
+                                scrollTrigger: {
+                                    trigger: '#signboard-grid',
+                                    start: "top 90%"
+                                }
+                            });
+                            
+                            currentIndex += 6;
+                            if (currentIndex >= signboardImages.length) {
+                                loadMoreBtn.style.display = 'none';
+                            }
+                        } else {
+                            loadMoreBtn.style.display = 'none';
+                        }
+                    } catch (error) {
+                        console.error('Error loading more images:', error);
+                        loadMoreBtn.innerHTML = 'Error loading more images. Try again.';
+                    } finally {
+                        isLoading = false;
+                        loadMoreBtn.disabled = false;
+                        loadMoreBtn.innerHTML = 'Load More';
+                    }
+                });
+            }
+        }
+
+        // Initialize optimizations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            optimizeImageLoading();
+            setupLoadMore();
+            // ... existing initialization code ...
+        });
+
+        // Gallery data
+        const galleryData = {
+            signboard: [
+                {
+                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.42 AM (1).jpeg',
+                    title: 'Premium Signboard',
+                    description: 'Custom illuminated signage with premium finish'
+                },
+                {
+                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.40 AM.jpeg',
+                    title: 'Modern Design',
+                    description: 'Contemporary signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.06 AM.jpeg',
+                    title: 'Elegant Display',
+                    description: 'Professional business signage'
+                },
+                {
+                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.02 AM (1).jpeg',
+                    title: 'Custom Design',
+                    description: 'Tailored signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.02 AM.jpeg',
+                    title: 'Premium Finish',
+                    description: 'High-quality signboard'
+                },
+                {
+                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.01 AM.jpeg',
+                    title: 'Professional Display',
+                    description: 'Business signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.00 AM.jpeg',
+                    title: 'Modern Illumination',
+                    description: 'LED illuminated signboard'
+                },
+                {
+                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.26.59 AM.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                }
+            ],
+            videoScreening: [
+                {
+                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.26.00 AM (1).jpeg',
+                    title: 'Video Display Installation',
+                    description: 'High-resolution LED video display for dynamic content'
+                },
+                {
+                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.25.54 AM.jpeg',
+                    title: 'Digital Display',
+                    description: 'Modern video screening solution'
+                },
+                {
+                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.25.55 AM (1).jpeg',
+                    title: 'LED Video Wall',
+                    description: 'Large-scale video display installation'
+                },
+                {
+                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.24.00 AM.jpeg',
+                    title: 'Interactive Display',
+                    description: 'Engaging digital signage solution'
+                },
+                {
+                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.23.59 AM.jpeg',
+                    title: 'Digital Signage',
+                    description: 'Interactive digital signage solution'
+                }
+            ],
+            acrylic: [
+                {
+                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.44 AM.jpeg',
+                    title: 'Acrylic Signage',
+                    description: 'Modern acrylic sign with elegant design'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.43 AM (2).jpeg',
+                    title: 'Custom Acrylic',
+                    description: 'Tailored acrylic signage solution'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.43 AM (1).jpeg',
+                    title: 'Premium Acrylic',
+                    description: 'High-quality acrylic display'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.43 AM.jpeg',
+                    title: 'Modern Acrylic',
+                    description: 'Contemporary acrylic signage'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.42 AM.jpeg',
+                    title: 'Elegant Acrylic',
+                    description: 'Sophisticated acrylic design'
+                }
+            ],
+            installation: [
+                {
+                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.27.05 AM.jpeg',
+                    title: 'Professional Installation',
+                    description: 'Expert signboard installation process'
+                },
+                {
+                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.27.04 AM.jpeg',
+                    title: 'Installation Team',
+                    description: 'Our skilled installation team in action'
+                },
+                {
+                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.26.00 AM.jpeg',
+                    title: 'Quality Check',
+                    description: 'Final quality inspection before handover'
+                },
+                {
+                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.25.56 AM.jpeg',
+                    title: 'Site Preparation',
+                    description: 'Preparing the installation site'
+                },
+                {
+                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.25.55 AM.jpeg',
+                    title: 'Installation Process',
+                    description: 'Step-by-step installation procedure'
+                }
+            ]
+        };
+
+        // Enhanced gallery initialization with error handling and loading states
+        function initializeGalleries() {
+            // Initialize Signboard Grid
+            const signboardGrid = document.getElementById('signboard-grid');
+            if (signboardGrid) {
+                galleryData.signboard.forEach(image => {
+                    signboardGrid.insertAdjacentHTML('beforeend', createGalleryItem(image.src, image.title, image.description));
+                });
+            }
+
+            // Initialize Video Screening Carousel
+            const videoScreeningWrapper = document.querySelector('.video-screening-carousel .swiper-wrapper');
+            if (videoScreeningWrapper) {
+                galleryData.videoScreening.forEach(image => {
+                    videoScreeningWrapper.insertAdjacentHTML('beforeend', createCarouselSlide(image));
+                });
+            }
+
+            // Initialize Acrylic Carousel
+            const acrylicWrapper = document.querySelector('.acrylic-carousel .swiper-wrapper');
+            if (acrylicWrapper) {
+                galleryData.acrylic.forEach(image => {
+                    acrylicWrapper.insertAdjacentHTML('beforeend', createCarouselSlide(image));
+                });
+            }
+
+            // Initialize Installation Grid
+            const installationGrid = document.getElementById('installation-grid');
+            if (installationGrid) {
+                galleryData.installation.forEach(image => {
+                    installationGrid.insertAdjacentHTML('beforeend', createGalleryItem(image.src, image.title, image.description));
+                });
+            }
+
+            // Initialize Swiper instances after content is loaded
+            initializeSwipers();
+        }
+
+        // Initialize Swiper instances with enhanced configuration
+        function initializeSwipers() {
+            const swiperConfig = {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 2,
+                    },
+                },
+                on: {
+                    init: function() {
+                        setTimeout(() => {
+                            this.el.style.opacity = '1';
+                        }, 100);
+                    }
+                }
+            };
+
+            // Initialize each carousel
+            ['video-screening', 'acrylic'].forEach(carouselId => {
+                const carousel = document.querySelector(`#${carouselId}-carousel`);
+                if (carousel) {
+                    new Swiper(carousel, swiperConfig);
+                }
+            });
+        }
+
+        // Add initializeGalleries to DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeGalleries();
+            optimizeImageLoading();
+            setupLoadMore();
         });
     </script>
 </body>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Al-furqan | Custom Signs & Signboards</title>
+    <title>Al-furqan International Deteeds | Custom Signs & Signboards</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
@@ -387,6 +387,20 @@
           padding-bottom: 2rem;
         }
       }
+      
+      /* Add logo animation */
+      @keyframes logoFloat {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      
+      .hero-parallax img {
+        animation: logoFloat 6s ease-in-out infinite;
+      }
     </style>
   </head>
   <body class="font-sans text-gray-800">
@@ -450,6 +464,10 @@
       id="hero"
       class="hero-parallax text-light py-20 px-4 relative min-h-[90vh] flex items-center"
     >
+      <!-- Add logo background with increased opacity -->
+      <div class="absolute inset-0 flex items-center justify-center opacity-20">
+        <img src="assets/images/logo2.png" alt="Al-furqan Logo" class="max-w-[500px] w-full h-auto">
+      </div>
       <div class="parallax-layer sign-particles" id="particles"></div>
       <div class="parallax-layer hero-overlay"></div>
       <div class="signboard-glow"></div>
@@ -469,7 +487,7 @@
               class="title-mask block opacity-0 text-3xl md:text-4xl"
               id="title-line2"
             >
-              <span class="bronze-text">Business International LLC</span>
+              <span class="bronze-text">International Businesss LLC</span>
               <span class="bronze-shimmer"></span>
             </span>
           </span>
@@ -478,13 +496,13 @@
           class="tagline text-xl mb-8 max-w-2xl mx-auto opacity-0 text-bronze-light"
           id="hero-text"
         >
-          Elevate Your Brand with Premium Custom Signage
+            Find your sign , Make it Shine
         </p>
         <p
           class="text-white/80 mb-8 max-w-2xl mx-auto opacity-0 text-sm"
           id="hero-subtext"
         >
-        Find Your Sign, Make it Shine
+          Find Your Sign, Make it Shine
         </p>
         <div class="flex flex-wrap justify-center gap-4 mb-12">
           <a
@@ -942,7 +960,7 @@
     <!-- Testimonials Section -->
     <section
       id="testimonials"
-      class="py-16 px-4 bg-gray-50 relative overflow-hidden"
+      class="py-12 sm:py-16 md:py-20 px-4 bg-gray-50 relative overflow-hidden"
     >
       <div
         class="absolute w-48 h-48 bg-bronze/5 rounded-full -right-20 top-10 testimonial-circle"
@@ -953,11 +971,14 @@
       <div class="container mx-auto max-w-6xl relative">
         <div class="overflow-hidden">
           <h2
-            class="text-3xl font-bold text-center mb-12 opacity-0"
+            class="text-3xl sm:text-4xl font-bold text-center mb-4 opacity-0"
             id="testimonials-title"
           >
             What Our Clients Say
           </h2>
+          <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8 sm:mb-12 opacity-0 text-sm sm:text-base" id="testimonials-subtitle">
+            Discover why businesses trust Al-furqan for their signage needs
+          </p>
         </div>
         <div
           class="splide testimonials-slider"
@@ -968,89 +989,160 @@
             <ul class="splide__list">
               <!-- Testimonial 1 -->
               <li class="splide__slide">
-                <div
-                  class="bg-white p-6 rounded-lg shadow-md relative testimonial-card"
-                >
-                  <div
-                    class="absolute -top-4 left-6 text-4xl text-bronze opacity-30"
-                  >
-                    "
-                  </div>
-                  <div class="mb-4 pt-4">
-                    <p class="italic text-gray-600">
-                      The signage that Al-furqan created for our restaurant
-                      completely transformed our storefront. The quality and
-                      craftsmanship exceeded our expectations, and we've
-                      received countless compliments from customers.
-                    </p>
-                  </div>
-                  <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-                    <div>
-                      <p class="font-semibold">Ahmed Khalid</p>
-                      <p class="text-sm text-gray-500">
-                        Spice Fusion Restaurant
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative testimonial-card hover:shadow-xl transition-shadow duration-300 h-full">
+                  <div class="absolute -top-4 left-6 text-4xl sm:text-5xl text-bronze opacity-20">"</div>
+                  <div class="flex gap-6 items-center">
+                    <div class="mb-0 flex-1">
+                      <div class="flex mb-3 sm:mb-4">
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                      </div>
+                      <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
+                        The signage that Al-furqan created for our restaurant completely transformed our storefront. The quality and craftsmanship exceeded our expectations, and we've received countless compliments from customers.
                       </p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center w-48 shrink-0">
+                      <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-bronze/10 flex items-center justify-center mb-3">
+                        <span class="text-bronze text-lg sm:text-xl font-bold">AK</span>
+                      </div>
+                      <div class="text-center">
+                        <p class="font-semibold text-base sm:text-lg text-gray-900">Ahmed Khalid</p>
+                        <p class="text-xs sm:text-sm text-gray-600">Spice Fusion Restaurant</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </li>
               <!-- Testimonial 2 -->
               <li class="splide__slide">
-                <div
-                  class="bg-white p-6 rounded-lg shadow-md relative testimonial-card"
-                >
-                  <div
-                    class="absolute -top-4 left-6 text-4xl text-bronze opacity-30"
-                  >
-                    "
-                  </div>
-                  <div class="mb-4 pt-4">
-                    <p class="italic text-gray-600">
-                      Working with Al-furqan was a seamless experience from
-                      start to finish. Their team took our vision and elevated
-                      it beyond what we imagined. The LED signboard they created
-                      has significantly increased our foot traffic.
-                    </p>
-                  </div>
-                  <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-                    <div>
-                      <p class="font-semibold">Sarah Johnson</p>
-                      <p class="text-sm text-gray-500">Bloom Boutique</p>
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative testimonial-card hover:shadow-xl transition-shadow duration-300 h-full">
+                  <div class="absolute -top-4 left-6 text-4xl sm:text-5xl text-bronze opacity-20">"</div>
+                  <div class="sm:flex sm:gap-6 sm:items-center">
+                    <div class="mb-4 sm:mb-0 sm:flex-1">
+                      <div class="flex mb-3 sm:mb-4">
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                      </div>
+                      <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
+                        Working with Al-furqan was a seamless experience from start to finish. Their team took our vision and elevated it beyond what we imagined. The LED signboard they created has significantly increased our foot traffic.
+                      </p>
+                    </div>
+                    <div class="flex sm:flex-col sm:items-center sm:justify-center sm:w-48">
+                      <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-bronze/10 flex items-center justify-center mr-3 sm:mr-0 sm:mb-3">
+                        <span class="text-bronze text-lg sm:text-xl font-bold">SJ</span>
+                      </div>
+                      <div class="sm:text-center">
+                        <p class="font-semibold text-base sm:text-lg text-gray-900">Sarah Johnson</p>
+                        <p class="text-xs sm:text-sm text-gray-600">Bloom Boutique</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </li>
               <!-- Testimonial 3 -->
               <li class="splide__slide">
-                <div
-                  class="bg-white p-6 rounded-lg shadow-md relative testimonial-card"
-                >
-                  <div
-                    class="absolute -top-4 left-6 text-4xl text-bronze opacity-30"
-                  >
-                    "
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative testimonial-card hover:shadow-xl transition-shadow duration-300 h-full">
+                  <div class="absolute -top-4 left-6 text-4xl sm:text-5xl text-bronze opacity-20">"</div>
+                  <div class="sm:flex sm:gap-6 sm:items-center">
+                    <div class="mb-4 sm:mb-0 sm:flex-1">
+                      <div class="flex mb-3 sm:mb-4">
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                      </div>
+                      <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
+                        The attention to detail and customer service provided by Al-furqan is unmatched. They went above and beyond to ensure our corporate signage was perfect, delivering on time and within budget.
+                      </p>
+                    </div>
+                    <div class="flex sm:flex-col sm:items-center sm:justify-center sm:w-48">
+                      <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-bronze/10 flex items-center justify-center mr-3 sm:mr-0 sm:mb-3">
+                        <span class="text-bronze text-lg sm:text-xl font-bold">MR</span>
+                      </div>
+                      <div class="sm:text-center">
+                        <p class="font-semibold text-base sm:text-lg text-gray-900">Mohammed Rahman</p>
+                        <p class="text-xs sm:text-sm text-gray-600">Global Tech Solutions</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="mb-4 pt-4">
-                    <p class="italic text-gray-600">
-                      The attention to detail and customer service provided by
-                      Al-furqan is unmatched. They went above and beyond to
-                      ensure our corporate signage was perfect, delivering on
-                      time and within budget.
-                    </p>
+                </div>
+              </li>
+              <!-- Testimonial 4 -->
+              <li class="splide__slide">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative testimonial-card hover:shadow-xl transition-shadow duration-300 h-full">
+                  <div class="absolute -top-4 left-6 text-4xl sm:text-5xl text-bronze opacity-20">"</div>
+                  <div class="sm:flex sm:gap-6 sm:items-center">
+                    <div class="mb-4 sm:mb-0 sm:flex-1">
+                      <div class="flex mb-3 sm:mb-4">
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                      </div>
+                      <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
+                        The 3D signage they created for our shopping mall entrance is absolutely stunning. The attention to detail and the way it catches light at different times of day creates a truly memorable first impression.
+                      </p>
+                    </div>
+                    <div class="flex sm:flex-col sm:items-center sm:justify-center sm:w-48">
+                      <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-bronze/10 flex items-center justify-center mr-3 sm:mr-0 sm:mb-3">
+                        <span class="text-bronze text-lg sm:text-xl font-bold">LA</span>
+                      </div>
+                      <div class="sm:text-center">
+                        <p class="font-semibold text-base sm:text-lg text-gray-900">Layla Ahmed</p>
+                        <p class="text-xs sm:text-sm text-gray-600">Dubai Mall Management</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-                    <div>
-                      <p class="font-semibold">Mohammed Rahman</p>
-                      <p class="text-sm text-gray-500">Global Tech Solutions</p>
+                </div>
+              </li>
+              <!-- Testimonial 5 -->
+              <li class="splide__slide">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg relative testimonial-card hover:shadow-xl transition-shadow duration-300 h-full">
+                  <div class="absolute -top-4 left-6 text-4xl sm:text-5xl text-bronze opacity-20">"</div>
+                  <div class="sm:flex sm:gap-6 sm:items-center">
+                    <div class="mb-4 sm:mb-0 sm:flex-1">
+                      <div class="flex mb-3 sm:mb-4">
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                        <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
+                      </div>
+                      <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
+                        Their team's expertise in LED technology helped us create an energy-efficient yet eye-catching display. The maintenance service is also top-notch, ensuring our signage always looks perfect.
+                      </p>
+                    </div>
+                    <div class="flex sm:flex-col sm:items-center sm:justify-center sm:w-48">
+                      <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-bronze/10 flex items-center justify-center mr-3 sm:mr-0 sm:mb-3">
+                        <span class="text-bronze text-lg sm:text-xl font-bold">RK</span>
+                      </div>
+                      <div class="sm:text-center">
+                        <p class="font-semibold text-base sm:text-lg text-gray-900">Rashid Khan</p>
+                        <p class="text-xs sm:text-sm text-gray-600">City Center Mall</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </li>
             </ul>
           </div>
+        </div>
+        <div class="text-center mt-8 sm:mt-12">
+          <a
+            href="contact.html"
+            class="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-bronze text-white rounded-lg hover:bg-bronze-dark transition-colors duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+          >
+            Share Your Experience
+            <i class="bx bx-right-arrow-alt ml-2 text-lg sm:text-xl"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -1382,7 +1474,7 @@
         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
-              Al-<span class="text-white">furqan Business International LLC</span>
+              Al-<span class="text-white">Furqan International Business LLC</span>
             </a>
             <p class="mb-4">
               Premium Custom Signs & Signboards for Businesses That Demand
@@ -1518,18 +1610,15 @@
             <ul class="space-y-3">
               <li class="flex items-start gap-3">
                 <i class="bx bx-map text-xl mt-0.5"></i>
-                <span
-                  >123 Business Avenue, Suite 456<br />Dubai, United Arab
-                  Emirates</span
-                >
+                <span>P O Box 105 Postal Code 112<br/>Wadi Kabir Sultanate Of Oman</span>
               </li>
               <li class="flex items-center gap-3">
                 <i class="bx bx-phone text-xl"></i>
-                <span>+971 (4) 123-4567</span>
+                <a href="tel:+96892949051" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
               </li>
               <li class="flex items-center gap-3">
                 <i class="bx bx-envelope text-xl"></i>
-                <span>info@al-furqan.com</span>
+                <a href="mailto:alfurqanint.business@gmail.com" class="hover:text-white/70 transition-colors">alfurqanint.business@gmail.com</a>
               </li>
               <li class="flex items-center gap-3">
                 <i class="bx bx-time text-xl"></i>
@@ -1540,7 +1629,10 @@
         </div>
         <div class="text-center pt-8 border-t border-white/10">
           <p>
-            &copy; 2024 Al-furqan Business International LLC. All rights reserved.
+            &copy; 2024 Al Furqan International Business LLC. All rights reserved.
+          </p>
+          <p class="mt-4 text-white/70 text-sm">
+            Made with <span class="text-red-400">♡</span> by Mehroz
           </p>
         </div>
       </div>
@@ -1564,24 +1656,121 @@
         // Initialize Splide testimonials slider
         const testimonialsSlider = new Splide(".testimonials-slider", {
           type: "loop",
-          perPage: 1,
+          perPage: 3,
           perMove: 1,
           gap: "2rem",
           pagination: true,
-          arrows: false,
+          arrows: true,
           autoplay: true,
-          interval: 2000,
+          interval: 4000,
           pauseOnHover: true,
+          pauseOnFocus: true,
+          speed: 800,
+          height: "auto",
+          easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           breakpoints: {
-            768: {
-              perPage: 2,
-            },
             1024: {
-              perPage: 3,
+              perPage: 2,
+              arrows: true,
             },
+            768: {
+              perPage: 1,
+              arrows: false,
+              gap: "1.5rem",
+            },
+            640: {
+              perPage: 1,
+              arrows: false,
+              gap: "1rem",
+            }
+          },
+          classes: {
+            arrows: "splide__arrows",
+            arrow: "splide__arrow",
+            prev: "splide__arrow--prev",
+            next: "splide__arrow--next",
           },
         });
         testimonialsSlider.mount();
+
+        // Add custom styles for the slider arrows
+        const style = document.createElement("style");
+        style.textContent = `
+          .testimonial-card {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .testimonial-card > div:last-child {
+            flex: 1;
+            display: flex;
+            align-items: center;
+          }
+          
+          .splide__arrow {
+            background: #A96C36;
+            width: 2.5rem;
+            height: 2.5rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+          }
+          
+          .splide__arrow:hover {
+            opacity: 1;
+            background: #7F5434;
+          }
+          
+          .splide__arrow svg {
+            fill: white;
+            width: 1.2rem;
+            height: 1.2rem;
+          }
+          
+          .splide__arrow--prev {
+            left: -1rem;
+          }
+          
+          .splide__arrow--next {
+            right: -1rem;
+          }
+          
+          @media (max-width: 768px) {
+            .splide__arrow {
+              display: none;
+            }
+          }
+          
+          .splide__pagination {
+            bottom: -2rem;
+          }
+          
+          .splide__pagination__page {
+            background: #a96c36;
+            opacity: 0.5;
+            margin: 0 4px;
+            width: 8px;
+            height: 8px;
+          }
+          
+          .splide__pagination__page.is-active {
+            opacity: 1;
+            background: #7f5434;
+            transform: scale(1.2);
+          }
+          
+          @media (max-width: 640px) {
+            .splide__pagination {
+              bottom: -1.5rem;
+            }
+            .splide__pagination__page {
+              width: 6px;
+              height: 6px;
+              margin: 0 3px;
+            }
+          }
+        `;
+        document.head.appendChild(style);
 
         // FAQ Accordion functionality
         const faqHeaders = document.querySelectorAll(".faq-header");

@@ -250,8 +250,9 @@
 
         /* Video Screening Section Styles */
         .video-screening-carousel .swiper-slide {
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             transform: scale(0.95);
+            height: 500px;
         }
 
         .video-screening-carousel .swiper-slide-active {
@@ -269,18 +270,17 @@
         .video-screening-carousel .swiper-pagination-bullet-active {
             opacity: 1;
             transform: scale(1.2);
+            background: #7F5434;
         }
 
         .video-screening-carousel .swiper-button-next:after,
         .video-screening-carousel .swiper-button-prev:after {
             font-size: 1.2rem;
-        }
-
-        .video-screening-carousel .swiper-slide {
-            padding: 1rem;
+            font-weight: bold;
         }
 
         .video-screening-carousel .swiper-slide > div {
+            height: 100%;
             border-radius: 1rem;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -293,6 +293,9 @@
         }
 
         .video-screening-carousel .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: all 0.5s ease;
         }
 
@@ -300,27 +303,11 @@
             transform: scale(1.05);
         }
 
-        .video-screening-carousel .swiper-slide .absolute {
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .video-screening-carousel .swiper-slide:hover .absolute {
-            opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-            .video-screening-carousel .swiper-button-next,
-            .video-screening-carousel .swiper-button-prev {
-                display: none;
-            }
-        }
-
         /* Acrylic Signs Section Styles */
         .acrylic-carousel .swiper-slide {
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             transform: scale(0.95);
+            height: 500px;
         }
 
         .acrylic-carousel .swiper-slide-active {
@@ -338,18 +325,17 @@
         .acrylic-carousel .swiper-pagination-bullet-active {
             opacity: 1;
             transform: scale(1.2);
+            background: #7F5434;
         }
 
         .acrylic-carousel .swiper-button-next:after,
         .acrylic-carousel .swiper-button-prev:after {
             font-size: 1.2rem;
-        }
-
-        .acrylic-carousel .swiper-slide {
-            padding: 1rem;
+            font-weight: bold;
         }
 
         .acrylic-carousel .swiper-slide > div {
+            height: 100%;
             border-radius: 1rem;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -362,6 +348,9 @@
         }
 
         .acrylic-carousel .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: all 0.5s ease;
         }
 
@@ -369,20 +358,24 @@
             transform: scale(1.05);
         }
 
-        .acrylic-carousel .swiper-slide .absolute {
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .acrylic-carousel .swiper-slide:hover .absolute {
-            opacity: 1;
-        }
-
         @media (max-width: 768px) {
+            .video-screening-carousel .swiper-button-next,
+            .video-screening-carousel .swiper-button-prev,
             .acrylic-carousel .swiper-button-next,
             .acrylic-carousel .swiper-button-prev {
                 display: none;
+            }
+            
+            .video-screening-carousel .swiper-slide,
+            .acrylic-carousel .swiper-slide {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .video-screening-carousel .swiper-slide,
+            .acrylic-carousel .swiper-slide {
+                height: 300px;
             }
         }
     </style>
@@ -449,7 +442,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.42 AM (1).jpeg" alt="Featured Project 1" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/1.jpeg" alt="Featured Project 1" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Premium Signboard</h3>
@@ -460,7 +453,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.26.00 AM (1).jpeg" alt="Featured Project 2" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/2.jpeg" alt="Featured Project 2" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Video Display Installation</h3>
@@ -471,7 +464,84 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.44 AM.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/3.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
+                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/featured/4.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
+                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/featured/5.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
+                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/featured/6.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
+                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/featured/7.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
+                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/featured/8.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
+                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/featured/9.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
+                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                            <img src="assets/featured/10.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
@@ -513,15 +583,13 @@
 
     <!-- Video Screening Section -->
     <section class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYuMjUgMzUuMjVhMS4yNSAxLjI1IDAgMCAxIDEuMjUtMS4yNWgxLjI1YTEuMjUgMS4yNSAwIDAgMSAxLjI1IDEuMjV2MS4yNWExLjI1IDEuMjUgMCAwIDEtMS4yNSAxLjI1aC0xLjI1YTEuMjUgMS4yNSAwIDAgMS0xLjI1LTEuMjV2LTEuMjV6IiBmaWxsPSIjRTlFN0VCIi8+PC9nPjwvc3ZnPg==')] opacity-5"></div>
-        <div class="container mx-auto max-w-6xl relative">
+        <div class="container mx-auto max-w-6xl">
             <div class="text-center mb-16">
-                <span class="text-bronze font-medium tracking-wider uppercase text-sm">Our Work</span>
-                <h2 class="text-4xl font-cinzel font-bold mt-4 mb-6 relative inline-block">
+                <span class="text-bronze font-medium">Our Work</span>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">
                     Video Screening Projects
-                    <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-bronze"></span>
                 </h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">Showcasing our video screening and digital display installations.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Showcasing our video screening and digital display installations.</p>
             </div>
             
             <!-- Carousel for Video Screening -->
@@ -529,9 +597,9 @@
                 <div class="swiper-wrapper">
                     <!-- Slides will be loaded dynamically -->
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next !text-bronze !bg-white !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300"></div>
-                <div class="swiper-button-prev !text-bronze !bg-white !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300"></div>
+                <div class="swiper-pagination !bottom-4"></div>
+                <div class="swiper-button-next !text-bronze !bg-white/90 !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300 !right-4"></div>
+                <div class="swiper-button-prev !text-bronze !bg-white/90 !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300 !left-4"></div>
             </div>
         </div>
     </section>
@@ -554,15 +622,13 @@
 
     <!-- Acrylic Signs Section -->
     <section class="py-20 px-4 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYuMjUgMzUuMjVhMS4yNSAxLjI1IDAgMCAxIDEuMjUtMS4yNWgxLjI1YTEuMjUgMS4yNSAwIDAgMSAxLjI1IDEuMjV2MS4yNWExLjI1IDEuMjUgMCAwIDEtMS4yNSAxLjI1aC0xLjI1YTEuMjUgMS4yNSAwIDAgMS0xLjI1LTEuMjV2LTEuMjV6IiBmaWxsPSIjRTlFN0VCIi8+PC9nPjwvc3ZnPg==')] opacity-5"></div>
         <div class="container mx-auto max-w-6xl relative">
-            <div class="text-center mb-16">
-                <span class="text-bronze font-medium tracking-wider uppercase text-sm">Our Work</span>
-                <h2 class="text-4xl font-cinzel font-bold mt-4 mb-6 relative inline-block">
+            <div class="text-center mb-12">
+                <span class="text-bronze font-medium">Our Work</span>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">
                     Acrylic Signs Collection
-                    <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-bronze"></span>
                 </h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">Discover our elegant acrylic signage solutions crafted for modern businesses.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mt-4">Discover our elegant acrylic signage solutions crafted for modern businesses.</p>
             </div>
             
             <!-- Carousel for Acrylic Signs -->
@@ -570,9 +636,9 @@
                 <div class="swiper-wrapper">
                     <!-- Slides will be loaded dynamically -->
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next !text-bronze !bg-white !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300"></div>
-                <div class="swiper-button-prev !text-bronze !bg-white !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300"></div>
+                <div class="swiper-pagination !bottom-4"></div>
+                <div class="swiper-button-next !text-bronze !bg-white/90 !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300 !right-4"></div>
+                <div class="swiper-button-prev !text-bronze !bg-white/90 !w-12 !h-12 !rounded-full !shadow-lg hover:!bg-bronze hover:!text-white transition-all duration-300 !left-4"></div>
             </div>
         </div>
     </section>
@@ -776,8 +842,9 @@
                 slidesPerView: 1,
                 spaceBetween: 30,
                 loop: true,
+                speed: 3000, // Faster sliding speed
                 autoplay: {
-                    delay: 5000,
+                    delay: 0, // No delay between slides
                     disableOnInteraction: false,
                 },
                 pagination: {
@@ -1106,7 +1173,9 @@
         // Enhanced load more functionality with loading state
         function setupLoadMore() {
             const loadMoreBtn = document.getElementById('load-more-signboards');
-            if (loadMoreBtn) {
+            const signboardGrid = document.getElementById('signboard-grid'); // Get grid reference here
+            
+            if (loadMoreBtn && signboardGrid) { // Check both elements exist
                 let currentIndex = 6;
                 let isLoading = false;
 
@@ -1118,7 +1187,7 @@
                     loadMoreBtn.innerHTML = '<span class="animate-spin mr-2">⌛</span> Loading...';
 
                     try {
-                        const nextImages = signboardImages.slice(currentIndex, currentIndex + 6);
+                        const nextImages = galleryData.signboard.slice(currentIndex, currentIndex + 6);
                         if (nextImages.length > 0) {
                             // Simulate network delay for smooth loading
                             await new Promise(resolve => setTimeout(resolve, 500));
@@ -1128,20 +1197,24 @@
                             });
                             
                             // Animate new items
-                            gsap.to('.gallery-item', {
-                                opacity: 1,
-                                y: 0,
-                                duration: 0.8,
-                                stagger: 0.2,
-                                ease: "back.out(1.2)",
-                                scrollTrigger: {
-                                    trigger: '#signboard-grid',
-                                    start: "top 90%"
+                            const newItems = signboardGrid.querySelectorAll('.gallery-item');
+                            const startIndex = currentIndex;
+                            const endIndex = currentIndex + nextImages.length;
+                            const itemsToAnimate = Array.from(newItems).slice(startIndex, endIndex);
+                            
+                            gsap.fromTo(itemsToAnimate, 
+                                { opacity: 0, y: 50 },
+                                {
+                                    opacity: 1,
+                                    y: 0,
+                                    duration: 0.8,
+                                    stagger: 0.2,
+                                    ease: "back.out(1.2)"
                                 }
-                            });
+                            );
                             
                             currentIndex += 6;
-                            if (currentIndex >= signboardImages.length) {
+                            if (currentIndex >= galleryData.signboard.length) {
                                 loadMoreBtn.style.display = 'none';
                             }
                         } else {
@@ -1153,7 +1226,9 @@
                     } finally {
                         isLoading = false;
                         loadMoreBtn.disabled = false;
-                        loadMoreBtn.innerHTML = 'Load More';
+                        if (!loadMoreBtn.style.display) {
+                            loadMoreBtn.innerHTML = 'Load More';
+                        }
                     }
                 });
             }
@@ -1161,132 +1236,332 @@
 
         // Initialize optimizations when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
+            initializeGalleries(); // Make sure this runs first
             optimizeImageLoading();
-            setupLoadMore();
-            // ... existing initialization code ...
+            setupLoadMore(); // Then setup load more
         });
 
         // Gallery data
         const galleryData = {
             signboard: [
                 {
-                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.42 AM (1).jpeg',
+                    src: 'assets/gallery/signboard/1.jpeg',
                     title: 'Premium Signboard',
                     description: 'Custom illuminated signage with premium finish'
                 },
                 {
-                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.40 AM.jpeg',
+                    src: 'assets/gallery/signboard/2.jpeg',
                     title: 'Modern Design',
                     description: 'Contemporary signage solution'
                 },
                 {
-                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.06 AM.jpeg',
+                    src: 'assets/gallery/signboard/3.jpeg',
                     title: 'Elegant Display',
                     description: 'Professional business signage'
                 },
                 {
-                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.02 AM (1).jpeg',
+                    src: 'assets/gallery/signboard/4.jpeg',
                     title: 'Custom Design',
                     description: 'Tailored signage solution'
                 },
                 {
-                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.02 AM.jpeg',
+                    src: 'assets/gallery/signboard/5.jpeg',
                     title: 'Premium Finish',
                     description: 'High-quality signboard'
                 },
                 {
-                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.01 AM.jpeg',
+                    src: 'assets/gallery/signboard/6.jpeg',
                     title: 'Professional Display',
                     description: 'Business signage solution'
                 },
                 {
-                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.27.00 AM.jpeg',
+                    src: 'assets/gallery/signboard/7.jpeg',
                     title: 'Modern Illumination',
                     description: 'LED illuminated signboard'
                 },
                 {
-                    src: 'assets/gallery/signboard/WhatsApp Image 2025-03-25 at 2.26.59 AM.jpeg',
+                    src: 'assets/gallery/signboard/8.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/9.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/10.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/11.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/12.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/13.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/14.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/15.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/16.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/17.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/18.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/19.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/20.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/21.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/22.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/23.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/24.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/25.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/26.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/27.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/28.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/29.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/30.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/31.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/32.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/33.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/34.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/35.jpeg',
+                    title: 'Custom Branding',
+                    description: 'Branded signage solution'
+                },
+                {
+                    src: 'assets/gallery/signboard/36.jpeg',
                     title: 'Custom Branding',
                     description: 'Branded signage solution'
                 }
             ],
             videoScreening: [
                 {
-                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.26.00 AM (1).jpeg',
-                    title: 'Video Display Installation',
-                    description: 'High-resolution LED video display for dynamic content'
-                },
-                {
-                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.25.54 AM.jpeg',
+                    src: 'assets/gallery/video-screening/1.jpeg',
                     title: 'Digital Display',
                     description: 'Modern video screening solution'
                 },
                 {
-                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.25.55 AM (1).jpeg',
+                    src: 'assets/gallery/video-screening/2.jpeg',
                     title: 'LED Video Wall',
                     description: 'Large-scale video display installation'
                 },
                 {
-                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.24.00 AM.jpeg',
+                    src: 'assets/gallery/video-screening/3.jpeg',
                     title: 'Interactive Display',
                     description: 'Engaging digital signage solution'
                 },
                 {
-                    src: 'assets/gallery/video-screening/WhatsApp Image 2025-03-25 at 2.23.59 AM.jpeg',
+                    src: 'assets/gallery/video-screening/4.jpeg',
+                    title: 'Digital Signage',
+                    description: 'Interactive digital signage solution'
+                },
+                {
+                    src: 'assets/gallery/video-screening/5.jpeg',
                     title: 'Digital Signage',
                     description: 'Interactive digital signage solution'
                 }
             ],
             acrylic: [
                 {
-                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.44 AM.jpeg',
+                    src: 'assets/gallery/arcylics signs/1.jpeg',
                     title: 'Acrylic Signage',
                     description: 'Modern acrylic sign with elegant design'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.43 AM (2).jpeg',
+                    src: 'assets/gallery/arcylics signs/2.jpeg',
                     title: 'Custom Acrylic',
                     description: 'Tailored acrylic signage solution'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.43 AM (1).jpeg',
+                    src: 'assets/gallery/arcylics signs/3.jpeg',
                     title: 'Premium Acrylic',
                     description: 'High-quality acrylic display'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.43 AM.jpeg',
+                    src: 'assets/gallery/arcylics signs/4.jpeg',
                     title: 'Modern Acrylic',
                     description: 'Contemporary acrylic signage'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/WhatsApp Image 2025-03-25 at 2.27.42 AM.jpeg',
+                    src: 'assets/gallery/arcylics signs/5.jpeg',
+                    title: 'Elegant Acrylic',
+                    description: 'Sophisticated acrylic design'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/6.jpeg',
+                    title: 'Elegant Acrylic',
+                    description: 'Sophisticated acrylic design'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/7.jpeg',
+                    title: 'Elegant Acrylic',
+                    description: 'Sophisticated acrylic design'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/8.jpeg',
+                    title: 'Elegant Acrylic',
+                    description: 'Sophisticated acrylic design'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/9.jpeg',
+                    title: 'Elegant Acrylic',
+                    description: 'Sophisticated acrylic design'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/10.jpeg',
+                    title: 'Elegant Acrylic',
+                    description: 'Sophisticated acrylic design'
+                },
+                {
+                    src: 'assets/gallery/arcylics signs/11.jpeg',
                     title: 'Elegant Acrylic',
                     description: 'Sophisticated acrylic design'
                 }
             ],
             installation: [
                 {
-                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.27.05 AM.jpeg',
+                    src: 'assets/gallery/installation/1.jpeg',
                     title: 'Professional Installation',
                     description: 'Expert signboard installation process'
                 },
                 {
-                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.27.04 AM.jpeg',
+                    src: 'assets/gallery/installation/2.jpeg',
                     title: 'Installation Team',
                     description: 'Our skilled installation team in action'
                 },
                 {
-                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.26.00 AM.jpeg',
+                    src: 'assets/gallery/installation/3.jpeg',
                     title: 'Quality Check',
                     description: 'Final quality inspection before handover'
                 },
                 {
-                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.25.56 AM.jpeg',
+                    src: 'assets/gallery/installation/4.jpeg',
                     title: 'Site Preparation',
                     description: 'Preparing the installation site'
                 },
                 {
-                    src: 'assets/gallery/installation/WhatsApp Image 2025-03-25 at 2.25.55 AM.jpeg',
+                    src: 'assets/gallery/installation/5.jpeg',
+                    title: 'Installation Process',
+                    description: 'Step-by-step installation procedure'
+                },
+                {
+                    src: 'assets/gallery/installation/6.jpeg',
+                    title: 'Installation Process',
+                    description: 'Step-by-step installation procedure'
+                },
+                {
+                    src: 'assets/gallery/installation/7.jpeg',
+                    title: 'Installation Process',
+                    description: 'Step-by-step installation procedure'
+                },
+                {
+                    src: 'assets/gallery/installation/8.jpeg',
+                    title: 'Installation Process',
+                    description: 'Step-by-step installation procedure'
+                },
+                {
+                    src: 'assets/gallery/installation/9.jpeg',
+                    title: 'Installation Process',
+                    description: 'Step-by-step installation procedure'
+                },
+                {
+                    src: 'assets/gallery/installation/10.jpeg',
+                    title: 'Installation Process',
+                    description: 'Step-by-step installation procedure'
+                },
+                {
+                    src: 'assets/gallery/installation/11.jpeg',
                     title: 'Installation Process',
                     description: 'Step-by-step installation procedure'
                 }
@@ -1298,7 +1573,8 @@
             // Initialize Signboard Grid
             const signboardGrid = document.getElementById('signboard-grid');
             if (signboardGrid) {
-                galleryData.signboard.forEach(image => {
+                // Show only first 6 images initially
+                galleryData.signboard.slice(0, 6).forEach(image => {
                     signboardGrid.insertAdjacentHTML('beforeend', createGalleryItem(image.src, image.title, image.description));
                 });
             }
@@ -1337,6 +1613,7 @@
                 slidesPerView: 1,
                 spaceBetween: 30,
                 loop: true,
+                speed: 1000,
                 autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
@@ -1355,35 +1632,57 @@
                     },
                     768: {
                         slidesPerView: 2,
+                        spaceBetween: 20,
                     },
                     1024: {
                         slidesPerView: 2,
+                        spaceBetween: 30,
                     },
                 },
                 on: {
                     init: function() {
                         setTimeout(() => {
-                            this.el.style.opacity = '1';
+                            this.el.classList.remove('opacity-0');
+                            this.el.classList.add('opacity-100');
                         }, 100);
                     }
                 }
             };
 
-            // Initialize each carousel
-            ['video-screening', 'acrylic'].forEach(carouselId => {
-                const carousel = document.querySelector(`#${carouselId}-carousel`);
-                if (carousel) {
-                    new Swiper(carousel, swiperConfig);
-                }
-            });
-        }
+            // Initialize Video Screening Carousel with modified config
+            const videoScreeningCarousel = document.querySelector('.video-screening-carousel');
+            if (videoScreeningCarousel) {
+                new Swiper(videoScreeningCarousel, {
+                    ...swiperConfig,
+                    effect: 'slide', // Changed from 'fade' to 'slide'
+                    slidesPerView: 1,
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        }
+                    },
+                    grabCursor: true,
+                    keyboard: {
+                        enabled: true,
+                    }
+                });
+            }
 
-        // Add initializeGalleries to DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeGalleries();
-            optimizeImageLoading();
-            setupLoadMore();
-        });
+            // Initialize Acrylic Signs Carousel
+            const acrylicCarousel = document.querySelector('.acrylic-carousel');
+            if (acrylicCarousel) {
+                new Swiper(acrylicCarousel, swiperConfig);
+            }
+        }
     </script>
 </body>
 </html>

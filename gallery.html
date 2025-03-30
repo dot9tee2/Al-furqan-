@@ -158,6 +158,14 @@
             transform: translateY(-10px);
         }
 
+        .featured-carousel .swiper-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background-color: #f3f4f6;
+            padding: 1rem;
+        }
+
         /* Image loading optimizations */
         .image-container {
             position: relative;
@@ -252,7 +260,7 @@
         .video-screening-carousel .swiper-slide {
             transition: all 0.5s ease;
             transform: scale(0.95);
-            height: 500px;
+            height: 400px;
         }
 
         .video-screening-carousel .swiper-slide-active {
@@ -295,8 +303,9 @@
         .video-screening-carousel .swiper-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
+            object-fit: contain;
+            background-color: #f3f4f6;
+            padding: 1rem;
         }
 
         .video-screening-carousel .swiper-slide:hover img {
@@ -307,7 +316,7 @@
         .acrylic-carousel .swiper-slide {
             transition: all 0.5s ease;
             transform: scale(0.95);
-            height: 500px;
+            height: 400px;
         }
 
         .acrylic-carousel .swiper-slide-active {
@@ -350,8 +359,9 @@
         .acrylic-carousel .swiper-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
+            object-fit: contain;
+            background-color: #f3f4f6;
+            padding: 1rem;
         }
 
         .acrylic-carousel .swiper-slide:hover img {
@@ -368,14 +378,22 @@
             
             .video-screening-carousel .swiper-slide,
             .acrylic-carousel .swiper-slide {
-                height: 400px;
+                height: 300px;
+            }
+            
+            .featured-carousel .swiper-slide img {
+                height: 300px;
             }
         }
 
         @media (max-width: 640px) {
             .video-screening-carousel .swiper-slide,
             .acrylic-carousel .swiper-slide {
-                height: 300px;
+                height: 250px;
+            }
+            
+            .featured-carousel .swiper-slide img {
+                height: 250px;
             }
         }
     </style>
@@ -411,7 +429,11 @@
     </header>
 
     <!-- Gallery Hero -->
-    <section class="hero-parallax text-light py-20 px-4 relative min-h-[60vh] flex items-center">
+    <section class="hero-parallax text-light py-20 px-4 relative min-h-[100vh] flex items-center">
+        <!-- Add logo background with increased opacity -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-20">
+            <img src="assets/images/logo2.png" alt="Al-furqan Logo" class="max-w-[500px] w-full h-auto">
+        </div>
         <div class="parallax-layer sign-particles" id="particles"></div>
         <div class="parallax-layer hero-overlay"></div>
         <div class="signboard-glow"></div>
@@ -478,8 +500,8 @@
                             <img src="assets/featured/4.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
-                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Kiosk Stall</h3>
+                                    <p class="text-white/90">Kiosk Stall with elegant design</p>
                                 </div>
                             </div>
                         </div>
@@ -500,8 +522,8 @@
                             <img src="assets/featured/6.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
-                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
+                                    <p class="text-white/90">Fit Out for a new restaurant with elegant design</p>
                                 </div>
                             </div>
                         </div>
@@ -511,8 +533,8 @@
                             <img src="assets/featured/7.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
-                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
+                                    <p class="text-white/90">Fit Out for a new office with elegant design</p>
                                 </div>
                             </div>
                         </div>
@@ -533,8 +555,8 @@
                             <img src="assets/featured/9.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
-                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
+                                    <p class="text-white/90">Fit Out for a new office with elegant design</p>
                                 </div>
                             </div>
                         </div>
@@ -544,8 +566,8 @@
                             <img src="assets/featured/10.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
-                                    <p class="text-white/90">Modern acrylic sign with elegant design</p>
+                                    <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
+                                    <p class="text-white/90">Fit Out for a new office with elegant design</p>
                                 </div>
                             </div>
                         </div>
@@ -792,12 +814,16 @@
                   <a href="tel:+96892949051" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
                 </li>
                 <li class="flex items-center gap-3">
+                  <i class="bx bx-phone text-xl"></i>
+                  <a href="tel:+96896967601" class="hover:text-white/70 transition-colors">+968 9696 7601</a>
+                </li>
+                <li class="flex items-center gap-3">
                   <i class="bx bx-envelope text-xl"></i>
                   <a href="mailto:alfurqanint.business@gmail.com" class="hover:text-white/70 transition-colors">alfurqanint.business@gmail.com</a>
                 </li>
                 <li class="flex items-center gap-3">
                   <i class="bx bx-time text-xl"></i>
-                  <span>Mon-Fri: 9AM-6PM</span>
+                  <span>Sun-Thu: 9AM-6PM</span>
                 </li>
               </ul>
             </div>
@@ -1246,344 +1272,344 @@
             signboard: [
                 {
                     src: 'assets/gallery/signboard/1.jpeg',
-                    title: 'Premium Signboard',
-                    description: 'Custom illuminated signage with premium finish'
+                    title: 'Premium LED Signboard',
+                    description: 'Custom illuminated LED signboard with premium finish and dynamic lighting effects'
                 },
                 {
                     src: 'assets/gallery/signboard/2.jpeg',
-                    title: 'Modern Design',
-                    description: 'Contemporary signage solution'
+                    title: 'Modern Channel Letters',
+                    description: 'Contemporary channel letter signage with sleek design'
                 },
                 {
                     src: 'assets/gallery/signboard/3.jpeg',
-                    title: 'Elegant Display',
-                    description: 'Professional business signage'
+                    title: 'Backlit Signboard',
+                    description: 'Professional backlit business signage with energy-efficient LED lighting'
                 },
                 {
                     src: 'assets/gallery/signboard/4.jpeg',
-                    title: 'Custom Design',
-                    description: 'Tailored signage solution'
+                    title: '3D Letter Signage',
+                    description: 'Custom 3D letter signage with premium materials and finish'
                 },
                 {
                     src: 'assets/gallery/signboard/5.jpeg',
-                    title: 'Premium Finish',
-                    description: 'High-quality signboard'
+                    title: 'Front Lit Signboard',
+                    description: 'High-quality front-lit signboard with superior visibility'
                 },
                 {
                     src: 'assets/gallery/signboard/6.jpeg',
-                    title: 'Professional Display',
-                    description: 'Business signage solution'
+                    title: 'Neon Signboard',
+                    description: 'Vibrant neon signboard for eye-catching business display'
                 },
                 {
                     src: 'assets/gallery/signboard/7.jpeg',
-                    title: 'Modern Illumination',
-                    description: 'LED illuminated signboard'
+                    title: 'Digital LED Signboard',
+                    description: 'Modern digital LED signboard with content management system'
                 },
                 {
                     src: 'assets/gallery/signboard/8.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Outdoor Billboard',
+                    description: 'Large-scale outdoor billboard with weather-resistant materials'
                 },
                 {
                     src: 'assets/gallery/signboard/9.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Indoor Directional Signs',
+                    description: 'Clear and elegant indoor directional signage system'
                 },
                 {
                     src: 'assets/gallery/signboard/10.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Retail Store Signage',
+                    description: 'Custom retail store signage with brand identity'
                 },
                 {
                     src: 'assets/gallery/signboard/11.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Corporate Office Signage',
+                    description: 'Professional corporate office signage with modern aesthetics'
                 },
                 {
                     src: 'assets/gallery/signboard/12.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Restaurant Signboard',
+                    description: 'Appetizing restaurant signboard with custom design'
                 },
                 {
                     src: 'assets/gallery/signboard/13.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Shopping Mall Signage',
+                    description: 'Large-scale shopping mall signage with high visibility'
                 },
                 {
                     src: 'assets/gallery/signboard/14.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Hotel Entrance Sign',
+                    description: 'Luxurious hotel entrance sign with premium finish'
                 },
                 {
                     src: 'assets/gallery/signboard/15.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Bank Branch Signage',
+                    description: 'Professional bank branch signage with corporate identity'
                 },
                 {
                     src: 'assets/gallery/signboard/16.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Medical Center Signboard',
+                    description: 'Clear and professional medical center signage'
                 },
                 {
                     src: 'assets/gallery/signboard/17.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'School Campus Signage',
+                    description: 'Educational institution signage with clear visibility'
                 },
                 {
                     src: 'assets/gallery/signboard/18.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Sports Complex Signboard',
+                    description: 'Dynamic sports complex signage with modern design'
                 },
                 {
                     src: 'assets/gallery/signboard/19.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Industrial Facility Signage',
+                    description: 'Durable industrial facility signage with weather protection'
                 },
                 {
                     src: 'assets/gallery/signboard/20.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Apartment Building Sign',
+                    description: 'Residential complex signage with elegant design'
                 },
                 {
                     src: 'assets/gallery/signboard/21.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Shopping Center Signage',
+                    description: 'Large-scale shopping center signage with brand integration'
                 },
                 {
                     src: 'assets/gallery/signboard/22.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Office Building Signboard',
+                    description: 'Corporate office building signage with professional finish'
                 },
                 {
                     src: 'assets/gallery/signboard/23.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Retail Mall Signage',
+                    description: 'Modern retail mall signage with dynamic lighting'
                 },
                 {
                     src: 'assets/gallery/signboard/24.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Hospital Signboard',
+                    description: 'Clear and professional hospital signage system'
                 },
                 {
                     src: 'assets/gallery/signboard/25.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'University Campus Signage',
+                    description: 'Educational campus signage with institutional branding'
                 },
                 {
                     src: 'assets/gallery/signboard/26.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Commercial Complex Sign',
+                    description: 'Large commercial complex signage with modern design'
                 },
                 {
                     src: 'assets/gallery/signboard/27.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Business Center Signage',
+                    description: 'Professional business center signage with corporate identity'
                 },
                 {
                     src: 'assets/gallery/signboard/28.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Shopping District Signboard',
+                    description: 'Vibrant shopping district signage with dynamic elements'
                 },
                 {
                     src: 'assets/gallery/signboard/29.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Office Park Signage',
+                    description: 'Modern office park signage with professional finish'
                 },
                 {
                     src: 'assets/gallery/signboard/30.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Retail Plaza Signboard',
+                    description: 'Contemporary retail plaza signage with brand integration'
                 },
                 {
                     src: 'assets/gallery/signboard/31.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Business Tower Signage',
+                    description: 'Tall building signage with premium materials'
                 },
                 {
                     src: 'assets/gallery/signboard/32.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Shopping Mall Entrance',
+                    description: 'Grand shopping mall entrance signage'
                 },
                 {
                     src: 'assets/gallery/signboard/33.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Corporate Campus Sign',
+                    description: 'Large corporate campus signage system'
                 },
                 {
                     src: 'assets/gallery/signboard/34.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Retail Center Signage',
+                    description: 'Modern retail center signage with dynamic lighting'
                 },
                 {
                     src: 'assets/gallery/signboard/35.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Business District Sign',
+                    description: 'Professional business district signage'
                 },
                 {
                     src: 'assets/gallery/signboard/36.jpeg',
-                    title: 'Custom Branding',
-                    description: 'Branded signage solution'
+                    title: 'Commercial Zone Signage',
+                    description: 'Large commercial zone signage with modern design'
                 }
             ],
             videoScreening: [
                 {
                     src: 'assets/gallery/video-screening/1.jpeg',
-                    title: 'Digital Display',
-                    description: 'Modern video screening solution'
+                    title: 'LED Video Wall',
+                    description: 'Large-scale LED video wall installation for dynamic content display'
                 },
                 {
                     src: 'assets/gallery/video-screening/2.jpeg',
-                    title: 'LED Video Wall',
-                    description: 'Large-scale video display installation'
+                    title: 'Digital Display Screen',
+                    description: 'High-resolution digital display for outdoor advertising'
                 },
                 {
                     src: 'assets/gallery/video-screening/3.jpeg',
-                    title: 'Interactive Display',
-                    description: 'Engaging digital signage solution'
+                    title: 'Interactive LED Screen',
+                    description: 'Interactive digital signage with touch capabilities'
                 },
                 {
                     src: 'assets/gallery/video-screening/4.jpeg',
-                    title: 'Digital Signage',
-                    description: 'Interactive digital signage solution'
+                    title: 'Outdoor LED Display',
+                    description: 'Weather-resistant outdoor LED display installation'
                 },
                 {
                     src: 'assets/gallery/video-screening/5.jpeg',
-                    title: 'Digital Signage',
-                    description: 'Interactive digital signage solution'
+                    title: 'Indoor Video Wall',
+                    description: 'Premium indoor video wall for corporate displays'
                 },
                 {
                     src: 'assets/gallery/video-screening/6.jpeg',
-                    title: 'Digital Signage',
-                    description: 'Interactive digital signage solution'
+                    title: 'Digital Signage System',
+                    description: 'Complete digital signage solution with content management'
                 },
                 {
                     src: 'assets/gallery/video-screening/7.jpeg',
-                    title: 'Digital Signage',
-                    description: 'Interactive digital signage solution'
+                    title: 'LED Screen Installation',
+                    description: 'Professional LED screen installation in commercial spaces'
                 },
                 {
                     src: 'assets/gallery/video-screening/8.jpeg',
-                    title: 'Digital Signage',
-                    description: 'Interactive digital signage solution'
+                    title: 'Video Display Panel',
+                    description: 'Custom video display panel for retail environments'
                 },
                 {
                     src: 'assets/gallery/video-screening/9.jpeg',
-                    title: 'Digital Signage',
-                    description: 'Interactive digital signage solution'
+                    title: 'Digital Advertising Screen',
+                    description: 'High-impact digital advertising display solution'
                 }
             ],
             acrylic: [
                 {
                     src: 'assets/gallery/arcylics signs/1.jpeg',
-                    title: 'Acrylic Signage',
-                    description: 'Modern acrylic sign with elegant design'
+                    title: 'Custom Acrylic Sign',
+                    description: 'Handcrafted acrylic sign with premium finish'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/2.jpeg',
-                    title: 'Custom Acrylic',
-                    description: 'Tailored acrylic signage solution'
+                    title: 'Illuminated Acrylic',
+                    description: 'LED-backlit acrylic sign for enhanced visibility'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/3.jpeg',
-                    title: 'Premium Acrylic',
-                    description: 'High-quality acrylic display'
+                    title: '3D Acrylic Display',
+                    description: 'Three-dimensional acrylic sign with depth effect'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/4.jpeg',
-                    title: 'Modern Acrylic',
-                    description: 'Contemporary acrylic signage'
+                    title: 'Frosted Acrylic Sign',
+                    description: 'Elegant frosted acrylic with modern design'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/5.jpeg',
-                    title: 'Elegant Acrylic',
-                    description: 'Sophisticated acrylic design'
+                    title: 'Transparent Acrylic',
+                    description: 'Crystal clear acrylic sign with premium finish'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/6.jpeg',
-                    title: 'Elegant Acrylic',
-                    description: 'Sophisticated acrylic design'
+                    title: 'Layered Acrylic Design',
+                    description: 'Multi-layered acrylic sign with depth'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/7.jpeg',
-                    title: 'Elegant Acrylic',
-                    description: 'Sophisticated acrylic design'
+                    title: 'Custom Acrylic Logo',
+                    description: 'Branded acrylic logo with precise detailing'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/8.jpeg',
-                    title: 'Elegant Acrylic',
-                    description: 'Sophisticated acrylic design'
+                    title: 'Acrylic Wall Sign',
+                    description: 'Wall-mounted acrylic sign with modern aesthetics'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/9.jpeg',
-                    title: 'Elegant Acrylic',
-                    description: 'Sophisticated acrylic design'
+                    title: 'Acrylic Light Box',
+                    description: 'Illuminated acrylic light box for indoor display'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/10.jpeg',
-                    title: 'Elegant Acrylic',
-                    description: 'Sophisticated acrylic design'
+                    title: 'Acrylic Stand Display',
+                    description: 'Freestanding acrylic display with custom design'
                 },
                 {
                     src: 'assets/gallery/arcylics signs/11.jpeg',
-                    title: 'Elegant Acrylic',
-                    description: 'Sophisticated acrylic design'
+                    title: 'Acrylic Menu Board',
+                    description: 'Stylish acrylic menu board for restaurants'
                 }
             ],
             installation: [
                 {
                     src: 'assets/gallery/installation/1.jpeg',
-                    title: 'Professional Installation',
-                    description: 'Expert signboard installation process'
+                    title: 'Large-Scale Installation',
+                    description: 'Professional team installing major signage project'
                 },
                 {
                     src: 'assets/gallery/installation/2.jpeg',
-                    title: 'Installation Team',
-                    description: 'Our skilled installation team in action'
+                    title: 'Site Assessment',
+                    description: 'Initial site assessment and measurement for optimal placement'
                 },
                 {
                     src: 'assets/gallery/installation/3.jpeg',
-                    title: 'Quality Check',
-                    description: 'Final quality inspection before handover'
+                    title: 'Foundation Work',
+                    description: 'Preparing and setting up the foundation for signboard support'
                 },
                 {
                     src: 'assets/gallery/installation/4.jpeg',
-                    title: 'Site Preparation',
-                    description: 'Preparing the installation site'
+                    title: 'Safety Protocol',
+                    description: 'Implementing comprehensive safety measures during installation'
                 },
                 {
                     src: 'assets/gallery/installation/5.jpeg',
-                    title: 'Installation Process',
-                    description: 'Step-by-step installation procedure'
+                    title: 'Team Coordination',
+                    description: 'Coordinated effort between installation and technical teams'
                 },
                 {
                     src: 'assets/gallery/installation/6.jpeg',
-                    title: 'Installation Process',
-                    description: 'Step-by-step installation procedure'
+                    title: 'Equipment Setup',
+                    description: 'Setting up specialized installation equipment and tools'
                 },
                 {
                     src: 'assets/gallery/installation/7.jpeg',
-                    title: 'Installation Process',
-                    description: 'Step-by-step installation procedure'
+                    title: 'Quality Control',
+                    description: 'Rigorous quality inspection of installed components'
                 },
                 {
                     src: 'assets/gallery/installation/8.jpeg',
-                    title: 'Installation Process',
-                    description: 'Step-by-step installation procedure'
+                    title: 'Electrical Testing',
+                    description: 'Testing electrical connections and lighting systems'
                 },
                 {
                     src: 'assets/gallery/installation/9.jpeg',
-                    title: 'Installation Process',
-                    description: 'Step-by-step installation procedure'
+                    title: 'Alignment Check',
+                    description: 'Precise alignment and positioning of signboard elements'
                 },
                 {
                     src: 'assets/gallery/installation/10.jpeg',
-                    title: 'Installation Process',
-                    description: 'Step-by-step installation procedure'
+                    title: 'Final Inspection',
+                    description: 'Comprehensive final inspection before project handover'
                 },
                 {
                     src: 'assets/gallery/installation/11.jpeg',
-                    title: 'Installation Process',
-                    description: 'Step-by-step installation procedure'
+                    title: 'Documentation',
+                    description: 'Recording installation details and specifications'
                 }
             ]
         };

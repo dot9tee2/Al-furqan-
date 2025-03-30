@@ -1,54 +1,177 @@
+<!--
+  Services Page - Al-furqan International Business LLC
+  Comprehensive overview of company services and solutions
+  Author: Mehroz
+  Version: 1.0.0
+  Last Updated: March 2024
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Al-furqan's comprehensive range of custom signs and signboards. From LED signs to outdoor displays, we provide professional signage solutions." />
+    <meta name="keywords" content="custom signs, LED signs, outdoor signs, indoor signs, signboards, Dubai signs, signage solutions" />
+    <meta name="author" content="Al-furqan International Business LLC" />
+    
+    <!-- Page Title -->
     <title>Services | Al-furqan | Custom Signs & Signboards</title>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <!-- External CSS Libraries -->
+    <!-- Boxicons for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#7F5434',
-                        secondary: '#10B981',
-                        dark: '#1F2937',
-                        light: '#F9FAFB',
-                        gray: '#E5E7EB',
-                        bronze: { light: '#DAA468', DEFAULT: '#A96C36', dark: '#7F5434' }
+                        primary: '#7F5434',    // Bronze
+                        secondary: '#10B981',  // Green
+                        dark: '#1F2937',       // Dark gray
+                        light: '#F9FAFB',      // Light gray
+                        gray: '#E5E7EB',       // Medium gray
+                        bronze: { 
+                            light: '#DAA468',  // Light bronze
+                            DEFAULT: '#A96C36', // Default bronze
+                            dark: '#7F5434'     // Dark bronze
+                        }
                     },
-                    fontFamily: { 'cinzel': ['Cinzel', 'serif'], 'sans': ['Montserrat', 'sans-serif'] }
+                    fontFamily: { 
+                        'cinzel': ['Cinzel', 'serif'], 
+                        'sans': ['Montserrat', 'sans-serif'] 
+                    }
                 }
             }
         }
     </script>
+    
+    <!-- GSAP Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    
+    <!-- Custom CSS -->
     <style>
-        .hero-parallax { position: relative; overflow: hidden; background-color: #121212; }
-        .parallax-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; will-change: transform; }
-        .hero-overlay { background: rgba(0,0,0,0.75); z-index: 1; }
-        .hero-content { position: relative; z-index: 2; }
-        .signboard-glow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(169, 108, 54, 0.25), transparent 70%); opacity: 0; z-index: 0; }
-        .sign-particles { position: absolute; width: 100%; height: 100%; overflow: hidden; z-index: 0; }
-        .particle { position: absolute; background-color: rgba(169, 108, 54, 0.6); border-radius: 50%; opacity: 0; }
-        .title-mask { position: relative; display: inline-block; overflow: hidden; }
-        .bronze-text { display: inline-block; background: linear-gradient(to right, #614022 0%, #DAA468 25%, #F6E6C2 50%, #DAA468 75%, #614022 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; }
-        .bronze-shimmer { position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%); animation: shimmer 5s infinite; transform: skewX(-20deg); }
-        @keyframes shimmer { 0% { left: -100%; } 100% { left: 200%; } }
-        .tagline { font-family: 'Montserrat', sans-serif; font-weight: 300; letter-spacing: 2px; }
+        /* Hero Section Styles */
+        .hero-parallax { 
+            position: relative; 
+            overflow: hidden; 
+            background-color: #121212; 
+        }
+        
+        /* Parallax Layer for Background Effects */
+        .parallax-layer { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            will-change: transform; 
+        }
+        
+        /* Hero Overlay for Text Readability */
+        .hero-overlay { 
+            background: rgba(0,0,0,0.75); 
+            z-index: 1; 
+        }
+        
+        /* Hero Content Positioning */
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+        }
+        
+        /* Signboard Glow Effect */
+        .signboard-glow { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: radial-gradient(circle at center, rgba(169, 108, 54, 0.25), transparent 70%); 
+            opacity: 0; 
+            z-index: 0; 
+        }
+        
+        /* Particle Animation Container */
+        .sign-particles { 
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            z-index: 0; 
+        }
+        
+        /* Individual Particle Style */
+        .particle { 
+            position: absolute; 
+            background-color: rgba(169, 108, 54, 0.6); 
+            border-radius: 50%; 
+            opacity: 0; 
+        }
+        
+        /* Title Text Mask for Animation */
+        .title-mask { 
+            position: relative; 
+            display: inline-block; 
+            overflow: hidden; 
+        }
+        
+        /* Bronze Text Gradient Effect */
+        .bronze-text { 
+            display: inline-block; 
+            background: linear-gradient(to right, #614022 0%, #DAA468 25%, #F6E6C2 50%, #DAA468 75%, #614022 100%); 
+            background-clip: text; 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-size: 200% auto; 
+        }
+        
+        /* Shimmer Effect Animation */
+        .bronze-shimmer { 
+            position: absolute; 
+            top: 0; 
+            left: -100%; 
+            width: 50%; 
+            height: 100%; 
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%); 
+            animation: shimmer 5s infinite; 
+            transform: skewX(-20deg); 
+        }
+        
+        /* Shimmer Animation Keyframes */
+        @keyframes shimmer { 
+            0% { left: -100%; } 
+            100% { left: 200%; } 
+        }
+        
+        /* Tagline Typography */
+        .tagline { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 300; 
+            letter-spacing: 2px; 
+        }
+        
+        /* Service Card Hover Effects */
         .fit-out-card {
             transition: all 0.3s ease;
         }
         .fit-out-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         .feature-icon {
             transition: all 0.3s ease;

@@ -1,52 +1,179 @@
+<!--
+  Gallery Page - Al-furqan International Business LLC
+  Showcase of completed projects and signage solutions
+  Features:
+  - Featured projects carousel
+  - Project categories
+  - Image gallery with lightbox
+  - Project details and descriptions
+  Author: Mehroz
+  Version: 1.0.0
+  Last Updated: March 2024
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our portfolio of custom signs and signboards. View our latest projects, including LED signs, acrylic signs, and more. See how we've helped businesses enhance their brand visibility." />
+    <meta name="keywords" content="sign gallery, custom signs portfolio, LED signs, acrylic signs, signboard projects, signage showcase" />
+    <meta name="author" content="Al-furqan International Business LLC" />
+    
+    <!-- Page Title -->
     <title>Gallery | Al-furqan | Custom Signs & Signboards</title>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <!-- External CSS Libraries -->
+    <!-- Boxicons for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#7F5434',
-                        secondary: '#10B981',
-                        dark: '#1F2937',
-                        light: '#F9FAFB',
-                        gray: '#E5E7EB',
-                        bronze: { light: '#DAA468', DEFAULT: '#A96C36', dark: '#7F5434' }
+                        primary: '#7F5434',    // Bronze
+                        secondary: '#10B981',  // Green
+                        dark: '#1F2937',       // Dark gray
+                        light: '#F9FAFB',      // Light gray
+                        gray: '#E5E7EB',       // Medium gray
+                        bronze: {
+                            light: '#DAA468',  // Light bronze
+                            DEFAULT: '#A96C36', // Default bronze
+                            dark: '#7F5434'     // Dark bronze
+                        }
                     },
-                    fontFamily: { 'cinzel': ['Cinzel', 'serif'], 'sans': ['Montserrat', 'sans-serif'] }
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
+    
+    <!-- GSAP Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    
+    <!-- Swiper Carousel Library -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Custom CSS -->
     <style>
-        .hero-parallax { position: relative; overflow: hidden; background-color: #121212; }
-        .parallax-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; will-change: transform; }
-        .hero-overlay { background: rgba(0,0,0,0.75); z-index: 1; }
-        .hero-content { position: relative; z-index: 2; }
-        .signboard-glow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(169, 108, 54, 0.25), transparent 70%); opacity: 0; z-index: 0; }
-        .sign-particles { position: absolute; width: 100%; height: 100%; overflow: hidden; z-index: 0; }
-        .particle { position: absolute; background-color: rgba(169, 108, 54, 0.6); border-radius: 50%; opacity: 0; }
-        .title-mask { position: relative; display: inline-block; overflow: hidden; }
-        .bronze-text { display: inline-block; background: linear-gradient(to right, #614022 0%, #DAA468 25%, #F6E6C2 50%, #DAA468 75%, #614022 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; }
-        .bronze-shimmer { position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%); animation: shimmer 5s infinite; transform: skewX(-20deg); }
-        @keyframes shimmer { 0% { left: -100%; } 100% { left: 200%; } }
-        .tagline { font-family: 'Montserrat', sans-serif; font-weight: 300; letter-spacing: 2px; }
-
+        /* Hero Section Styles */
+        .hero-parallax {
+            position: relative;
+            overflow: hidden;
+            background-color: #121212;
+        }
+        
+        /* Parallax Layer for Background Effects */
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+        
+        /* Hero Overlay for Text Readability */
+        .hero-overlay {
+            background: rgba(0,0,0,0.75);
+            z-index: 1;
+        }
+        
+        /* Hero Content Positioning */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Signboard Glow Effect */
+        .signboard-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(169, 108, 54, 0.25), transparent 70%);
+            opacity: 0;
+            z-index: 0;
+        }
+        
+        /* Particle Animation Container */
+        .sign-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        /* Individual Particle Style */
+        .particle {
+            position: absolute;
+            background-color: rgba(169, 108, 54, 0.6);
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        /* Title Text Mask for Animation */
+        .title-mask {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        
+        /* Bronze Text Gradient Effect */
+        .bronze-text {
+            display: inline-block;
+            background: linear-gradient(to right, #614022 0%, #DAA468 25%, #F6E6C2 50%, #DAA468 75%, #614022 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+        }
+        
+        /* Shimmer Effect Animation */
+        .bronze-shimmer {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%);
+            animation: shimmer 5s infinite;
+            transform: skewX(-20deg);
+        }
+        
+        /* Shimmer Animation Keyframes */
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+        
+        /* Tagline Typography */
+        .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
         /* Mobile Menu Styles */
         .mobile-menu {
             position: absolute;
@@ -84,37 +211,6 @@
         .mobile-menu a:hover {
             color: #7F5434;
             background-color: #f9fafb;
-        }
-
-        /* Responsive Media Queries */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .grid-cols-3, .grid-cols-2 {
-                grid-template-columns: 1fr;
-            }
-            .py-20, .py-16 {
-                padding-top: 3rem;
-                padding-bottom: 3rem;
-            }
-            .px-8 {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .text-4xl, .text-5xl {
-                font-size: 1.75rem;
-            }
-            .py-16 {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
-            }
         }
 
         /* Swiper Carousel Styles */
@@ -166,7 +262,7 @@
             padding: 1rem;
         }
 
-        /* Image loading optimizations */
+        /* Image Loading Optimizations */
         .image-container {
             position: relative;
             background-color: #f3f4f6;
@@ -195,205 +291,39 @@
             opacity: 0;
         }
 
-        /* Performance optimizations */
+        /* Performance Optimizations */
         .gallery-item {
             will-change: transform;
-            backface-visibility: hidden;
-            transform: translateZ(0);
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Enhanced hover effects */
-        .gallery-item {
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Loading state for buttons */
-        button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        /* Optimize animations */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-
-        /* Responsive image loading */
+        /* Responsive Media Queries */
         @media (max-width: 768px) {
-            .image-container {
-                height: 60vh;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
-        }
-
-        /* Add skeleton loading effect */
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-
-        @keyframes loading {
-            0% {
-                background-position: 200% 0;
+            .grid-cols-3, .grid-cols-2 {
+                grid-template-columns: 1fr;
             }
-            100% {
-                background-position: -200% 0;
+            .py-20, .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
             }
-        }
-
-        /* Video Screening Section Styles */
-        .video-screening-carousel .swiper-slide {
-            transition: all 0.5s ease;
-            transform: scale(0.95);
-            height: 400px;
-        }
-
-        .video-screening-carousel .swiper-slide-active {
-            transform: scale(1);
-        }
-
-        .video-screening-carousel .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #A96C36;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-        }
-
-        .video-screening-carousel .swiper-pagination-bullet-active {
-            opacity: 1;
-            transform: scale(1.2);
-            background: #7F5434;
-        }
-
-        .video-screening-carousel .swiper-button-next:after,
-        .video-screening-carousel .swiper-button-prev:after {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .video-screening-carousel .swiper-slide > div {
-            height: 100%;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .video-screening-carousel .swiper-slide:hover > div {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .video-screening-carousel .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background-color: #f3f4f6;
-            padding: 1rem;
-        }
-
-        .video-screening-carousel .swiper-slide:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Acrylic Signs Section Styles */
-        .acrylic-carousel .swiper-slide {
-            transition: all 0.5s ease;
-            transform: scale(0.95);
-            height: 400px;
-        }
-
-        .acrylic-carousel .swiper-slide-active {
-            transform: scale(1);
-        }
-
-        .acrylic-carousel .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #A96C36;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-        }
-
-        .acrylic-carousel .swiper-pagination-bullet-active {
-            opacity: 1;
-            transform: scale(1.2);
-            background: #7F5434;
-        }
-
-        .acrylic-carousel .swiper-button-next:after,
-        .acrylic-carousel .swiper-button-prev:after {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .acrylic-carousel .swiper-slide > div {
-            height: 100%;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .acrylic-carousel .swiper-slide:hover > div {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .acrylic-carousel .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background-color: #f3f4f6;
-            padding: 1rem;
-        }
-
-        .acrylic-carousel .swiper-slide:hover img {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .video-screening-carousel .swiper-button-next,
-            .video-screening-carousel .swiper-button-prev,
-            .acrylic-carousel .swiper-button-next,
-            .acrylic-carousel .swiper-button-prev {
-                display: none;
-            }
-            
-            .video-screening-carousel .swiper-slide,
-            .acrylic-carousel .swiper-slide {
-                height: 300px;
-            }
-            
-            .featured-carousel .swiper-slide img {
-                height: 300px;
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
         }
 
         @media (max-width: 640px) {
-            .video-screening-carousel .swiper-slide,
-            .acrylic-carousel .swiper-slide {
-                height: 250px;
+            .hero-content h1 {
+                font-size: 2rem;
             }
-            
-            .featured-carousel .swiper-slide img {
-                height: 250px;
+            .text-4xl, .text-5xl {
+                font-size: 1.75rem;
+            }
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
             }
         }
     </style>

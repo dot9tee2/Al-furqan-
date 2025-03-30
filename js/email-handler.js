@@ -1,9 +1,24 @@
-// Initialize EmailJS with your public key
+/**
+ * Email Handler Module
+ * Handles form submissions and email sending functionality using EmailJS
+ * @author Your Name
+ * @version 1.0.0
+ */
+
+/**
+ * Initialize EmailJS with your public key
+ * Note: Replace the public key with your own from EmailJS dashboard
+ */
 (function() {
     emailjs.init("RN3zHAc-0qWTu4CtP"); // Public key
 })();
 
-// Function to handle form submission
+/**
+ * Handles form submission and sends email using EmailJS
+ * @param {string} formId - The ID of the form element to handle
+ * @param {string} templateId - The EmailJS template ID to use
+ * @throws {Error} If form or submit button is not found
+ */
 function handleFormSubmit(formId, templateId) {
     // Get the form element
     const form = document.getElementById(formId);
@@ -16,6 +31,10 @@ function handleFormSubmit(formId, templateId) {
     const newForm = form.cloneNode(true);
     form.parentNode.replaceChild(newForm, form);
 
+    /**
+     * Form submission event handler
+     * @param {Event} e - The form submission event
+     */
     newForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -42,7 +61,12 @@ function handleFormSubmit(formId, templateId) {
             // Add timestamp to the template params
             templateParams.time = new Date().toLocaleString();
 
-            // Send email using EmailJS
+            /**
+             * Send email using EmailJS
+             * @param {string} serviceId - The EmailJS service ID
+             * @param {string} templateId - The EmailJS template ID
+             * @param {Object} templateParams - The parameters to use in the template
+             */
             emailjs.send('service_yl31or9', templateId, templateParams)
                 .then(function(response) {
                     // Show success message
@@ -60,36 +84,38 @@ function handleFormSubmit(formId, templateId) {
                     submitButton.disabled = false;
                 });
         } catch (error) {
+            // Handle any unexpected errors
+            showNotification('An unexpected error occurred. Please try again.', 'error');
             console.error('Form submission error:', error);
-            showNotification('An error occurred. Please try again.', 'error');
             submitButton.innerHTML = originalButtonText;
             submitButton.disabled = false;
         }
     });
 }
 
-// Function to show notifications
-function showNotification(message, type = 'success') {
-    // Remove any existing notifications first
-    const existingNotifications = document.querySelectorAll('.notification-toast');
-    existingNotifications.forEach(notification => notification.remove());
-
-    // Create new notification
+/**
+ * Shows a notification message to the user
+ * @param {string} message - The message to display
+ * @param {string} type - The type of notification ('success' or 'error')
+ */
+function showNotification(message, type) {
     const notification = document.createElement('div');
-    notification.className = `notification-toast fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
+    notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg ${
         type === 'success' ? 'bg-green-500' : 'bg-red-500'
-    } text-white`;
-    notification.innerHTML = message;
+    } text-white z-50`;
+    notification.textContent = message;
     
     document.body.appendChild(notification);
     
     // Remove notification after 5 seconds
     setTimeout(() => {
-        if (notification.parentNode) {
-            notification.remove();
-        }
+        notification.remove();
     }, 5000);
 }
+
+// Export functions for use in other files
+window.handleFormSubmit = handleFormSubmit;
+window.showNotification = showNotification;
 
 // Initialize forms when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {

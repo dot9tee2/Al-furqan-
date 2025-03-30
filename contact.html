@@ -1,14 +1,29 @@
+<!--
+  Contact Page - Al-furqan International Business LLC
+  Contact form and company information page
+  Author: Mehroz
+  Version: 1.0.0
+  Last Updated: March 2024
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Al-furqan International Business LLC for custom signs and signboards. Get in touch with our team for professional signage solutions." />
+    <meta name="keywords" content="contact us, sign company contact, Dubai signs, custom signs contact" />
+    <meta name="author" content="Al-furqan International Business LLC" />
+    
+    <!-- Page Title -->
     <title>Contact Us | Al-furqan | Custom Signs & Signboards</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     
-    <!-- Boxicons -->
+    <!-- External CSS Libraries -->
+    <!-- Boxicons for icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
     <!-- Google Fonts -->
@@ -16,22 +31,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS Configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#7F5434',
-                        secondary: '#10B981',
-                        dark: '#1F2937',
-                        light: '#F9FAFB',
-                        gray: '#E5E7EB',
+                        primary: '#7F5434',    // Bronze
+                        secondary: '#10B981',  // Green
+                        dark: '#1F2937',       // Dark gray
+                        light: '#F9FAFB',      // Light gray
+                        gray: '#E5E7EB',       // Medium gray
                         bronze: {
-                            light: '#DAA468',
-                            DEFAULT: '#A96C36',
-                            dark: '#7F5434'
+                            light: '#DAA468',  // Light bronze
+                            DEFAULT: '#A96C36', // Default bronze
+                            dark: '#7F5434'     // Dark bronze
                         }
                     },
                     fontFamily: {
@@ -43,10 +58,17 @@
         }
     </script>
     
-    <!-- GSAP and Plugins -->
+    <!-- GSAP Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    
+    <!-- EmailJS for Form Handling -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/email-handler.js"></script>
+    <script src="js/index.js"></script>
     
     <style>
         /* Reuse styles from index.html */
@@ -534,8 +556,6 @@
     </button>
 
     <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="js/email-handler.js"></script>
     <script>
         // Mobile Navigation Toggle
         const navToggle = document.querySelector('#mobile-menu-toggle');

@@ -1,4 +1,14 @@
-// Mobile Navigation Toggle
+/**
+ * Main JavaScript file for Al-furqan International Business LLC website
+ * Handles animations, UI interactions, and performance optimizations
+ * @author Your Name
+ * @version 1.0.0
+ */
+
+/**
+ * Mobile Navigation Toggle
+ * Handles the mobile menu toggle functionality and click-outside behavior
+ */
 const navToggle = document.querySelector('#mobile-menu-toggle');
 const navMenu = document.querySelector('#mobile-menu');
 
@@ -17,7 +27,12 @@ if (navToggle && navMenu) {
     });
 }
 
-// Device capability detection - used to scale down effects for lower-end devices
+/**
+ * Device Capability Detection
+ * Detects if the device is low-end based on memory and CPU cores
+ * Used to scale down effects for better performance
+ * @returns {boolean} True if device is considered low-end
+ */
 const isLowEndDevice = () => {
     return (
         navigator.deviceMemory && navigator.deviceMemory < 4 || // Less than 4GB RAM
@@ -25,11 +40,18 @@ const isLowEndDevice = () => {
     );
 };
 
-// Performance monitoring
+/**
+ * Performance Monitoring System
+ * Tracks frame rate and throttles animations if performance drops
+ */
 let lastFrameTime = performance.now();
 let frameRate = 60;
 let frameRateUpdateTime = 0;
 
+/**
+ * Updates frame rate calculation and determines if animations should be throttled
+ * @returns {boolean} True if animations should be throttled (frame rate < 30)
+ */
 function updateFrameRate() {
     const now = performance.now();
     const delta = now - lastFrameTime;
@@ -45,11 +67,18 @@ function updateFrameRate() {
     return frameRate < 30;
 }
 
+/**
+ * Main initialization function
+ * Sets up GSAP animations, particles, and scroll-based effects
+ */
 document.addEventListener('DOMContentLoaded', () => {
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize particles
+    /**
+     * Particle Animation System
+     * Creates and animates background particles for visual effect
+     */
     const particlesContainer = document.getElementById('particles');
     if (particlesContainer) {
         const particles = [];
@@ -64,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             particles.push(particle);
         }
 
+        // Initial particle fade-in animation
         gsap.to('.particle', {
             opacity: 0.7,
             stagger: 0.1,
@@ -71,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: "power2.out"
         });
 
+        // Continuous particle movement animation
         particles.forEach(particle => {
             gsap.to(particle, {
                 x: `${Math.random() * 80 - 40}px`,
@@ -83,7 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hero section animations
+    /**
+     * Hero Section Animations
+     * Handles parallax and scroll-based animations for the hero section
+     */
     const heroSection = document.querySelector('.hero-parallax');
     if (heroSection) {
         const heroTl = gsap.timeline();

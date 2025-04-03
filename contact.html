@@ -280,7 +280,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="py-16 px-4 relative overflow-hidden">
+    <section id="contact-section" class="py-16 px-4 relative overflow-hidden">
         <div class="absolute w-32 h-32 bg-bronze/5 rounded-full -left-10 top-20 contact-circle"></div>
         <div class="absolute w-40 h-40 bg-bronze/5 rounded-full -right-10 bottom-20 contact-circle"></div>
         <div class="container mx-auto max-w-6xl">
@@ -314,7 +314,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold mb-1">Email</h3>
-                                <p class="text-gray-600"><a href="mailto:alfurqanint.business@gmail.com" class="hover:text-bronze transition-colors">alfurqanint.business@gmail.com</a></p>
+                                <p class="text-gray-600"><a href="/cdn-cgi/l/email-protection#fe9f92988b8c8f9f9097908ad09c8b8d97909b8d8dbe99939f9792d09d9193" class="hover:text-bronze transition-colors"><span class="__cf_email__" data-cfemail="a4858882919695858a8d8a90ca8691978d8a819797a48389858d88ca878b89">[email&#160;protected]</span></a></p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -530,11 +530,11 @@
                 </li>
                 <li class="flex items-center gap-3">
                   <i class="bx bx-envelope text-xl"></i>
-                  <a href="mailto:alfurqanint.business@gmail.com" class="hover:text-white/70 transition-colors">alfurqanint.business@gmail.com</a>
+                  <a href="/cdn-cgi/l/email-protection#d2b3beb4a7a0a3b3bcbbbca6fcb0a7a1bbbcb7a1a192b5bfb3bbbefcb1bdbf" class="hover:text-white/70 transition-colors"><span class="__cf_email__" data-cfemail="a3c2cfc5d6d1d2c2cdcacdd78dc1d6d0cacdc6d0d0e3c4cec2cacf8dc0ccce">[email&#160;protected]</span></a>
                 </li>
                 <li class="flex items-center gap-3">
                     <i class="bx bx-envelope text-xl"></i>
-                    <a href="mailto:business@alfurqanint.com" class="hover:text-white/70 transition-colors">business@alfurqanint.com</a>
+                    <a href="/cdn-cgi/l/email-protection#50726563797e75636350717c76656261717e797e643e737f7d" class="hover:text-white/70 transition-colors"><span class="__cf_email__" data-cfemail="ae8c9b9d87808b9d9dae8f82889b9c9f8f8087809ac08d8183">[email&#160;protected]</span></a>
                   </li>
                 <li class="flex items-center gap-3">
                   <i class="bx bx-time text-xl"></i>
@@ -560,6 +560,7 @@
     </button>
 
     <!-- JavaScript -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // Mobile Navigation Toggle
         const navToggle = document.querySelector('#mobile-menu-toggle');
@@ -661,7 +662,7 @@
 
             // Contact Section Animations
             const contactTl = gsap.timeline({
-                scrollTrigger: { trigger: ".contact-section", start: "top 80%", toggleActions: "play none none none" }
+                scrollTrigger: { trigger: "#contact-section", start: "top 80%", toggleActions: "play none none none" }
             });
             contactTl.fromTo(".contact-circle", { scale: 0, opacity: 0 }, {
                 scale: 1,
@@ -676,7 +677,7 @@
                 stagger: 0.2,
                 duration: 0.8,
                 ease: "back.out(1.2)",
-                scrollTrigger: { trigger: ".contact-section", start: "top 75%" }
+                scrollTrigger: { trigger: "#contact-section", start: "top 75%" }
             });
             document.querySelectorAll(".contact-card").forEach(card => {
                 card.addEventListener("mouseenter", () => {
@@ -694,5 +695,6 @@
             alert('Form submitted! (This is a demo message)');
         });
     </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92a8e5148946b0ac',t:'MTc0MzY4Njc1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>

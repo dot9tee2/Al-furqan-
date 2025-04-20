@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# --- Redirect www to non-www ---
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# --- Redirect HTTP to HTTPS ---
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# --- Redirect /index.html to root ---
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# --- Remove .html extension from URL ---
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)$ $1.html [L]
+
+# --- Redirect .html to clean version (SEO-friendly) ---
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^/]+)\.html [NC]
+RewriteRule ^([^/]+)\.html$ https://alfurqanint.com/$1 [R=301,L]

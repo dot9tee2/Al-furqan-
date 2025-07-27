@@ -12,18 +12,41 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Al-furqan International Business LLC - Your trusted partner for custom signs and signboards in Oman. Discover our history, values, and commitment to excellence." />
-    <meta name="keywords" content="about us, sign company history, custom signs Oman, signboard manufacturer, company values" />
+    <meta name="description" content="Learn about Al-furqan International Business LLC - Your trusted partner for custom signs and signboards in Oman. Discover our history, values, team, and commitment to excellence in signage solutions." />
+    <meta name="keywords" content="about us, sign company history, custom signs Oman, signboard manufacturer, company values, Al-furqan team, Oman signage company" />
     <meta name="author" content="Al-furqan International Business LLC" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Us | Al-furqan | Custom Signs & Signboards | Oman" />
+    <meta property="og:description" content="Learn about Al-furqan International Business LLC - Your trusted partner for custom signs and signboards in Oman. Discover our history, values, and commitment to excellence." />
+    <meta property="og:url" content="https://alfurqanint.com/about" />
+    <meta property="og:site_name" content="Al-furqan International Business LLC" />
+    <meta property="og:image" content="https://alfurqanint.com/assets/images/logo.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us | Al-furqan | Custom Signs & Signboards | Oman" />
+    <meta name="twitter:description" content="Learn about Al-furqan International Business LLC - Your trusted partner for custom signs and signboards in Oman." />
+    <meta name="twitter:image" content="https://alfurqanint.com/assets/images/logo.webp" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alfurqanint.com/about" />
     
     <!-- Page Title -->
-    <title>About Us | Al-furqan | Custom Signs & Signboards</title>
+    <title>About Us | Al-furqan | Custom Signs & Signboards | Oman</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo.webp">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/images/logo.webp" as="image">
+    <link rel="preload" href="assets/images/hero-bg.jpg" as="image">
     
     <!-- External CSS Libraries -->
     <!-- Boxicons for icons -->
@@ -793,6 +816,111 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
+    </script>
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-gray-100 py-2 px-4" aria-label="Breadcrumb">
+        <div class="container mx-auto">
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
+                <li class="flex items-center">
+                    <i class='bx bx-chevron-right text-gray-400'></i>
+                    <span class="ml-2 text-bronze font-medium">About Us</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "About Us | Al-furqan | Custom Signs & Signboards",
+        "description": "Learn about Al-furqan International Business LLC - Your trusted partner for custom signs and signboards in Oman.",
+        "url": "https://alfurqanint.com/about",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Al-furqan International Business LLC",
+            "url": "https://alfurqanint.com",
+            "logo": "https://alfurqanint.com/assets/images/logo.webp",
+            "description": "Premium Custom Signs & Signboards for Businesses That Demand Excellence",
+            "foundingDate": "2020",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "P O Box 105",
+                "addressLocality": "Wadi Kabir",
+                "addressRegion": "Muscat",
+                "postalCode": "112",
+                "addressCountry": "OM"
+            },
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+968-9294-9051",
+                    "contactType": "customer service",
+                    "availableLanguage": "English"
+                },
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+968-9696-7601",
+                    "contactType": "customer service",
+                    "availableLanguage": "English"
+                }
+            ],
+            "employee": [
+                {
+                    "@type": "Person",
+                    "name": "Muhammad Ali Akbar",
+                    "jobTitle": "CEO",
+                    "worksFor": {
+                        "@type": "Organization",
+                        "name": "Al-furqan International Business LLC"
+                    }
+                },
+                {
+                    "@type": "Person",
+                    "name": "Jey Marrakesh",
+                    "jobTitle": "Operations Manager",
+                    "worksFor": {
+                        "@type": "Organization",
+                        "name": "Al-furqan International Business LLC"
+                    }
+                },
+                {
+                    "@type": "Person",
+                    "name": "David Dee",
+                    "jobTitle": "Technical Director",
+                    "worksFor": {
+                        "@type": "Organization",
+                        "name": "Al-furqan International Business LLC"
+                    }
+                }
+            ],
+            "sameAs": [
+                "https://facebook.com/alfurqanint",
+                "https://instagram.com/alfurqanint",
+                "https://linkedin.com/company/alfurqanint"
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://alfurqanint.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "About Us",
+                    "item": "https://alfurqanint.com/about"
+                }
+            ]
+        }
+    }
     </script>
 </body>
 </html>

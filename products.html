@@ -1,18 +1,54 @@
+<!--
+  Products Page - Al-furqan International Business LLC
+  Showcase of custom signs and signboards products
+  Author: Mehroz
+  Version: 1.0.0
+  Last Updated: March 2024
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products | Al-furqan | Custom Signs & Signboards</title>
+    <meta name="description" content="Explore our comprehensive range of custom signs and signboards in Oman. From LED signs to acrylic signage, neon signs, and 3D letters - premium quality signage solutions for your business." />
+    <meta name="keywords" content="custom signs Oman, LED signs, acrylic signs, neon signs, 3D letters, signboards, business signs, outdoor signs, indoor signs, Muscat signage" />
+    <meta name="author" content="Al-furqan International Business LLC" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Products | Al-furqan | Custom Signs & Signboards | Oman" />
+    <meta property="og:description" content="Explore our comprehensive range of custom signs and signboards in Oman. From LED signs to acrylic signage, neon signs, and 3D letters." />
+    <meta property="og:url" content="https://alfurqanint.com/products" />
+    <meta property="og:site_name" content="Al-furqan International Business LLC" />
+    <meta property="og:image" content="https://alfurqanint.com/assets/images/logo.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Products | Al-furqan | Custom Signs & Signboards | Oman" />
+    <meta name="twitter:description" content="Explore our comprehensive range of custom signs and signboards in Oman. From LED signs to acrylic signage, neon signs, and 3D letters." />
+    <meta name="twitter:image" content="https://alfurqanint.com/assets/images/logo.webp" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alfurqanint.com/products" />
     
+    <!-- Page Title -->
+    <title>Products | Al-furqan | Custom Signs & Signboards | Oman</title>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.webp">
-
+    <link rel="apple-touch-icon" href="assets/images/logo.webp">
     
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/images/logo.webp" as="image">
+    <link rel="preload" href="assets/products/product1.webp" as="image">
+    
+    <!-- External CSS Libraries -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -105,7 +141,7 @@
         left: -100%;
         width: 50%;
         height: 100%;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3) 85%, rgba(255, 255, 255, 0) 100%);
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 85%, rgba(255,255,255,0) 100%);
         animation: shimmer 5s infinite;
         transform: skewX(-20deg);
       }
@@ -114,10 +150,11 @@
         100% { left: 200%; }
       }
       .tagline {
-        font-family: "Montserrat", sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 300;
         letter-spacing: 2px;
       }
+      
       /* Mobile Menu Styles */
       .mobile-menu {
         position: absolute;
@@ -161,15 +198,6 @@
       @media (max-width: 768px) {
         .hero-content h1 {
           font-size: 2.5rem;
-        }
-        .grid-cols-3 {
-          grid-template-columns: 1fr;
-        }
-        .md\:grid-cols-2 {
-          grid-template-columns: 1fr;
-        }
-        .md\:grid-cols-3 {
-          grid-template-columns: 1fr;
         }
         .py-20, .py-16 {
           padding-top: 3rem;
@@ -568,6 +596,19 @@
         </div>
       </footer>
 
+    <!-- Breadcrumbs -->
+    <nav class="bg-gray-100 py-2 px-4" aria-label="Breadcrumb">
+        <div class="container mx-auto">
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
+                <li class="flex items-center">
+                    <i class='bx bx-chevron-right text-gray-400'></i>
+                    <span class="ml-2 text-bronze font-medium">Products</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Scroll to Top -->
     <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn">
       <i class="bx bx-up-arrow-alt text-2xl"></i>
@@ -678,6 +719,122 @@
         });
       });
     </script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'926ad9212fc86733',t:'MTc0MzAzNjE1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Products | Al-furqan | Custom Signs & Signboards",
+        "description": "Explore our comprehensive range of custom signs and signboards in Oman. From LED signs to acrylic signage, neon signs, and 3D letters.",
+        "url": "https://alfurqanint.com/products",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Custom Signs and Signboards Products",
+            "description": "Comprehensive collection of custom signage products including LED signs, acrylic signs, neon signs, and 3D letters",
+            "numberOfItems": 12,
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "Product",
+                        "name": "Neon Signs",
+                        "description": "Vibrant neon signs for eye-catching business displays",
+                        "image": "https://alfurqanint.com/assets/products/product1.webp",
+                        "category": "Custom Signs"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "Product",
+                        "name": "Acrylic Signs",
+                        "description": "Modern acrylic signs with elegant design",
+                        "image": "https://alfurqanint.com/assets/products/product2.webp",
+                        "category": "Custom Signs"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "Product",
+                        "name": "LED Signs",
+                        "description": "Energy-efficient LED signage solutions",
+                        "image": "https://alfurqanint.com/assets/products/product3.webp",
+                        "category": "Custom Signs"
+                    }
+                }
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://alfurqanint.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Products",
+                    "item": "https://alfurqanint.com/products"
+                }
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Al-furqan International Business LLC",
+            "url": "https://alfurqanint.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://alfurqanint.com/assets/images/logo.webp"
+            }
+        }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Al-furqan International Business LLC",
+        "url": "https://alfurqanint.com",
+        "logo": "https://alfurqanint.com/assets/images/logo.webp",
+        "description": "Premium Custom Signs & Signboards for Businesses That Demand Excellence",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "P O Box 105",
+            "addressLocality": "Wadi Kabir",
+            "addressRegion": "Muscat",
+            "postalCode": "112",
+            "addressCountry": "OM"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+968-9294-9051",
+                "contactType": "customer service",
+                "availableLanguage": "English"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+968-9696-7601",
+                "contactType": "customer service",
+                "availableLanguage": "English"
+            }
+        ],
+        "sameAs": [
+            "https://facebook.com/alfurqanint",
+            "https://instagram.com/alfurqanint",
+            "https://linkedin.com/company/alfurqanint"
+        ]
+    }
+    </script>
   </body>
 </html>

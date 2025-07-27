@@ -8,7 +8,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-04T34P73VG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-04T34P73VG');
+    </script>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -280,12 +289,13 @@
                 <button class="lg:hidden" id="nav-toggle" aria-label="Toggle navigation">
                     <i class='bx bx-menu text-2xl'></i>
                 </button>
-                <ul class="hidden lg:flex lg:items-center lg:space-x-8" id="nav-menu">
+                <ul class="hidden lg:flex space-x-8">
                     <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
                     <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
                     <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
                     <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
                     <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
+                    <li><a href="faqs.html" class="hover:text-bronze transition-colors">FAQs</a></li>
                     <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
                 </ul>
             </div>
@@ -297,11 +307,23 @@
                     <li><a href="about.html" class="block hover:text-bronze transition-colors">About</a></li>
                     <li><a href="services.html" class="block hover:text-bronze transition-colors">Services</a></li>
                     <li><a href="gallery.html" class="block hover:text-bronze transition-colors">Gallery</a></li>
+                    <li><a href="faqs.html" class="block hover:text-bronze transition-colors">FAQs</a></li>
                     <li><a href="contact.html" class="block hover:text-bronze transition-colors">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-100 py-3 px-4">
+      <div class="container mx-auto">
+        <div class="flex items-center space-x-2 text-sm">
+          <a href="index.html" class="text-gray-600 hover:text-bronze transition-colors">Home</a>
+          <i class="bx bx-chevron-right text-gray-400"></i>
+          <span class="text-bronze font-medium">About Us</span>
+        </div>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
     <!-- 

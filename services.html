@@ -8,7 +8,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-04T34P73VG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-04T34P73VG');
+    </script>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -307,6 +316,7 @@
                 <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
                 <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
                 <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
+                <li><a href="faqs.html" class="hover:text-bronze transition-colors">FAQs</a></li>
                 <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
             </ul>
             <!-- Mobile Menu -->
@@ -316,10 +326,22 @@
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
                 <a href="gallery.html">Gallery</a>
+                <a href="faqs.html">FAQs</a>
                 <a href="contact.html">Contact</a>
             </div>
         </nav>
     </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-100 py-3 px-4">
+      <div class="container mx-auto">
+        <div class="flex items-center space-x-2 text-sm">
+          <a href="index.html" class="text-gray-600 hover:text-bronze transition-colors">Home</a>
+          <i class="bx bx-chevron-right text-gray-400"></i>
+          <span class="text-bronze font-medium">Services</span>
+        </div>
+      </div>
+    </nav>
 
     <!-- Services Hero -->
     <section class="hero-parallax text-light py-20 px-4 relative min-h-[100vh] flex items-center">
@@ -697,6 +719,48 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-16 px-4 bg-gray-50 relative overflow-hidden">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-cinzel font-bold mb-4">Featured Products</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Explore our most popular signage products that complement our services</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
+              <i class="bx bx-bulb text-bronze text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">LED Signs</h3>
+            <p class="text-gray-600 mb-4">Energy-efficient LED displays perfect for outdoor advertising and indoor displays.</p>
+            <a href="products.html#led-signs" class="text-bronze hover:underline font-medium">View Products →</a>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
+              <i class="bx bx-cube text-bronze text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">3D Letters</h3>
+            <p class="text-gray-600 mb-4">Three-dimensional letters that create depth and visual impact for your brand.</p>
+            <a href="products.html#3d-letters" class="text-bronze hover:underline font-medium">View Products →</a>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
+              <i class="bx bx-palette text-bronze text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Acrylic Signs</h3>
+            <p class="text-gray-600 mb-4">Modern acrylic signage with elegant design and durability for long-lasting appeal.</p>
+            <a href="products.html#acrylic-signs" class="text-bronze hover:underline font-medium">View Products →</a>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="products.html" class="inline-flex items-center px-6 py-3 bg-bronze text-white rounded-lg hover:bg-bronze-dark transition-colors">
+            View All Products
+            <i class="bx bx-right-arrow-alt ml-2"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Form Section -->

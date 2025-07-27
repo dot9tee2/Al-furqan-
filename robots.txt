@@ -1,0 +1,199 @@
+# Al-furqan International Business LLC - Robots.txt
+# Website: https://alfurqanint.com
+# Last Updated: December 2024
+
+# Allow all search engines to crawl the site
+User-agent: *
+
+# Allow crawling of all pages
+Allow: /
+
+# Disallow crawling of admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+
+# Disallow crawling of system files
+Disallow: /*.log$
+Disallow: /*.sql$
+Disallow: /*.zip$
+Disallow: /*.tar$
+Disallow: /*.gz$
+Disallow: /*.rar$
+
+# Disallow crawling of temporary files
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /cache/
+
+# Allow crawling of important assets
+Allow: /assets/
+Allow: /assets/images/
+Allow: /assets/products/
+Allow: /assets/gallery/
+Allow: /assets/featured/
+Allow: /assets/projects/
+
+# Allow crawling of CSS and JS files
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+
+# Disallow crawling of email handler scripts
+Disallow: /js/email-handler.js
+
+# Allow crawling of main pages
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /products.html
+Allow: /services.html
+Allow: /gallery.html
+Allow: /faqs.html
+
+# Sitemap location
+Sitemap: https://alfurqanint.com/sitemap.xml
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yahoo Bot
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Facebook Bot
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 2
+
+# Twitter Bot
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 2
+
+# LinkedIn Bot
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 2
+
+# Instagram Bot
+User-agent: Instagram
+Allow: /
+Crawl-delay: 2
+
+# WhatsApp Bot
+User-agent: WhatsApp
+Allow: /
+Crawl-delay: 2
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+
+# Block image scrapers
+User-agent: ImageScraper
+Disallow: /
+
+User-agent: ImageBot
+Disallow: /
+
+# Block email harvesters
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+# Block web scrapers
+User-agent: WebStripper
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: Fetch
+Disallow: /
+
+User-agent: Offline Explorer
+Disallow: /
+
+User-agent: Teleport
+Disallow: /
+
+User-agent: TeleportPro
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: linko
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: Microsoft.URL.Control
+Disallow: /
+
+User-agent: Xenu
+Disallow: /
+
+User-agent: larbin
+Disallow: /
+
+User-agent: libwww
+Disallow: /
+
+User-agent: ZyBorg
+Disallow: /
+
+User-agent: Download Ninja
+Disallow: /
+
+# Block archive.org (optional - remove if you want your site archived)
+User-agent: ia_archiver
+Disallow: /
+
+# Block archive.org web crawler
+User-agent: archive.org_bot
+Disallow: /
+
+# Block wayback machine
+User-agent: WaybackMachine
+Disallow: /

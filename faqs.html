@@ -1,44 +1,51 @@
-<!--
-  FAQs Page - Al-furqan International Business LLC
-  Frequently asked questions about custom signs and signboards
-  Author: Mehroz
-  Version: 1.0.0
-  Last Updated: March 2024
--->
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-04T34P73VG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-04T34P73VG');
+    </script>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Frequently asked questions about custom signs and signboards in Oman. Get answers about LED signs, acrylic signage, installation, pricing, and more from Al-furqan International Business LLC." />
-    <meta name="keywords" content="FAQs, custom signs questions, signboard FAQ, LED signs Oman, acrylic signs, signage installation, sign pricing, Al-furqan FAQ" />
+    <meta name="description" content="Get expert answers to frequently asked questions about custom signs, LED displays, acrylic signage, and signboard installation in Oman. Professional guidance from Al-furqan International Business LLC." />
+    <meta name="keywords" content="signage FAQ Oman, custom signs questions, LED display installation, acrylic signs pricing, signboard maintenance, outdoor signage, neon signs, 3D letters, video screens, Al-furqan signage services" />
     <meta name="author" content="Al-furqan International Business LLC" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="geo.region" content="OM" />
+    <meta name="geo.placename" content="Muscat, Oman" />
+    <meta name="geo.position" content="23.5880;58.3829" />
+    <meta name="ICBM" content="23.5880, 58.3829" />
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="FAQs | Al-furqan | Custom Signs & Signboards | Oman" />
-    <meta property="og:description" content="Frequently asked questions about custom signs and signboards in Oman. Get answers about LED signs, acrylic signage, installation, and more." />
+    <meta property="og:title" content="Signage FAQ - Custom Signs & LED Displays | Al-furqan Oman" />
+    <meta property="og:description" content="Expert answers to all your signage questions. LED displays, acrylic signs, neon signs, 3D letters, installation, maintenance, and pricing in Oman." />
     <meta property="og:url" content="https://alfurqanint.com/faqs" />
     <meta property="og:site_name" content="Al-furqan International Business LLC" />
     <meta property="og:image" content="https://alfurqanint.com/assets/images/logo.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image:alt" content="Al-furqan International Business LLC - Premium Custom Signs & Signboards" />
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="FAQs | Al-furqan | Custom Signs & Signboards | Oman" />
-    <meta name="twitter:description" content="Frequently asked questions about custom signs and signboards in Oman." />
+    <meta name="twitter:title" content="Signage FAQ - Custom Signs & LED Displays | Al-furqan Oman" />
+    <meta name="twitter:description" content="Expert answers to all your signage questions. LED displays, acrylic signs, neon signs, 3D letters, installation, maintenance, and pricing in Oman." />
     <meta name="twitter:image" content="https://alfurqanint.com/assets/images/logo.webp" />
+    <meta name="twitter:image:alt" content="Al-furqan International Business LLC - Premium Custom Signs & Signboards" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alfurqanint.com/faqs" />
     
     <!-- Page Title -->
-    <title>FAQs | Al-furqan | Custom Signs & Signboards | Oman</title>
+    <title>Signage FAQ - Custom Signs & LED Displays | Al-furqan Oman</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.webp">
@@ -68,6 +75,8 @@
             }
         }
     </script>
+    
+    <!-- GSAP Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
@@ -124,6 +133,19 @@
             background-color: #f9fafb;
         }
 
+        /* FAQ Styles */
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-accordion-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-accordion-content {
+            transition: all 0.3s ease;
+        }
+
         /* Responsive Media Queries */
         @media (max-width: 768px) {
             .hero-content h1 {
@@ -136,9 +158,6 @@
             .px-8 {
                 padding-left: 1rem;
                 padding-right: 1rem;
-            }
-            .faq-container {
-                padding: 1.5rem;
             }
         }
 
@@ -153,12 +172,6 @@
                 padding-top: 2rem;
                 padding-bottom: 2rem;
             }
-            .faq-accordion-btn {
-                padding: 1rem;
-            }
-            .faq-accordion-content {
-                padding: 1rem;
-            }
         }
     </style>
 </head>
@@ -168,7 +181,7 @@
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-cinzel font-bold flex items-center gap-2">
                 <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto">
-                Al-<span class="text-bronze">Furqan Business International LLC</span>
+                Al-<span class="text-bronze">Furqan</span>
             </a>
             <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
                 <i class='bx bx-menu text-2xl'></i>
@@ -178,8 +191,10 @@
                 <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
                 <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
                 <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
-                <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
+                <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
                 <li><a href="faqs.html" class="hover:text-bronze transition-colors font-medium">FAQs</a></li>
+                <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
+                
             </ul>
             <!-- Mobile Menu -->
             <div class="mobile-menu" id="mobile-menu">
@@ -187,11 +202,23 @@
                 <a href="products.html">Products</a>
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
+                <a href="gallery.html">Gallery</a>
                 <a href="faqs.html" class="font-medium">FAQs</a>
+                <a href="contact.html">Contact</a>
             </div>
         </nav>
     </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-100 py-3 px-4">
+      <div class="container mx-auto">
+        <div class="flex items-center space-x-2 text-sm">
+          <a href="index.html" class="text-gray-600 hover:text-bronze transition-colors">Home</a>
+          <i class="bx bx-chevron-right text-gray-400"></i>
+          <span class="text-bronze font-medium">FAQs</span>
+        </div>
+      </div>
+    </nav>
 
     <!-- FAQs Hero -->
     <section class="hero-parallax text-light py-20 px-4 relative min-h-[100vh] flex items-center">
@@ -211,7 +238,12 @@
                     </span>
                 </span>
             </h1>
-            <p class="tagline text-xl mb-8 max-w-2xl mx-auto opacity-0 text-bronze-light" id="hero-text">Find answers to common questions about our services</p>
+            <p class="tagline text-xl mb-8 max-w-2xl mx-auto opacity-0 text-bronze-light" id="hero-text">
+                Expert answers to all your signage questions
+            </p>
+            <a href="#contact-form" class="bg-bronze text-white px-6 py-3 rounded-full font-semibold hover:bg-bronze-dark transition opacity-0" id="hero-cta">
+                Get a Quote
+            </a>
         </div>
     </section>
 
@@ -219,217 +251,362 @@
     <section class="py-16 px-4 relative overflow-hidden">
         <div class="absolute w-32 h-32 bg-bronze/5 rounded-full -left-10 top-20 faq-circle"></div>
         <div class="absolute w-40 h-40 bg-bronze/5 rounded-full -right-10 bottom-20 faq-circle"></div>
-        <div class="container mx-auto max-w-4xl">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 faq-item" data-faq>
-                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg">
-                        What materials do you use for signboards?
-                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
-                    </button>
-                    <div class="mt-4 text-gray-600 hidden">We use high-quality materials like acrylic, aluminum, and LED components, depending on your project needs.</div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 faq-item" data-faq>
-                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg">
-                        How long does it take to complete a sign?
-                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
-                    </button>
-                    <div class="mt-4 text-gray-600 hidden">Turnaround time varies by complexity, typically 5-10 business days.</div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 faq-item" data-faq>
-                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg">
-                        Do you offer custom designs?
-                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
-                    </button>
-                    <div class="mt-4 text-gray-600 hidden">Yes, we specialize in fully customized signage tailored to your vision.</div>
+        <div class="container mx-auto max-w-6xl">
+            
+            <!-- FAQ Categories Navigation -->
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-cinzel font-bold mb-8 text-bronze">Find Your Answers</h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">Get comprehensive answers to common questions about our custom signage services, LED displays, installation, maintenance, and more.</p>
+                
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="faq-filter-btn active px-6 py-3 rounded-full bg-bronze text-white font-medium transition-all" data-category="all">All Questions</button>
+                    <button class="faq-filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-medium transition-all hover:bg-bronze hover:text-white" data-category="services">Services</button>
+                    <button class="faq-filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-medium transition-all hover:bg-bronze hover:text-white" data-category="products">Products</button>
+                    <button class="faq-filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-medium transition-all hover:bg-bronze hover:text-white" data-category="installation">Installation</button>
+                    <button class="faq-filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-medium transition-all hover:bg-bronze hover:text-white" data-category="pricing">Pricing</button>
+                    <button class="faq-filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-medium transition-all hover:bg-bronze hover:text-white" data-category="maintenance">Maintenance</button>
                 </div>
             </div>
+
+            <!-- FAQ Grid -->
+            <div class="grid lg:grid-cols-2 gap-6">
+                
+                <!-- Services Category -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="services">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        What types of custom signage services do you offer in Oman?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">We offer a comprehensive range of signage services including:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>LED Signs & Displays:</strong> Indoor and outdoor LED displays, video walls, and digital signage</li>
+                            <li><strong>Acrylic Signs:</strong> Custom acrylic lettering, logos, and decorative elements</li>
+                            <li><strong>Neon Signs:</strong> Traditional and modern neon lighting solutions</li>
+                            <li><strong>3D Letters:</strong> Dimensional lettering in various materials and finishes</li>
+                            <li><strong>Metal Signs:</strong> Stainless steel, aluminum, and brass signage</li>
+                            <li><strong>Complete Fit-out Solutions:</strong> Interior and exterior signage packages</li>
+                        </ul>
+                        <p class="mt-3">All our services are available throughout Oman with professional installation and maintenance support.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="services">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        Do you provide complete signage solutions for businesses?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">Yes, we provide end-to-end signage solutions including:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Consultation & Design:</strong> Professional design consultation and custom artwork</li>
+                            <li><strong>Manufacturing:</strong> In-house production using premium materials</li>
+                            <li><strong>Installation:</strong> Professional installation by certified technicians</li>
+                            <li><strong>Maintenance:</strong> Regular maintenance and repair services</li>
+                            <li><strong>Project Management:</strong> Complete project coordination from concept to completion</li>
+                        </ul>
+                        <p class="mt-3">We work with businesses of all sizes, from small shops to large corporations across Oman.</p>
+                    </div>
+                </div>
+
+                <!-- Products Category -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="products">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        What materials do you use for LED displays and signs?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">We use only premium materials for optimal performance and durability:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>LED Components:</strong> High-quality SMD LEDs with excellent brightness and color accuracy</li>
+                            <li><strong>Housing Materials:</strong> Weather-resistant aluminum and stainless steel</li>
+                            <li><strong>Acrylic Panels:</strong> UV-resistant acrylic for outdoor applications</li>
+                            <li><strong>Power Supplies:</strong> Reliable power systems with surge protection</li>
+                            <li><strong>Mounting Systems:</strong> Heavy-duty mounting brackets and hardware</li>
+                        </ul>
+                        <p class="mt-3">All materials are selected for their durability in Oman's climate conditions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="products">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        Can you create custom 3D letters and dimensional signage?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">Absolutely! We specialize in custom 3D dimensional signage:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>3D Letters:</strong> Custom dimensional lettering in various depths and styles</li>
+                            <li><strong>Materials Available:</strong> Acrylic, aluminum, stainless steel, brass, and composite materials</li>
+                            <li><strong>Finishes:</strong> Painted, brushed, polished, or illuminated finishes</li>
+                            <li><strong>Backlighting:</strong> LED backlighting for dramatic night-time visibility</li>
+                            <li><strong>Custom Sizing:</strong> Any size from small interior signs to large outdoor displays</li>
+                        </ul>
+                        <p class="mt-3">Our 3D signage adds premium visual impact to any business location.</p>
+                    </div>
+                </div>
+
+                <!-- Installation Category -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="installation">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        What areas in Oman do you serve for installation?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">We provide installation services throughout the Sultanate of Oman:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Muscat:</strong> All areas including Muttrah, Ruwi, Al Khuwair, and surrounding districts</li>
+                            <li><strong>Salalah:</strong> Complete coverage of Dhofar Governorate</li>
+                            <li><strong>Sohar:</strong> North Al Batinah Governorate</li>
+                            <li><strong>Nizwa:</strong> Ad Dakhiliyah Governorate</li>
+                            <li><strong>Sur:</strong> Ash Sharqiyah Governorate</li>
+                            <li><strong>Other Regions:</strong> We travel to all governorates for major projects</li>
+                        </ul>
+                        <p class="mt-3">Our installation team is equipped to handle projects of any size across Oman.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="installation">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        How long does installation typically take?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">Installation timelines vary based on project complexity:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Simple Signs:</strong> 2-4 hours for basic signage installation</li>
+                            <li><strong>LED Displays:</strong> 1-2 days for medium-sized LED installations</li>
+                            <li><strong>Large Projects:</strong> 3-7 days for complex multi-signage projects</li>
+                            <li><strong>Complete Fit-outs:</strong> 1-2 weeks for full business signage packages</li>
+                        </ul>
+                        <p class="mt-3">We always provide detailed timelines during the consultation phase and work efficiently to minimize business disruption.</p>
+                    </div>
+                </div>
+
+                <!-- Pricing Category -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="pricing">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        How much do custom signs cost in Oman?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">Pricing varies based on several factors:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Size & Complexity:</strong> Larger and more complex designs cost more</li>
+                            <li><strong>Materials:</strong> Premium materials like stainless steel cost more than standard options</li>
+                            <li><strong>Technology:</strong> LED displays are more expensive than static signs</li>
+                            <li><strong>Installation:</strong> Height and accessibility affect installation costs</li>
+                            <li><strong>Quantity:</strong> Bulk orders typically receive discounts</li>
+                        </ul>
+                        <p class="mt-3">We provide detailed quotes after site assessment. Contact us for a free consultation and estimate.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="pricing">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        Do you offer payment plans or financing options?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">Yes, we offer flexible payment options to accommodate different budgets:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Standard Terms:</strong> 50% deposit, 50% upon completion</li>
+                            <li><strong>Large Projects:</strong> Custom payment schedules for major installations</li>
+                            <li><strong>Corporate Clients:</strong> Net 30 payment terms for established businesses</li>
+                            <li><strong>Government Projects:</strong> Special terms for government and institutional clients</li>
+                        </ul>
+                        <p class="mt-3">We work with clients to find payment solutions that work for their business needs.</p>
+                    </div>
+                </div>
+
+                <!-- Maintenance Category -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="maintenance">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        Do you provide maintenance services for LED displays?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">Yes, we offer comprehensive maintenance services:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Regular Maintenance:</strong> Scheduled cleaning and inspection services</li>
+                            <li><strong>Emergency Repairs:</strong> 24/7 emergency repair services for critical signage</li>
+                            <li><strong>LED Module Replacement:</strong> Quick replacement of faulty LED modules</li>
+                            <li><strong>Software Updates:</strong> Content management system updates and troubleshooting</li>
+                            <li><strong>Preventive Maintenance:</strong> Proactive maintenance to prevent issues</li>
+                        </ul>
+                        <p class="mt-3">Our maintenance contracts ensure your signage remains in optimal condition year-round.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="maintenance">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        What warranty do you provide on your signage products?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">We provide comprehensive warranties on all our products:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>LED Displays:</strong> 2-3 years warranty on LED modules and electronics</li>
+                            <li><strong>Acrylic Signs:</strong> 1 year warranty on materials and workmanship</li>
+                            <li><strong>Metal Signs:</strong> 2 years warranty on structural integrity</li>
+                            <li><strong>Installation:</strong> 1 year warranty on installation work</li>
+                            <li><strong>Extended Warranties:</strong> Available for additional coverage</li>
+                        </ul>
+                        <p class="mt-3">All warranties cover parts and labor, ensuring peace of mind for our clients.</p>
+                    </div>
+                </div>
+
+                <!-- General Category -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="general">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        How do I get started with a custom signage project?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">Getting started is easy with our streamlined process:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                            <li><strong>Initial Consultation:</strong> Contact us via phone, WhatsApp, or email</li>
+                            <li><strong>Site Visit:</strong> We'll visit your location for assessment and measurements</li>
+                            <li><strong>Design Proposal:</strong> We'll create custom designs based on your requirements</li>
+                            <li><strong>Quote & Approval:</strong> Detailed quote with timeline and payment terms</li>
+                            <li><strong>Production & Installation:</strong> Manufacturing followed by professional installation</li>
+                        </ol>
+                        <p class="mt-3">Contact us today to begin your signage project journey!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white p-6 rounded-lg shadow-md opacity-0" data-category="general">
+                    <button class="w-full text-left flex justify-between items-center font-semibold text-lg faq-accordion-btn">
+                        What makes Al-furqan different from other signage companies?
+                        <i class='bx bx-chevron-down text-2xl transition-transform'></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-accordion-content">
+                        <p class="mb-3">Al-furqan stands out through our commitment to excellence:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Premium Quality:</strong> We use only the highest quality materials and components</li>
+                            <li><strong>Expert Craftsmanship:</strong> Skilled technicians with years of experience</li>
+                            <li><strong>Comprehensive Service:</strong> From design to installation and maintenance</li>
+                            <li><strong>Local Expertise:</strong> Deep understanding of Oman's climate and regulations</li>
+                            <li><strong>Customer Focus:</strong> Personalized service and ongoing support</li>
+                            <li><strong>Innovation:</strong> Latest technology and design trends</li>
+                        </ul>
+                        <p class="mt-3">We're not just a signage company - we're your branding partner for success.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="mt-16 text-center bg-gradient-to-r from-bronze to-bronze-dark p-8 rounded-lg text-white">
+                <h3 class="text-2xl font-cinzel font-bold mb-4">Still Have Questions?</h3>
+                <p class="text-lg mb-6">Our expert team is here to help with any signage questions or project requirements.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-white text-bronze px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        Contact Us Today
+                    </a>
+                    <a href="tel:+96892949051" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-bronze transition-colors">
+                        Call +968 9294 9051
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
- <!-- Footer -->
- <footer class="bg-bronze text-white pt-16 pb-8">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
-        <div>
-          <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
-            Al-<span class="text-white">Furqan International Business LLC</span>
-          </a>
-          <p class="mb-4">
-            Premium Custom Signs & Signboards for Businesses That Demand
-            Excellence
-          </p>
-          <div class="flex gap-4 mt-4">
-            <a
-              href="#"
-              class="hover:text-white/70 transition-colors"
-              aria-label="Facebook"
-            >
-              <i class="bx bxl-facebook text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              class="hover:text-white/70 transition-colors"
-              aria-label="Instagram"
-            >
-              <i class="bx bxl-instagram text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              class="hover:text-white/70 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <i class="bx bxl-linkedin text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              class="hover:text-white/70 transition-colors"
-              aria-label="Twitter"
-            >
-              <i class="bx bxl-twitter text-2xl"></i>
-            </a>
-          </div>
+    <!-- Footer -->
+    <footer class="bg-bronze text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
+                        Al-<span class="text-white">Furqan International Business LLC</span>
+                    </a>
+                    <p class="mb-4">
+                        Premium Custom Signs & Signboards for Businesses That Demand Excellence
+                    </p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="hover:text-white/70 transition-colors" aria-label="Facebook">
+                            <i class="bx bxl-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-white/70 transition-colors" aria-label="Instagram">
+                            <i class="bx bxl-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-white/70 transition-colors" aria-label="LinkedIn">
+                            <i class="bx bxl-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-white/70 transition-colors" aria-label="Twitter">
+                            <i class="bx bxl-twitter text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-white/70 transition-colors">Home</a></li>
+                        <li><a href="products.html" class="hover:text-white/70 transition-colors">Products</a></li>
+                        <li><a href="about.html" class="hover:text-white/70 transition-colors">About</a></li>
+                        <li><a href="services.html" class="hover:text-white/70 transition-colors">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-white/70 transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white/70 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="hover:text-white/70 transition-colors">Custom Signage</a></li>
+                        <li><a href="services.html" class="hover:text-white/70 transition-colors">LED Signs</a></li>
+                        <li><a href="services.html" class="hover:text-white/70 transition-colors">Acrylic Signs</a></li>
+                        <li><a href="services.html" class="hover:text-white/70 transition-colors">Metal Signs</a></li>
+                        <li><a href="services.html" class="hover:text-white/70 transition-colors">Installation</a></li>
+                        <li><a href="services.html" class="hover:text-white/70 transition-colors">Led Screenings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="bx bx-map text-xl mt-0.5"></i>
+                            <span>P O Box 105 Postal Code 112<br/>Wadi Kabir Sultanate Of Oman</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="bx bxl-whatsapp text-xl"></i>
+                            <a href="https://wa.me/96892949051" target="_blank" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="bx bx-phone text-xl"></i>
+                            <a href="tel:+96896967601" class="hover:text-white/70 transition-colors">+968 9696 7601</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="bx bx-buildings text-xl"></i>
+                            <a href="tel:+96824702723" class="hover:text-white/70 transition-colors">+968 24702723</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="bx bx-envelope text-xl"></i>
+                            <a href="mailto:alfurqanint.business@gmail.com" class="hover:text-white/70 transition-colors">alfurqanint.business@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="bx bx-envelope text-xl"></i>
+                            <a href="mailto:business@alfurqanint.com" class="hover:text-white/70 transition-colors">business@alfurqanint.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="bx bx-time text-xl"></i>
+                            <span>Sun-Thu: 9AM-6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-white/10">
+                <p>&copy; 2024 Al Furqan International Business LLC. All rights reserved.</p>
+                <p class="mt-4 text-white/70 text-sm">Made with <span class="text-red-400">♡</span> by Mehroz</p>
+            </div>
         </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="index.html"
-                class="hover:text-white/70 transition-colors"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="products.html"
-                class="hover:text-white/70 transition-colors"
-                >Products</a
-              >
-            </li>
-            <li>
-              <a
-                href="about.html"
-                class="hover:text-white/70 transition-colors"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="gallery.html"
-                class="hover:text-white/70 transition-colors"
-                >Gallery</a
-              >
-            </li>
-            <li>
-              <a
-                href="contact.html"
-                class="hover:text-white/70 transition-colors"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Our Services</h3>
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Custom Signage</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >LED Signs</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Acrylic Signs</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Metal Signs</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Installation</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="hover:text-white/70 transition-colors"
-                >Led Screenings</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <i class="bx bx-map text-xl mt-0.5"></i>
-              <span>P O Box 105 Postal Code 112<br/>Wadi Kabir Sultanate Of Oman</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bxl-whatsapp text-xl"></i>
-              <a href="https://wa.me/96892949051" target="_blank" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bx-phone text-xl"></i>
-              <a href="tel:+96896967601" class="hover:text-white/70 transition-colors">+968 9696 7601</a>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bx-buildings text-xl"></i>
-              <a href="tel:+96824702723" class="hover:text-white/70 transition-colors">+968 24702723</a>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bx-envelope text-xl"></i>
-              <a href="mailto:alfurqanint.business@gmail.com" class="hover:text-white/70 transition-colors">alfurqanint.business@gmail.com</a>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bx-envelope text-xl"></i>
-              <a href="mailto:business@alfurqanint.com" class="hover:text-white/70 transition-colors">business@alfurqanint.com</a>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="bx bx-time text-xl"></i>
-              <span>Sun-Thu: 9AM-6PM</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="text-center pt-8 border-t border-white/10">
-        <p>
-          &copy; 2024 Al Furqan International Business LLC. All rights reserved.
-        </p>
-        <p class="mt-4 text-white/70 text-sm">
-          Made with <span class="text-red-400">♡</span> by Mehroz
-        </p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <!-- Scroll to Top -->
-    <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn"><i class='bx bx-up-arrow-alt text-2xl'></i></button>
+    <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn">
+        <i class='bx bx-up-arrow-alt text-2xl'></i>
+    </button>
 
     <script>
         // Mobile Navigation Toggle
@@ -451,11 +628,62 @@
             });
         }
 
-        // FAQ Accordion
+        // FAQ Accordion and Filtering
         document.addEventListener('DOMContentLoaded', () => {
-            // Existing code for FAQs
-            
-            // Set up FAQ accordions
+            // GSAP Animations
+            gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+            // Hero Animations
+            const heroTl = gsap.timeline();
+            heroTl.to('.signboard-glow', { opacity: 0.8, duration: 1.5, ease: "power2.inOut" }, 0);
+            heroTl.to('#title-line1', { opacity: 1, duration: 1.2, ease: "power3.out" }, 0.3);
+            heroTl.to('#hero-text', { opacity: 1, duration: 1, ease: "power2.out" }, 1.2);
+            heroTl.to('#hero-cta', { opacity: 1, duration: 1, ease: "power2.out" }, 1.5);
+
+            // Particles
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 6 + 2}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particlesContainer.appendChild(particle);
+            }
+            gsap.to('.particle', {
+                opacity: 0.7,
+                stagger: 0.1,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+            document.querySelectorAll('.particle').forEach(particle => {
+                gsap.to(particle, {
+                    x: `${Math.random() * 100 - 50}px`,
+                    y: `${Math.random() * 100 - 50}px`,
+                    duration: Math.random() * 10 + 5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+            });
+
+            // Parallax and Glow Effects
+            document.querySelector('.hero-parallax').addEventListener('mousemove', (e) => {
+                const xPos = (e.clientX / window.innerWidth) * 100;
+                const yPos = (e.clientY / window.innerHeight) * 100;
+                gsap.to('.signboard-glow', {
+                    background: `radial-gradient(circle at ${xPos}% ${yPos}%, rgba(169, 108, 54, 0.3), transparent 70%)`,
+                    duration: 0.5
+                });
+            });
+            gsap.to('.parallax-layer', {
+                y: (i) => -ScrollTrigger.maxScroll(window) * 0.2,
+                ease: "none",
+                scrollTrigger: { trigger: ".hero-parallax", start: "top top", end: "bottom top", scrub: true }
+            });
+
+            // FAQ Accordion functionality
             const accordionButtons = document.querySelectorAll('.faq-accordion-btn');
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -464,8 +692,7 @@
                     
                     // Toggle current accordion
                     content.classList.toggle('hidden');
-                    icon.classList.toggle('bx-plus');
-                    icon.classList.toggle('bx-minus');
+                    icon.classList.toggle('rotate-180');
                     
                     // Close other accordions
                     accordionButtons.forEach(otherButton => {
@@ -474,77 +701,169 @@
                             const otherIcon = otherButton.querySelector('.bx');
                             
                             otherContent.classList.add('hidden');
-                            otherIcon.classList.remove('bx-minus');
-                            otherIcon.classList.add('bx-plus');
+                            otherIcon.classList.remove('rotate-180');
                         }
                     });
                 });
             });
+
+            // FAQ Category Filtering
+            const filterButtons = document.querySelectorAll('.faq-filter-btn');
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-category');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-bronze', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    button.classList.add('active', 'bg-bronze', 'text-white');
+                    button.classList.remove('bg-gray-200', 'text-gray-700');
+
+                    // Filter FAQ items
+                    faqItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                            item.classList.add('opacity-100');
+                        } else {
+                            item.style.display = 'none';
+                            item.classList.remove('opacity-100');
+                        }
+                    });
+                });
+            });
+
+            // Animate FAQ items on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            faqItems.forEach(item => {
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+
+            // Scroll to top functionality
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.remove('opacity-0', 'invisible');
+                    scrollTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'invisible');
+                    scrollTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         });
     </script>
-
-    <!-- Breadcrumbs -->
-    <nav class="bg-gray-100 py-2 px-4" aria-label="Breadcrumb">
-        <div class="container mx-auto">
-            <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
-                <li class="flex items-center">
-                    <i class='bx bx-chevron-right text-gray-400'></i>
-                    <span class="ml-2 text-bronze font-medium">FAQs</span>
-                </li>
-            </ol>
-        </div>
-    </nav>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "FAQs | Al-furqan | Custom Signs & Signboards",
-        "description": "Frequently asked questions about custom signs and signboards in Oman.",
+        "name": "Signage FAQ - Custom Signs & LED Displays | Al-furqan Oman",
+        "description": "Expert answers to all your signage questions. LED displays, acrylic signs, neon signs, 3D letters, installation, maintenance, and pricing in Oman.",
         "url": "https://alfurqanint.com/faqs",
         "mainEntity": {
             "@type": "FAQPage",
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "What types of custom signs do you offer?",
+                    "name": "What types of custom signage services do you offer in Oman?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "We offer a comprehensive range of custom signs including LED signs, acrylic signs, neon signs, 3D letters, outdoor displays, and complete fit-out solutions."
+                        "text": "We offer a comprehensive range of signage services including LED signs & displays, acrylic signs, neon signs, 3D letters, metal signs, and complete fit-out solutions. All services are available throughout Oman with professional installation and maintenance support."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "Do you provide installation services?",
+                    "name": "What materials do you use for LED displays and signs?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Yes, we provide complete installation services for all our signage products, including site assessment, installation, and post-installation support."
+                        "text": "We use only premium materials including high-quality SMD LEDs, weather-resistant aluminum and stainless steel housing, UV-resistant acrylic panels, reliable power systems with surge protection, and heavy-duty mounting systems. All materials are selected for durability in Oman's climate conditions."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "What areas do you serve in Oman?",
+                    "name": "Can you create custom 3D letters and dimensional signage?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "We serve the entire Sultanate of Oman, with our main operations in Muscat and surrounding areas."
+                        "text": "Absolutely! We specialize in custom 3D dimensional signage including custom dimensional lettering in various depths and styles, materials like acrylic, aluminum, stainless steel, brass, and composite materials, with painted, brushed, polished, or illuminated finishes and LED backlighting for dramatic night-time visibility."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "How long does it take to complete a signage project?",
+                    "name": "What areas in Oman do you serve for installation?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Project timelines vary depending on complexity and size. Simple signs can be completed in 1-2 weeks, while complex projects may take 4-6 weeks."
+                        "text": "We provide installation services throughout the Sultanate of Oman including Muscat (Muttrah, Ruwi, Al Khuwair), Salalah (Dhofar Governorate), Sohar (North Al Batinah), Nizwa (Ad Dakhiliyah), Sur (Ash Sharqiyah), and all other governorates for major projects."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "Do you provide maintenance services?",
+                    "name": "How long does installation typically take?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Yes, we offer comprehensive maintenance services for all our signage products to ensure optimal performance and longevity."
+                        "text": "Installation timelines vary: simple signs take 2-4 hours, LED displays take 1-2 days, large projects take 3-7 days, and complete fit-outs take 1-2 weeks. We provide detailed timelines during consultation and work efficiently to minimize business disruption."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much do custom signs cost in Oman?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Pricing varies based on size & complexity, materials (premium materials cost more), technology (LED displays are more expensive than static signs), installation requirements, and quantity (bulk orders receive discounts). We provide detailed quotes after site assessment."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you provide maintenance services for LED displays?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, we offer comprehensive maintenance services including scheduled cleaning and inspection, 24/7 emergency repairs for critical signage, quick LED module replacement, software updates and troubleshooting, and preventive maintenance to prevent issues."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What warranty do you provide on your signage products?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We provide comprehensive warranties: LED displays (2-3 years on modules and electronics), acrylic signs (1 year on materials and workmanship), metal signs (2 years on structural integrity), installation (1 year on installation work), and extended warranties available for additional coverage."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I get started with a custom signage project?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Our streamlined process includes: 1) Initial consultation via phone, WhatsApp, or email, 2) Site visit for assessment and measurements, 3) Design proposal based on requirements, 4) Quote & approval with timeline and payment terms, 5) Production & professional installation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What makes Al-furqan different from other signage companies?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Al-furqan stands out through premium quality materials and components, expert craftsmanship with skilled technicians, comprehensive service from design to maintenance, local expertise in Oman's climate and regulations, customer-focused personalized service, and innovation with latest technology and design trends."
                     }
                 }
             ]
@@ -574,6 +893,11 @@
                 "@type": "ImageObject",
                 "url": "https://alfurqanint.com/assets/images/logo.webp"
             }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://alfurqanint.com/contact",
+            "query-input": "required name=search_term_string"
         }
     }
     </script>
@@ -617,4 +941,4 @@
     }
     </script>
 </body>
-</html>
+</html> 

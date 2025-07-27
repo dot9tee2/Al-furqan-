@@ -9,6 +9,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-04T34P73VG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-04T34P73VG');
+    </script>
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -240,6 +249,7 @@
           <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
           <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
           <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
+          <li><a href="faqs.html" class="hover:text-bronze transition-colors">FAQs</a></li>
           <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
         </ul>
         <!-- Mobile Menu -->
@@ -249,10 +259,22 @@
           <a href="about.html">About</a>
           <a href="services.html">Services</a>
           <a href="gallery.html">Gallery</a>
+          <a href="faqs.html">FAQs</a>
           <a href="contact.html">Contact</a>
         </div>
       </nav>
     </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-100 py-3 px-4">
+      <div class="container mx-auto">
+        <div class="flex items-center space-x-2 text-sm">
+          <a href="index.html" class="text-gray-600 hover:text-bronze transition-colors">Home</a>
+          <i class="bx bx-chevron-right text-gray-400"></i>
+          <span class="text-bronze font-medium">Products</span>
+        </div>
+      </div>
+    </nav>
 
     <!-- Products Hero -->
     <section class="hero-parallax text-light py-20 px-4 relative min-h-[100vh] flex items-center">
@@ -289,7 +311,7 @@
             <img src="assets/products/product1.webp" alt="Neon Signs" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Neon Signs</h3>
-              <p class="text-gray-600 mb-4">Vibrant and eye-catching neon signs.</p>
+              <p class="text-gray-600 mb-4">Vibrant and eye-catching neon signs perfect for restaurants, bars, and retail spaces. <a href="services.html#neon-signs" class="text-bronze hover:underline text-sm">Learn more about our neon services</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -298,7 +320,7 @@
             <img src="assets/products/product2.webp" alt="Acrylic Signs" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Acrylic Signs</h3>
-              <p class="text-gray-600 mb-4">Durable and stylish acrylic signage.</p>
+              <p class="text-gray-600 mb-4">Durable and stylish acrylic signage with depth and dimension. <a href="gallery.html#acrylic-projects" class="text-bronze hover:underline text-sm">View acrylic projects</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -307,7 +329,7 @@
             <img src="assets/products/product3.webp" alt="LED Signs" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">LED Signs</h3>
-              <p class="text-gray-600 mb-4">Bright and efficient LED displays.</p>
+              <p class="text-gray-600 mb-4">Bright and efficient LED displays for maximum visibility. <a href="services.html#led-screening" class="text-bronze hover:underline text-sm">Explore LED screening services</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -316,7 +338,7 @@
             <img src="assets/products/signboard.webp" alt="Signboards" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Signboards</h3>
-              <p class="text-gray-600 mb-4">Custom signboards for outdoor advertising and business identification.</p>
+              <p class="text-gray-600 mb-4">Custom signboards for outdoor advertising and business identification. <a href="services.html#installation" class="text-bronze hover:underline text-sm">Professional installation included</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -325,7 +347,7 @@
             <img src="assets/products/back-led-lights.webp" alt="Back LED Lights" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Back LED Lights</h3>
-              <p class="text-gray-600 mb-4">Backlit signs with LED illumination for enhanced visibility.</p>
+              <p class="text-gray-600 mb-4">Backlit signs with LED illumination for enhanced visibility. <a href="products.html#led-signs" class="text-bronze hover:underline text-sm">See all LED options</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -334,7 +356,7 @@
             <img src="assets/products/3d-letters.webp" alt="3D Letters" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Letters</h3>
-              <p class="text-gray-600 mb-4">Three-dimensional letters for impactful branding.</p>
+              <p class="text-gray-600 mb-4">Three-dimensional letters for impactful branding. <a href="gallery.html#3d-projects" class="text-bronze hover:underline text-sm">View 3D projects</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -343,7 +365,7 @@
             <img src="assets/products/stainless-steel-back-side-light.webp" alt="Stainless Steel Back Side Light" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Stainless Steel Back Side Light</h3>
-              <p class="text-gray-600 mb-4">Durable stainless steel backlit signs.</p>
+              <p class="text-gray-600 mb-4">Durable stainless steel backlit signs with premium finish. <a href="products.html#metal-signs" class="text-bronze hover:underline text-sm">Explore metal signage options</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -352,7 +374,7 @@
             <img src="assets/products/3d-profile-letter-signage.webp" alt="3D Profile Letter Signage" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Profile Letter Signage</h3>
-              <p class="text-gray-600 mb-4">Profiled 3D letters for a unique look.</p>
+              <p class="text-gray-600 mb-4">Profiled 3D letters for a unique look. <a href="gallery.html#3d-projects" class="text-bronze hover:underline text-sm">See 3D letter projects</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -361,7 +383,7 @@
             <img src="assets/products/cladding-work-signage.webp" alt="Cladding Work and Signage" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Cladding Work and Signage</h3>
-              <p class="text-gray-600 mb-4">Integrated signage solutions with building cladding.</p>
+              <p class="text-gray-600 mb-4">Integrated signage solutions with building cladding. <a href="services.html#fit-out" class="text-bronze hover:underline text-sm">Complete fit-out services</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -370,7 +392,7 @@
             <img src="assets/products/kiosk-stall-signage.webp" alt="Kiosk Stall Signage" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Kiosk Stall Signage</h3>
-              <p class="text-gray-600 mb-4">Custom signage for kiosks and stalls.</p>
+              <p class="text-gray-600 mb-4">Custom signage for kiosks and stalls. <a href="gallery.html#retail-projects" class="text-bronze hover:underline text-sm">View retail projects</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -379,7 +401,7 @@
             <img src="assets/products/3d-signage.webp" alt="3D Signage" class="w-full h-64 object-cover" loading="lazy" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Signage</h3>
-              <p class="text-gray-600 mb-4">Advanced 3D signage solutions.</p>
+              <p class="text-gray-600 mb-4">Advanced 3D signage solutions for maximum impact. <a href="gallery.html#3d-projects" class="text-bronze hover:underline text-sm">Browse 3D projects</a>.</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -410,6 +432,48 @@
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services Section -->
+    <section class="py-16 px-4 bg-gray-50 relative overflow-hidden">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-cinzel font-bold mb-4">Related Services</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Complement your signage with our comprehensive range of professional services</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
+              <i class="bx bx-cog text-bronze text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Installation Services</h3>
+            <p class="text-gray-600 mb-4">Professional installation and mounting of all signage types with safety and precision.</p>
+            <a href="services.html#installation" class="text-bronze hover:underline font-medium">Learn More →</a>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
+              <i class="bx bx-palette text-bronze text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Design Services</h3>
+            <p class="text-gray-600 mb-4">Custom design and consultation to create the perfect signage solution for your brand.</p>
+            <a href="services.html#design" class="text-bronze hover:underline font-medium">Learn More →</a>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
+              <i class="bx bx-wrench text-bronze text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Maintenance & Repair</h3>
+            <p class="text-gray-600 mb-4">Ongoing maintenance and repair services to keep your signage looking perfect.</p>
+            <a href="services.html#maintenance" class="text-bronze hover:underline font-medium">Learn More →</a>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="services.html" class="inline-flex items-center px-6 py-3 bg-bronze text-white rounded-lg hover:bg-bronze-dark transition-colors">
+            View All Services
+            <i class="bx bx-right-arrow-alt ml-2"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -493,6 +557,13 @@
                     href="gallery.html"
                     class="hover:text-white/70 transition-colors"
                     >Gallery</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="faqs.html"
+                    class="hover:text-white/70 transition-colors"
+                    >FAQs</a
                   >
                 </li>
                 <li>

@@ -17,18 +17,41 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore our portfolio of custom signs and signboards. View our latest projects, including LED signs, acrylic signs, and more. See how we've helped businesses enhance their brand visibility." />
-    <meta name="keywords" content="sign gallery, custom signs portfolio, LED signs, acrylic signs, signboard projects, signage showcase" />
+    <meta name="description" content="Explore our comprehensive portfolio of custom signs and signboards in Oman. View LED signs, acrylic signs, video displays, and installation projects. See how Al-furqan International Business LLC has helped businesses enhance their brand visibility across the Sultanate." />
+    <meta name="keywords" content="sign gallery Oman, custom signs portfolio, LED signs Muscat, acrylic signs, signboard projects, signage showcase, video displays, installation gallery, Al-furqan gallery" />
     <meta name="author" content="Al-furqan International Business LLC" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gallery | Al-furqan | Custom Signs & Signboards Portfolio" />
+    <meta property="og:description" content="Explore our comprehensive portfolio of custom signs and signboards in Oman. View LED signs, acrylic signs, video displays, and installation projects." />
+    <meta property="og:url" content="https://alfurqanint.com/gallery" />
+    <meta property="og:site_name" content="Al-furqan International Business LLC" />
+    <meta property="og:image" content="https://alfurqanint.com/assets/images/logo.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gallery | Al-furqan | Custom Signs & Signboards Portfolio" />
+    <meta name="twitter:description" content="Explore our comprehensive portfolio of custom signs and signboards in Oman. View LED signs, acrylic signs, video displays, and installation projects." />
+    <meta name="twitter:image" content="https://alfurqanint.com/assets/images/logo.webp" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alfurqanint.com/gallery" />
     
     <!-- Page Title -->
-    <title>Gallery | Al-furqan | Custom Signs & Signboards</title>
+    <title>Gallery | Al-furqan | Custom Signs & Signboards Portfolio | Oman</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo.webp">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/images/logo.webp" as="image">
+    <link rel="preload" href="assets/featured/1.jpeg" as="image">
     
     <!-- External CSS Libraries -->
     <!-- Boxicons for icons -->
@@ -363,42 +386,43 @@
     </header>
 
     <!-- Gallery Hero -->
-    <section class="hero-parallax text-light py-20 px-4 relative min-h-[100vh] flex items-center">
-        <!-- Add logo background with increased opacity -->
-        <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <img src="assets/images/logo2.webp" alt="Al-furqan Logo" class="max-w-[500px] w-full h-auto">
-        </div>
-        <div class="parallax-layer sign-particles" id="particles"></div>
-        <div class="parallax-layer hero-overlay"></div>
-        <div class="signboard-glow"></div>
-        <div class="container mx-auto max-w-4xl text-center hero-content">
-            <h1 class="font-cinzel font-bold mb-8" id="hero-title">
-                <span class="block overflow-hidden mb-2">
-                    <span class="title-mask block opacity-0 text-5xl md:text-6xl" id="title-line1">
-                        <span class="bronze-text">Our Gallery</span>
-                        <span class="bronze-shimmer"></span>
+    <main>
+        <section class="hero-parallax text-light py-20 px-4 relative min-h-[100vh] flex items-center" role="banner" aria-labelledby="hero-title">
+            <!-- Add logo background with increased opacity -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                <img src="assets/images/logo2.webp" alt="Al-furqan International Business LLC Logo" class="max-w-[500px] w-full h-auto">
+            </div>
+            <div class="parallax-layer sign-particles" id="particles"></div>
+            <div class="parallax-layer hero-overlay"></div>
+            <div class="signboard-glow"></div>
+            <div class="container mx-auto max-w-4xl text-center hero-content">
+                <h1 class="font-cinzel font-bold mb-8" id="hero-title">
+                    <span class="block overflow-hidden mb-2">
+                        <span class="title-mask block opacity-0 text-5xl md:text-6xl" id="title-line1">
+                            <span class="bronze-text">Our Gallery</span>
+                            <span class="bronze-shimmer"></span>
+                        </span>
                     </span>
-                </span>
-            </h1>
-            <p class="tagline text-xl mb-8 max-w-2xl mx-auto opacity-0 text-bronze-light" id="hero-text">Explore our stunning signboard creations</p>
-        </div>
-    </section>
+                </h1>
+                <p class="tagline text-xl mb-8 max-w-2xl mx-auto opacity-0 text-bronze-light" id="hero-text">Explore our stunning signboard creations and custom signage solutions</p>
+            </div>
+        </section>
 
     <!-- Featured Carousel Section -->
-    <section class="py-16 px-4 bg-gray-50 relative overflow-hidden">
+    <section class="py-16 px-4 bg-gray-50 relative overflow-hidden" aria-labelledby="featured-projects-title">
         <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-12">
+            <header class="text-center mb-12">
                 <span class="text-bronze font-medium">Featured Work</span>
-                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">Our Latest Projects</h2>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4" id="featured-projects-title">Our Latest Projects</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Discover our most recent and impressive signboard installations and custom signage solutions.</p>
-            </div>
+            </header>
             
             <!-- Swiper Carousel -->
             <div class="swiper featured-carousel opacity-0" id="featured-carousel">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/1.jpeg" alt="Featured Project 1" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/1.jpeg" alt="Premium LED Signboard - Custom illuminated signage with premium finish" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Premium Signboard</h3>
@@ -409,7 +433,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/2.jpeg" alt="Featured Project 2" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/2.jpeg" alt="Video Display Installation - High-resolution LED video display for dynamic content" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Video Display Installation</h3>
@@ -420,7 +444,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/3.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/3.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
@@ -431,7 +455,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/4.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/4.jpeg" alt="Kiosk Stall - Elegant kiosk stall design with custom signage" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Kiosk Stall</h3>
@@ -442,7 +466,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/5.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/5.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design and premium finish" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
@@ -453,7 +477,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/6.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/6.jpeg" alt="Restaurant Fit Out - Complete restaurant interior design and signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
@@ -464,7 +488,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/7.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/7.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
@@ -475,7 +499,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/8.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/8.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design and custom branding" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
@@ -486,7 +510,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/9.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/9.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
@@ -497,7 +521,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/10.jpeg" alt="Featured Project 3" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/10.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
@@ -515,13 +539,13 @@
     </section>
 
     <!-- Signboard Section -->
-    <section class="py-16 px-4 bg-white relative overflow-hidden">
+    <section class="py-16 px-4 bg-white relative overflow-hidden" aria-labelledby="signboard-collection-title">
         <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-12">
+            <header class="text-center mb-12">
                 <span class="text-bronze font-medium">Our Work</span>
-                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">Signboard Collection</h2>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4" id="signboard-collection-title">Signboard Collection</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Explore our diverse collection of custom signboards and signage solutions.</p>
-            </div>
+            </header>
             
             <!-- Pinterest-style Grid for Signboards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="signboard-grid">
@@ -538,15 +562,15 @@
     </section>
 
     <!-- Video Screening Section -->
-    <section class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden" aria-labelledby="video-screening-title">
         <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16">
+            <header class="text-center mb-16">
                 <span class="text-bronze font-medium">Our Work</span>
-                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4" id="video-screening-title">
                     Video Screening Projects
                 </h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Showcasing our video screening and digital display installations.</p>
-            </div>
+            </header>
             
             <!-- Carousel for Video Screening -->
             <div class="swiper video-screening-carousel opacity-0 relative" id="video-screening-carousel">
@@ -561,13 +585,13 @@
     </section>
 
     <!-- Installation Section -->
-    <section class="py-16 px-4 bg-white relative overflow-hidden">
+    <section class="py-16 px-4 bg-white relative overflow-hidden" aria-labelledby="installation-gallery-title">
         <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-12">
+            <header class="text-center mb-12">
                 <span class="text-bronze font-medium">Our Process</span>
-                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">Installation Gallery</h2>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4" id="installation-gallery-title">Installation Gallery</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Behind the scenes of our professional installation process.</p>
-            </div>
+            </header>
             
             <!-- Grid for Installation Process -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="installation-grid">
@@ -577,15 +601,15 @@
     </section>
 
     <!-- Acrylic Signs Section -->
-    <section class="py-20 px-4 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section class="py-20 px-4 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden" aria-labelledby="acrylic-signs-title">
         <div class="container mx-auto max-w-6xl relative">
-            <div class="text-center mb-12">
+            <header class="text-center mb-12">
                 <span class="text-bronze font-medium">Our Work</span>
-                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4">
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4" id="acrylic-signs-title">
                     Acrylic Signs Collection
                 </h2>
                 <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mt-4">Discover our elegant acrylic signage solutions crafted for modern businesses.</p>
-            </div>
+            </header>
             
             <!-- Carousel for Acrylic Signs -->
             <div class="swiper acrylic-carousel opacity-0 relative" id="acrylic-carousel">
@@ -599,6 +623,7 @@
         </div>
     </section>
 
+        </main>
     <!-- Footer -->
     <footer class="bg-bronze text-white pt-16 pb-8">
         <div class="container mx-auto px-4">
@@ -780,6 +805,19 @@
           </div>
         </div>
       </footer>
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-gray-100 py-2 px-4" aria-label="Breadcrumb">
+        <div class="container mx-auto">
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
+                <li class="flex items-center">
+                    <i class='bx bx-chevron-right text-gray-400'></i>
+                    <span class="ml-2 text-bronze font-medium">Gallery</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
 
     <!-- Scroll to Top -->
     <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn"><i class='bx bx-up-arrow-alt text-2xl'></i></button>
@@ -1073,15 +1111,16 @@
             galleryItems.forEach(item => observer.observe(item));
         });
 
-        // Enhanced gallery item creation with loading state
+        // Enhanced gallery item creation with loading state and SEO optimization
         function createGalleryItem(image, title, description) {
             return `
-                <div class="gallery-item bg-white rounded-lg shadow-md overflow-hidden">
+                <article class="gallery-item bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="relative group">
                         <img src="${image}" 
-                             alt="${title}" 
+                             alt="${title} - ${description}" 
                              class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                             loading="lazy">
+                             loading="lazy"
+                             title="${title}">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                 <h3 class="text-xl font-cinzel font-semibold mb-2">${title}</h3>
@@ -1089,26 +1128,27 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
             `;
         }
 
-        // Create carousel slide with simplified loading
+        // Create carousel slide with simplified loading and SEO optimization
         function createCarouselSlide(image) {
             return `
                 <div class="swiper-slide">
-                    <div class="relative rounded-lg overflow-hidden shadow-lg group">
+                    <article class="relative rounded-lg overflow-hidden shadow-lg group">
                         <img src="${image.src}" 
-                             alt="${image.title}" 
+                             alt="${image.title} - ${image.description}" 
                              class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110"
-                             loading="lazy">
+                             loading="lazy"
+                             title="${image.title}">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                 <h3 class="text-2xl font-cinzel font-semibold mb-2">${image.title}</h3>
                                 <p class="text-white/90">${image.description}</p>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             `;
         }
@@ -1671,6 +1711,132 @@
                 new Swiper(acrylicCarousel, swiperConfig);
             }
         }
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Gallery | Al-furqan | Custom Signs & Signboards Portfolio",
+        "description": "Explore our comprehensive portfolio of custom signs and signboards in Oman. View LED signs, acrylic signs, video displays, and installation projects.",
+        "url": "https://alfurqanint.com/gallery",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Signage Portfolio Gallery",
+            "description": "Collection of custom signage projects including LED signs, acrylic signs, video displays, and installation work",
+            "numberOfItems": 66,
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "CreativeWork",
+                        "name": "Premium LED Signboard",
+                        "description": "Custom illuminated LED signboard with premium finish and dynamic lighting effects",
+                        "image": "https://alfurqanint.com/assets/gallery/signboard/1.jpeg"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "CreativeWork",
+                        "name": "Video Display Installation",
+                        "description": "High-resolution LED video display for dynamic content",
+                        "image": "https://alfurqanint.com/assets/gallery/video-screening/1.jpeg"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "CreativeWork",
+                        "name": "Acrylic Signage",
+                        "description": "Modern acrylic sign with elegant design",
+                        "image": "https://alfurqanint.com/assets/gallery/arcylics signs/1.jpeg"
+                    }
+                }
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://alfurqanint.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Gallery",
+                    "item": "https://alfurqanint.com/gallery"
+                }
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Al-furqan International Business LLC",
+            "url": "https://alfurqanint.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://alfurqanint.com/assets/images/logo.webp"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "OM",
+                "addressLocality": "Wadi Kabir",
+                "postalCode": "112"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+968-9294-9051",
+                "contactType": "customer service",
+                "availableLanguage": "English"
+            }
+        }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Al-furqan International Business LLC",
+        "url": "https://alfurqanint.com",
+        "logo": "https://alfurqanint.com/assets/images/logo.webp",
+        "description": "Premium Custom Signs & Signboards for Businesses That Demand Excellence",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "P O Box 105",
+            "addressLocality": "Wadi Kabir",
+            "addressRegion": "Muscat",
+            "postalCode": "112",
+            "addressCountry": "OM"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+968-9294-9051",
+                "contactType": "customer service",
+                "availableLanguage": "English"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+968-9696-7601",
+                "contactType": "customer service",
+                "availableLanguage": "English"
+            }
+        ],
+        "sameAs": [
+            "https://facebook.com/alfurqanint",
+            "https://instagram.com/alfurqanint",
+            "https://linkedin.com/company/alfurqanint"
+        ]
+    }
     </script>
 </body>
 </html>

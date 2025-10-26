@@ -50,7 +50,7 @@
     <title>Services | Al-furqan | Custom Signs & Signboards | Oman</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.webp">
+    <link rel="icon" type="image/webp" href="assets/images/logo.webp">
     <link rel="apple-touch-icon" href="assets/images/logo.webp">
     
     <!-- Preload Critical Resources -->
@@ -371,7 +371,7 @@
     </section>
 
     <!-- Featured Fit-Out Services Section -->
-    <section class="py-20 px-4 bg-gradient-to-b from-bronze/5 to-white relative overflow-hidden">
+    <section id="fit-out" class="py-20 px-4 bg-gradient-to-b from-bronze/5 to-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-64 h-64 bg-bronze/5 rounded-full -z-10 blur-3xl"></div>
         <div class="absolute bottom-0 right-0 w-48 h-48 bg-bronze/5 rounded-full -z-10 blur-3xl"></div>
         <div class="container mx-auto max-w-6xl">
@@ -516,7 +516,7 @@
     </section>
 
     <!-- LED Screening Services Section -->
-    <section class="py-20 px-4 bg-gradient-to-b from-bronze/5 to-white relative overflow-hidden">
+    <section id="led-screening" class="py-20 px-4 bg-gradient-to-b from-bronze/5 to-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-64 h-64 bg-bronze/5 rounded-full -z-10 blur-3xl"></div>
         <div class="absolute bottom-0 right-0 w-48 h-48 bg-bronze/5 rounded-full -z-10 blur-3xl"></div>
         <div class="container mx-auto max-w-6xl">
@@ -670,7 +670,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1: Custom Sign Design -->
-                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
+                <div id="design" class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
                     <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                         <i class='bx bx-bulb text-bronze text-2xl'></i>
                     </div>
@@ -686,7 +686,7 @@
                     <p class="text-gray-600">High-quality production using premium materials like brass, acrylic, and stainless steel for durable signs.</p>
                 </div>
                 <!-- Service 3: Installation Services -->
-                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
+                <div id="installation" class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
                     <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                         <i class='bx bx-wrench text-bronze text-2xl'></i>
                     </div>
@@ -702,7 +702,7 @@
                     <p class="text-gray-600">Expert guidance to choose the right signage solutions that enhance your brand visibility.</p>
                 </div>
                 <!-- Service 5: Maintenance & Repair -->
-                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
+                <div id="maintenance" class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
                     <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                         <i class='bx bx-tools text-bronze text-2xl'></i>
                     </div>
@@ -716,6 +716,14 @@
                     </div>
                     <h3 class="font-semibold text-xl mb-2">Digital Signage Solutions</h3>
                     <p class="text-gray-600">Dynamic video screens and LED displays to create engaging and modern advertising solutions.</p>
+                </div>
+                <!-- Service 7: Neon Signs -->
+                <div id="neon-signs" class="bg-white p-6 rounded-lg shadow-md opacity-0 service-card">
+                    <div class="bg-bronze/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i class='bx bx-bulb text-bronze text-2xl'></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-2">Neon Signs</h3>
+                    <p class="text-gray-600">Vibrant custom neon signage for eye-catching branding across retail, hospitality, and events.</p>
                 </div>
             </div>
         </div>
@@ -735,7 +743,7 @@
             </div>
             <h3 class="text-xl font-semibold mb-2">LED Signs</h3>
             <p class="text-gray-600 mb-4">Energy-efficient LED displays perfect for outdoor advertising and indoor displays.</p>
-            <a href="products.html#led-signs" class="text-bronze hover:underline font-medium">View Products →</a>
+            <a href="products.html" class="text-bronze hover:underline font-medium">View Products →</a>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
             <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
@@ -743,7 +751,7 @@
             </div>
             <h3 class="text-xl font-semibold mb-2">3D Letters</h3>
             <p class="text-gray-600 mb-4">Three-dimensional letters that create depth and visual impact for your brand.</p>
-            <a href="products.html#3d-letters" class="text-bronze hover:underline font-medium">View Products →</a>
+            <a href="products.html" class="text-bronze hover:underline font-medium">View Products →</a>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
             <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
@@ -751,7 +759,7 @@
             </div>
             <h3 class="text-xl font-semibold mb-2">Acrylic Signs</h3>
             <p class="text-gray-600 mb-4">Modern acrylic signage with elegant design and durability for long-lasting appeal.</p>
-            <a href="products.html#acrylic-signs" class="text-bronze hover:underline font-medium">View Products →</a>
+            <a href="products.html" class="text-bronze hover:underline font-medium">View Products →</a>
           </div>
         </div>
         <div class="text-center mt-8">
@@ -917,10 +925,9 @@
                 </li>
                 <li>
                   <a
-                    href="services.html"
+                    href="services.html#led-screening"
                     class="hover:text-white/70 transition-colors"
-                    >Led Screenings</a
-                  >
+                    >LED Screening</a>
                 </li>
               </ul>
             </div>
@@ -929,7 +936,7 @@
               <ul class="space-y-3">
                 <li class="flex items-start gap-3">
                   <i class="bx bx-map text-xl mt-0.5"></i>
-                  <span>P O Box 105 Postal Code 112<br/>Wadi Kabir Sultanate Of Oman</span>
+                  <span>2nd Floor, 4376 Way, Wadi Kabir, Muscat, Sultanate of Oman<br/>P.O. Box 1477392, P.C. 112</span>
                 </li>
                 <li class="flex items-center gap-3">
                   <i class="bx bxl-whatsapp text-xl"></i>
@@ -1109,18 +1116,7 @@
         });
     </script>
 
-    <!-- Breadcrumbs -->
-    <nav class="bg-gray-100 py-2 px-4" aria-label="Breadcrumb">
-        <div class="container mx-auto">
-            <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
-                <li class="flex items-center">
-                    <i class='bx bx-chevron-right text-gray-400'></i>
-                    <span class="ml-2 text-bronze font-medium">Services</span>
-                </li>
-            </ol>
-        </div>
-    </nav>
+    
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -1215,19 +1211,22 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "name": "Al-furqan International Business LLC",
         "url": "https://alfurqanint.com",
         "logo": "https://alfurqanint.com/assets/images/logo.webp",
         "description": "Premium Custom Signs & Signboards for Businesses That Demand Excellence",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "P O Box 105",
+            "streetAddress": "2nd Floor, 4376 Way",
             "addressLocality": "Wadi Kabir",
             "addressRegion": "Muscat",
             "postalCode": "112",
-            "addressCountry": "OM"
+            "addressCountry": "OM",
+            "postOfficeBoxNumber": "1477392"
         },
+        "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.5264597308228!2d58.54649985709227!3d23.589145222581106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91f90aec064279%3A0xde1b18cb7c3811b6!2sAl%20Furqan%20International%20Business%20LLC.%20KARACHI-EES%20RESTAURANT!5e0!3m2!1sen!2som!4v1761508796009!5m2!1sen!2som",
+        "geo": { "@type": "GeoCoordinates", "latitude": 23.5891452, "longitude": 58.5464999 },
         "contactPoint": [
             {
                 "@type": "ContactPoint",

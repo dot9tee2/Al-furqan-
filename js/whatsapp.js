@@ -33,10 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add WhatsApp CTA to desktop navbar (append to the nav list)
   const desktopNav = document.querySelector('header ul.lg\\:flex');
-  if (desktopNav && !desktopNav.querySelector('.wa-nav-btn')) {
-    const navItem = document.createElement('li');
-    navItem.innerHTML = `<a href="${whatsappUrl}" target="_blank" rel="noopener" class="wa-nav-btn"><i class='bx bxl-whatsapp text-xl'></i><span>WhatsApp</span></a>`;
-    desktopNav.appendChild(navItem);
+  if (desktopNav) {
+    // Ensure vertical centering of all nav items
+    if (!desktopNav.classList.contains('items-center')) {
+      desktopNav.classList.add('items-center');
+    }
+    // Append CTA if not already present
+    if (!desktopNav.querySelector('.wa-nav-btn')) {
+      const navItem = document.createElement('li');
+      navItem.style.marginLeft = '0.5rem'; // small separation from last link
+      navItem.innerHTML = `<a href="${whatsappUrl}" target="_blank" rel="noopener" class="wa-nav-btn"><i class='bx bxl-whatsapp text-xl'></i><span>WhatsApp</span></a>`;
+      desktopNav.appendChild(navItem);
+    }
   }
 
   // Add WhatsApp link to mobile menu

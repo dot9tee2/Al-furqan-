@@ -61,6 +61,15 @@ function handleFormSubmit(formId, templateId) {
             // Add timestamp to the template params
             templateParams.time = new Date().toLocaleString();
 
+            // Honeypot check: if filled, treat as spam and exit gracefully
+            if (templateParams.website) {
+                showNotification('Thank you! Your message has been received.', 'success');
+                newForm.reset();
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+                return;
+            }
+
             /**
              * Send email using EmailJS
              * @param {string} serviceId - The EmailJS service ID

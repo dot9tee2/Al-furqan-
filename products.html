@@ -18,7 +18,7 @@
 
       gtag('config', 'G-YFELY6SPP4');
     </script>
-    <script src="js/whatsapp.js"></script>
+    <script defer src="js/whatsapp.js"></script>
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,7 +33,8 @@
     <meta property="og:description" content="Explore our comprehensive range of custom signs and signboards in Oman. From LED signs to acrylic signage, neon signs, and 3D letters." />
     <meta property="og:url" content="https://alfurqanint.com/products" />
     <meta property="og:site_name" content="Al-furqan International Business LLC" />
-    <meta property="og:image" content="https://alfurqanint.com/assets/images/logo.webp" />
+    <meta property="og:image" content="https://alfurqanint.com/assets/products/signboard.webp" />
+    <meta property="og:image:alt" content="Custom signboards by Al-furqan" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
@@ -42,7 +43,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Products | Al-furqan | Custom Signs & Signboards | Oman" />
     <meta name="twitter:description" content="Explore our comprehensive range of custom signs and signboards in Oman. From LED signs to acrylic signage, neon signs, and 3D letters." />
-    <meta name="twitter:image" content="https://alfurqanint.com/assets/images/logo.webp" />
+    <meta name="twitter:image" content="https://alfurqanint.com/assets/products/signboard.webp" />
+    <meta name="twitter:image:alt" content="Custom signboards by Al-furqan" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alfurqanint.com/products" />
@@ -62,6 +64,9 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -84,9 +89,9 @@
         },
       };
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
     <style>
       .hero-parallax {
         position: relative;
@@ -234,11 +239,12 @@
     </style>
   </head>
   <body class="font-sans text-gray-800">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded shadow">Skip to content</a>
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
       <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="text-2xl font-cinzel font-bold flex items-center gap-2">
-            <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto">
+            <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512" decoding="async">
             Al-<span class="text-bronze">furqan</span>
         </a>
         <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
@@ -246,7 +252,7 @@
         </div>
         <ul class="hidden lg:flex space-x-8">
           <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
-          <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
+          <li><a href="products.html" aria-current="page" class="hover:text-bronze transition-colors">Products</a></li>
           <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
           <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
           <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
@@ -278,10 +284,11 @@
     </nav>
 
     <!-- Products Hero -->
+    <div id="main" tabindex="-1"></div>
     <section class="hero-parallax text-light py-20 px-4 relative min-h-[100vh] flex items-center">
         <!-- Add logo background with increased opacity -->
         <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <img src="assets/images/logo2.webp" alt="Al-furqan Logo" class="max-w-[500px] w-full h-auto">
+            <img src="assets/images/logo2.webp" alt="Al-furqan Logo" class="max-w-[500px] w-full h-auto" width="800" height="800" decoding="async">
         </div>
         <div class="parallax-layer sign-particles" id="particles"></div>
         <div class="parallax-layer hero-overlay"></div>
@@ -309,7 +316,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Neon Signs -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/product1.webp" alt="Neon Signs" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/product1.webp" alt="Neon Signs" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Neon Signs</h3>
               <p class="text-gray-600 mb-4">Vibrant and eye-catching neon signs perfect for restaurants, bars, and retail spaces. <a href="services.html#neon-signs" class="text-bronze hover:underline text-sm">Learn more about our neon services</a>.</p>
@@ -318,7 +325,7 @@
           </div>
           <!-- Acrylic Signs -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/product2.webp" alt="Acrylic Signs" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/product2.webp" alt="Acrylic Signs" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Acrylic Signs</h3>
               <p class="text-gray-600 mb-4">Durable and stylish acrylic signage with depth and dimension. <a href="gallery.html#acrylic-projects" class="text-bronze hover:underline text-sm">View acrylic projects</a>.</p>
@@ -327,7 +334,7 @@
           </div>
           <!-- LED Signs -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/product3.webp" alt="LED Signs" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/product3.webp" alt="LED Signs" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">LED Signs</h3>
               <p class="text-gray-600 mb-4">Bright and efficient LED displays for maximum visibility. <a href="services.html#led-screening" class="text-bronze hover:underline text-sm">Explore LED screening services</a>.</p>
@@ -336,7 +343,7 @@
           </div>
           <!-- Signboards -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/signboard.webp" alt="Signboards" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/signboard.webp" alt="Signboards" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Signboards</h3>
               <p class="text-gray-600 mb-4">Custom signboards for outdoor advertising and business identification. <a href="services.html#installation" class="text-bronze hover:underline text-sm">Professional installation included</a>.</p>
@@ -345,7 +352,7 @@
           </div>
           <!-- Back LED Lights -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/back-led-lights.webp" alt="Back LED Lights" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/back-led-lights.webp" alt="Back LED Lights" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Back LED Lights</h3>
               <p class="text-gray-600 mb-4">Backlit signs with LED illumination for enhanced visibility. <a href="products.html#led-signs" class="text-bronze hover:underline text-sm">See all LED options</a>.</p>
@@ -354,7 +361,7 @@
           </div>
           <!-- 3D Letters -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/3d-letters.webp" alt="3D Letters" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/3d-letters.webp" alt="3D Letters" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Letters</h3>
               <p class="text-gray-600 mb-4">Three-dimensional letters for impactful branding. <a href="gallery.html#3d-projects" class="text-bronze hover:underline text-sm">View 3D projects</a>.</p>
@@ -363,7 +370,7 @@
           </div>
           <!-- Stainless Steel Back Side Light -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/stainless-steel-back-side-light.webp" alt="Stainless Steel Back Side Light" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/stainless-steel-back-side-light.webp" alt="Stainless Steel Back Side Light" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Stainless Steel Back Side Light</h3>
               <p class="text-gray-600 mb-4">Durable stainless steel backlit signs with premium finish. <a href="products.html#metal-signs" class="text-bronze hover:underline text-sm">Explore metal signage options</a>.</p>
@@ -372,7 +379,7 @@
           </div>
           <!-- 3D Profile Letter Signage -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/3d-profile-letter-signage.webp" alt="3D Profile Letter Signage" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/3d-profile-letter-signage.webp" alt="3D Profile Letter Signage" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Profile Letter Signage</h3>
               <p class="text-gray-600 mb-4">Profiled 3D letters for a unique look. <a href="gallery.html#3d-projects" class="text-bronze hover:underline text-sm">See 3D letter projects</a>.</p>
@@ -381,7 +388,7 @@
           </div>
           <!-- Cladding Work and Signage -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/cladding-work-signage.webp" alt="Cladding Work and Signage" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/cladding-work-signage.webp" alt="Cladding Work and Signage" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Cladding Work and Signage</h3>
               <p class="text-gray-600 mb-4">Integrated signage solutions with building cladding. <a href="services.html#fit-out" class="text-bronze hover:underline text-sm">Complete fit-out services</a>.</p>
@@ -390,7 +397,7 @@
           </div>
           <!-- Kiosk Stall Signage -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/kiosk-stall-signage.webp" alt="Kiosk Stall Signage" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/kiosk-stall-signage.webp" alt="Kiosk Stall Signage" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Kiosk Stall Signage</h3>
               <p class="text-gray-600 mb-4">Custom signage for kiosks and stalls. <a href="gallery.html#retail-projects" class="text-bronze hover:underline text-sm">View retail projects</a>.</p>
@@ -399,7 +406,7 @@
           </div>
           <!-- 3D Signage -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/3d-signage.webp" alt="3D Signage" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/3d-signage.webp" alt="3D Signage" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">3D Signage</h3>
               <p class="text-gray-600 mb-4">Advanced 3D signage solutions for maximum impact. <a href="gallery.html#3d-projects" class="text-bronze hover:underline text-sm">Browse 3D projects</a>.</p>
@@ -408,7 +415,7 @@
           </div>
           <!-- Video Screens -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/video-screens.webp" alt="Video Screens" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/video-screens.webp" alt="Video Screens" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Video Screens</h3>
               <p class="text-gray-600 mb-4">Digital video screens for dynamic advertising.</p>
@@ -417,7 +424,7 @@
           </div>
           <!-- LED Letters -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/led-letters.webp" alt="LED Letters" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/led-letters.webp" alt="LED Letters" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">LED Letters</h3>
               <p class="text-gray-600 mb-4">Energy-efficient LED illuminated letters.</p>
@@ -426,7 +433,7 @@
           </div>
           <!-- Brass Letters -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
-            <img src="assets/products/brass-letters.webp" alt="Brass Letters" class="w-full h-64 object-cover" loading="lazy" />
+            <img src="assets/products/brass-letters.webp" alt="Brass Letters" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Brass Letters</h3>
               <p class="text-gray-600 mb-4">Classic brass letters for a timeless appearance.</p>
@@ -615,11 +622,11 @@
                   >
                 </li>
                 <li>
-                  <a
-                    href="services.html"
-                    class="hover:text-white/70 transition-colors"
-                    >Led Screenings</a
-                  >
+                <a
+                  href="services.html"
+                  class="hover:text-white/70 transition-colors"
+                  >LED Screening</a
+                >
                 </li>
               </ul>
             </div>

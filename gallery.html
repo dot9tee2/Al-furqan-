@@ -38,7 +38,8 @@
     <meta property="og:description" content="Explore our comprehensive portfolio of custom signs and signboards in Oman. View LED signs, acrylic signs, video displays, and installation projects." />
     <meta property="og:url" content="https://alfurqanint.com/gallery" />
     <meta property="og:site_name" content="Al-furqan International Business LLC" />
-    <meta property="og:image" content="https://alfurqanint.com/assets/images/logo.webp" />
+    <meta property="og:image" content="https://alfurqanint.com/assets/featured/1.jpeg" />
+    <meta property="og:image:alt" content="Featured signage project from Al-furqan gallery" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
@@ -47,7 +48,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Gallery | Al-furqan | Custom Signs & Signboards Portfolio" />
     <meta name="twitter:description" content="Explore our comprehensive portfolio of custom signs and signboards in Oman. View LED signs, acrylic signs, video displays, and installation projects." />
-    <meta name="twitter:image" content="https://alfurqanint.com/assets/images/logo.webp" />
+    <meta name="twitter:image" content="https://alfurqanint.com/assets/featured/1.jpeg" />
+    <meta name="twitter:image:alt" content="Featured signage project from Al-furqan gallery" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alfurqanint.com/gallery" />
@@ -70,6 +72,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS Configuration -->
@@ -100,13 +105,13 @@
     </script>
     
     <!-- GSAP Animation Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
     
     <!-- Swiper Carousel Library -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <!-- Custom CSS -->
     <style>
@@ -365,11 +370,12 @@
     </style>
 </head>
 <body class="font-sans text-gray-800">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded shadow">Skip to content</a>
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-cinzel font-bold flex items-center gap-2">
-                <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto">
+                <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512" decoding="async">
                 Al-<span class="text-bronze">Furqan</span>
             </a>
             <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
@@ -380,7 +386,7 @@
                 <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
                 <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
                 <li><a href="services.html" class="hover:text-bronze transition-colors">Services</a></li>
-                <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
+                <li><a href="gallery.html" aria-current="page" class="hover:text-bronze transition-colors">Gallery</a></li>
                 <li><a href="faqs.html" class="hover:text-bronze transition-colors">FAQs</a></li>
                 <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
             </ul>
@@ -409,6 +415,7 @@
     </nav>
 
     <!-- Hero Section -->
+    <div id="main" tabindex="-1"></div>
     <main>
         <section class="hero-parallax text-light py-20 px-4 relative min-h-[100vh] flex items-center" role="banner" aria-labelledby="hero-title">
             <!-- Add logo background with increased opacity -->
@@ -445,7 +452,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/1.jpeg" alt="Premium LED Signboard - Custom illuminated signage with premium finish" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/1.jpeg" alt="Premium LED Signboard - Custom illuminated signage with premium finish" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Premium Signboard</h3>
@@ -456,7 +463,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/2.jpeg" alt="Video Display Installation - High-resolution LED video display for dynamic content" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/2.jpeg" alt="Video Display Installation - High-resolution LED video display for dynamic content" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Video Display Installation</h3>
@@ -467,7 +474,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/3.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/3.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
@@ -478,7 +485,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/4.jpeg" alt="Kiosk Stall - Elegant kiosk stall design with custom signage" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/4.jpeg" alt="Kiosk Stall - Elegant kiosk stall design with custom signage" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Kiosk Stall</h3>
@@ -489,7 +496,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/5.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design and premium finish" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/5.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design and premium finish" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
@@ -500,7 +507,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/6.jpeg" alt="Restaurant Fit Out - Complete restaurant interior design and signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/6.jpeg" alt="Restaurant Fit Out - Complete restaurant interior design and signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
@@ -511,7 +518,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/7.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/7.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
@@ -522,7 +529,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/8.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design and custom branding" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/8.jpeg" alt="Acrylic Signage - Modern acrylic sign with elegant design and custom branding" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Acrylic Signage</h3>
@@ -533,7 +540,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/9.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/9.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
@@ -544,7 +551,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-lg overflow-hidden shadow-lg group">
-                            <img src="assets/featured/10.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            <img src="assets/featured/10.jpeg" alt="Office Fit Out - Complete office interior design and corporate signage installation" class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="1600" height="1067">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                                     <h3 class="text-2xl font-cinzel font-semibold mb-2">Fit Out</h3>
@@ -786,7 +793,7 @@
                   <a
                     href="services.html"
                     class="hover:text-white/70 transition-colors"
-                    >Led Screenings</a
+                    >LED Screening</a
                   >
                 </li>
               </ul>
@@ -1137,6 +1144,8 @@
                              alt="${title} - ${description}" 
                              class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                              loading="lazy"
+                             decoding="async"
+                             width="1200" height="800"
                              title="${title}">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -1158,6 +1167,8 @@
                              alt="${image.title} - ${image.description}" 
                              class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110"
                              loading="lazy"
+                             decoding="async"
+                             width="1600" height="1067"
                              title="${image.title}">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -1499,57 +1510,57 @@
             ],
             acrylic: [
                 {
-                    src: 'assets/gallery/arcylics signs/1.jpeg',
+                    src: 'assets/gallery/acrylic-signs/1.jpeg',
                     title: 'Custom Acrylic Sign',
                     description: 'Handcrafted acrylic sign with premium finish'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/2.jpeg',
+                    src: 'assets/gallery/acrylic-signs/2.jpeg',
                     title: 'Illuminated Acrylic',
                     description: 'LED-backlit acrylic sign for enhanced visibility'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/3.jpeg',
+                    src: 'assets/gallery/acrylic-signs/3.jpeg',
                     title: '3D Acrylic Display',
                     description: 'Three-dimensional acrylic sign with depth effect'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/4.jpeg',
+                    src: 'assets/gallery/acrylic-signs/4.jpeg',
                     title: 'Frosted Acrylic Sign',
                     description: 'Elegant frosted acrylic with modern design'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/5.jpeg',
+                    src: 'assets/gallery/acrylic-signs/5.jpeg',
                     title: 'Transparent Acrylic',
                     description: 'Crystal clear acrylic sign with premium finish'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/6.jpeg',
+                    src: 'assets/gallery/acrylic-signs/6.jpeg',
                     title: 'Layered Acrylic Design',
                     description: 'Multi-layered acrylic sign with depth'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/7.jpeg',
+                    src: 'assets/gallery/acrylic-signs/7.jpeg',
                     title: 'Custom Acrylic Logo',
                     description: 'Branded acrylic logo with precise detailing'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/8.jpeg',
+                    src: 'assets/gallery/acrylic-signs/8.jpeg',
                     title: 'Acrylic Wall Sign',
                     description: 'Wall-mounted acrylic sign with modern aesthetics'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/9.jpeg',
+                    src: 'assets/gallery/acrylic-signs/9.jpeg',
                     title: 'Acrylic Light Box',
                     description: 'Illuminated acrylic light box for indoor display'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/10.jpeg',
+                    src: 'assets/gallery/acrylic-signs/10.jpeg',
                     title: 'Acrylic Stand Display',
                     description: 'Freestanding acrylic display with custom design'
                 },
                 {
-                    src: 'assets/gallery/arcylics signs/11.jpeg',
+                    src: 'assets/gallery/acrylic-signs/11.jpeg',
                     title: 'Acrylic Menu Board',
                     description: 'Stylish acrylic menu board for restaurants'
                 }
@@ -1771,7 +1782,7 @@
                         "@type": "CreativeWork",
                         "name": "Acrylic Signage",
                         "description": "Modern acrylic sign with elegant design",
-                        "image": "https://alfurqanint.com/assets/gallery/arcylics signs/1.jpeg"
+                        "image": "https://alfurqanint.com/assets/gallery/acrylic-signs/1.jpeg"
                     }
                 }
             ]

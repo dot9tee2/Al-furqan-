@@ -20,3 +20,56 @@ RewriteRule ^([^/]+)$ $1.html [L]
 # --- Redirect .html to clean version (SEO-friendly) ---
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^/]+)\.html [NC]
 RewriteRule ^([^/]+)\.html$ https://alfurqanint.com/$1 [R=301,L]
+
+# --- Redirect misnamed acrylics folder to new hyphenated path ---
+RewriteRule ^assets/gallery/arcylics%20signs/(.*)$ /assets/gallery/acrylic-signs/$1 [R=301,L]
+RewriteRule ^assets/gallery/arcylics\ signs/(.*)$ /assets/gallery/acrylic-signs/$1 [R=301,L]
+
+# --- Caching (static assets long cache; HTML no-store) ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresDefault "access plus 1 month"
+  <FilesMatch "\.(html)$">
+    ExpiresActive Off
+  </FilesMatch>
+  <FilesMatch "\.(htm)$">
+    ExpiresActive Off
+  </FilesMatch>
+  <FilesMatch "\.(json)$">
+    ExpiresActive Off
+  </FilesMatch>
+  <FilesMatch "\.(xml)$">
+    ExpiresActive Off
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-store"
+  </FilesMatch>
+</IfModule>
+
+# --- Compression ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- Security Headers (relaxed CSP to keep inline scripts working) ---
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https:; frame-ancestors 'self';"
+</IfModule>
+
+# --- Error document ---
+ErrorDocument 404 /404.html

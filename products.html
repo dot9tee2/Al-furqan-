@@ -258,6 +258,7 @@
           <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
           <li><a href="faqs.html" class="hover:text-bronze transition-colors">FAQs</a></li>
           <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
+          <li><a href="tel:+96892949051" class="text-bronze font-semibold">+968 9294 9051</a></li>
         </ul>
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
@@ -268,6 +269,7 @@
           <a href="gallery.html">Gallery</a>
           <a href="faqs.html">FAQs</a>
           <a href="contact.html">Contact</a>
+          <a href="tel:+96892949051" class="text-bronze font-semibold mt-2">Call: +968 9294 9051</a>
         </div>
       </nav>
     </header>
@@ -315,29 +317,32 @@
       <div class="container mx-auto max-w-6xl">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Neon Signs -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
+          <div id="neon-signs" class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
             <img src="assets/products/product1.webp" alt="Neon Signs" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Neon Signs</h3>
-              <p class="text-gray-600 mb-4">Vibrant and eye-catching neon signs perfect for restaurants, bars, and retail spaces. <a href="services.html#neon-signs" class="text-bronze hover:underline text-sm">Learn more about our neon services</a>.</p>
+              <p class="text-gray-600">Vibrant and eye-catching neon signs perfect for restaurants, bars, and retail spaces. <a href="services.html#neon-signs" class="text-bronze hover:underline text-sm">Learn more about our neon services</a>.</p>
+              <p class="text-gray-800 font-medium mt-2">Starting from OMR 150</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
           <!-- Acrylic Signs -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
+          <div id="acrylic-signs" class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
             <img src="assets/products/product2.webp" alt="Acrylic Signs" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Acrylic Signs</h3>
-              <p class="text-gray-600 mb-4">Durable and stylish acrylic signage with depth and dimension. <a href="gallery.html#acrylic-projects" class="text-bronze hover:underline text-sm">View acrylic projects</a>.</p>
+              <p class="text-gray-600">Durable and stylish acrylic signage with depth and dimension. <a href="gallery.html#acrylic-projects" class="text-bronze hover:underline text-sm">View acrylic projects</a>.</p>
+              <p class="text-gray-800 font-medium mt-2">Starting from OMR 100</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
           <!-- LED Signs -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
+          <div id="led-signs" class="bg-white rounded-lg shadow-md overflow-hidden opacity-0 product-card">
             <img src="assets/products/product3.webp" alt="LED Signs" class="w-full h-64 object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">LED Signs</h3>
-              <p class="text-gray-600 mb-4">Bright and efficient LED displays for maximum visibility. <a href="services.html#led-screening" class="text-bronze hover:underline text-sm">Explore LED screening services</a>.</p>
+              <p class="text-gray-600">Bright and efficient LED displays for maximum visibility. <a href="services.html#led-screening" class="text-bronze hover:underline text-sm">Explore LED screening services</a>.</p>
+              <p class="text-gray-800 font-medium mt-2">Starting from OMR 200</p>
               <a href="contact.html" class="text-bronze hover:underline">Request Quote</a>
             </div>
           </div>
@@ -659,7 +664,7 @@
                 </li>
                 <li class="flex items-center gap-3">
                   <i class="bx bx-time text-xl"></i>
-                  <span>Sun-Thu: 9AM-6PM</span>
+                  <span>Mon–Thu, Sat–Sun: 8:00 AM – 7:00 PM; Fri: Closed</span>
                 </li>
               </ul>
             </div>
@@ -675,18 +680,6 @@
         </div>
       </footer>
 
-    <!-- Breadcrumbs -->
-    <nav class="bg-gray-100 py-2 px-4" aria-label="Breadcrumb">
-        <div class="container mx-auto">
-            <ol class="flex items-center space-x-2 text-sm text-gray-600">
-                <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
-                <li class="flex items-center">
-                    <i class='bx bx-chevron-right text-gray-400'></i>
-                    <span class="ml-2 text-bronze font-medium">Products</span>
-                </li>
-            </ol>
-        </div>
-    </nav>
 
     <!-- Scroll to Top -->
     <button class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all" id="scrollTopBtn">
@@ -802,78 +795,93 @@
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Products | Al-furqan | Custom Signs & Signboards",
-        "description": "Explore our comprehensive range of custom signs and signboards in Oman. From LED signs to acrylic signage, neon signs, and 3D letters.",
-        "url": "https://alfurqanint.com/products",
-        "mainEntity": {
-            "@type": "ItemList",
-            "name": "Custom Signs and Signboards Products",
-            "description": "Comprehensive collection of custom signage products including LED signs, acrylic signs, neon signs, and 3D letters",
-            "numberOfItems": 12,
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "item": {
-                        "@type": "Product",
-                        "name": "Neon Signs",
-                        "description": "Vibrant neon signs for eye-catching business displays",
-                        "image": "https://alfurqanint.com/assets/products/product1.webp",
-                        "category": "Custom Signs"
-                    }
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "item": {
-                        "@type": "Product",
-                        "name": "Acrylic Signs",
-                        "description": "Modern acrylic signs with elegant design",
-                        "image": "https://alfurqanint.com/assets/products/product2.webp",
-                        "category": "Custom Signs"
-                    }
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "item": {
-                        "@type": "Product",
-                        "name": "LED Signs",
-                        "description": "Energy-efficient LED signage solutions",
-                        "image": "https://alfurqanint.com/assets/products/product3.webp",
-                        "category": "Custom Signs"
-                    }
-                }
-            ]
-        },
-        "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://alfurqanint.com"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Products",
-                    "item": "https://alfurqanint.com/products"
-                }
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Al-furqan International Business LLC",
-            "url": "https://alfurqanint.com",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://alfurqanint.com/assets/images/logo.webp"
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Products | Al-furqan | Custom Signs & Signboards",
+      "description": "Explore our comprehensive range of custom signs and signboards in Oman. From LED signs to acrylic signage, neon signs, and 3D letters.",
+      "url": "https://alfurqanint.com/products",
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 3,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "name": "Acrylic Signs",
+              "description": "Modern acrylic signs with elegant design",
+              "image": "https://alfurqanint.com/assets/products/product2.webp",
+              "url": "https://alfurqanint.com/products#acrylic-signs",
+              "brand": { "@type": "Brand", "name": "Al-furqan" },
+              "itemCondition": "https://schema.org/NewCondition",
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "OMR",
+                "lowPrice": "100",
+                "highPrice": "400",
+                "availability": "https://schema.org/InStock",
+                "url": "https://alfurqanint.com/products#acrylic-signs"
+              }
             }
-        }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "name": "LED Signs",
+              "description": "Energy-efficient LED signage solutions",
+              "image": "https://alfurqanint.com/assets/products/product3.webp",
+              "url": "https://alfurqanint.com/products#led-signs",
+              "brand": { "@type": "Brand", "name": "Al-furqan" },
+              "itemCondition": "https://schema.org/NewCondition",
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "OMR",
+                "lowPrice": "200",
+                "highPrice": "800",
+                "availability": "https://schema.org/InStock",
+                "url": "https://alfurqanint.com/products#led-signs"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+              "name": "Neon Signs",
+              "description": "Vibrant neon signs for eye-catching business displays",
+              "image": "https://alfurqanint.com/assets/products/product1.webp",
+              "url": "https://alfurqanint.com/products#neon-signs",
+              "brand": { "@type": "Brand", "name": "Al-furqan" },
+              "itemCondition": "https://schema.org/NewCondition",
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "OMR",
+                "lowPrice": "150",
+                "highPrice": "600",
+                "availability": "https://schema.org/InStock",
+                "url": "https://alfurqanint.com/products#neon-signs"
+              }
+            }
+          }
+        ]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alfurqanint.com" },
+          { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://alfurqanint.com/products" }
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Al-furqan International Business LLC",
+        "url": "https://alfurqanint.com",
+        "logo": { "@type": "ImageObject", "url": "https://alfurqanint.com/assets/images/logo.webp" }
+      }
     }
     </script>
 
@@ -895,6 +903,14 @@
             "addressCountry": "OM",
             "postOfficeBoxNumber": "1477392"
         },
+        "openingHoursSpecification": [
+            {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},
+            {"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},
+            {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},
+            {"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},
+            {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"19:00"},
+            {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"19:00"}
+        ],
         "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.5264597308228!2d58.54649985709227!3d23.589145222581106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91f90aec064279%3A0xde1b18cb7c3811b6!2sAl%20Furqan%20International%20Business%20LLC.%20KARACHI-EES%20RESTAURANT!5e0!3m2!1sen!2som!4v1761508796009!5m2!1sen!2som",
         "geo": { "@type": "GeoCoordinates", "latitude": 23.5891452, "longitude": 58.5464999 },
         "contactPoint": [

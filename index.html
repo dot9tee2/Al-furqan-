@@ -455,6 +455,8 @@
       .hero-parallax img {
         animation: logoFloat 6s ease-in-out infinite;
       }
+      /* subtle premium frame around feature images */
+      .premium-frame { box-shadow: 0 15px 35px rgba(31, 41, 55, 0.18); }
     </style>
   </head>
   <body class="font-sans text-gray-800">
@@ -493,6 +495,9 @@
             >
           </li>
           <li>
+            <a href="services.html#fit-out" class="hover:text-bronze transition-colors font-semibold">Interior Fit-Outs</a>
+          </li>
+          <li>
             <a href="gallery.html" class="hover:text-bronze transition-colors"
               >Gallery</a
             >
@@ -517,6 +522,7 @@
           <a href="products.html">Products</a>
           <a href="about.html">About</a>
           <a href="services.html">Services</a>
+          <a href="services.html#fit-out" class="font-semibold text-bronze">Interior Fit-Outs</a>
           <a href="gallery.html">Gallery</a>
           <a href="faqs.html">FAQs</a>
           <a href="contact.html">Contact</a>
@@ -563,13 +569,13 @@
           class="tagline text-xl mb-8 max-w-2xl mx-auto opacity-0 text-bronze-light"
           id="hero-text"
         >
-            Find your sign, Make it Shine
+            Find your sign, Design your Space
         </p>
         <p
           class="text-white/80 mb-8 max-w-2xl mx-auto opacity-0 text-sm"
           id="hero-subtext"
         >
-          Find Your Sign, Make it Shine
+          Find your sign, Design your Space
         </p>
         <div class="flex flex-wrap justify-center gap-4 mb-12">
           <a
@@ -625,6 +631,20 @@
             experts will handle every aspect of your project, ensuring a seamless
             and efficient process.
           </p>
+        </div>
+        <!-- Split‑screen feature: 50/50 image + content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-12">
+          <div>
+            <img src="assets/images/fit-out-hero-office.webp" alt="Modern office fit-out interior in Muscat Oman" loading="lazy" class="w-full h-auto rounded-2xl shadow-xl ring-1 ring-bronze/10 premium-frame" width="1600" height="1067" decoding="async">
+          </div>
+          <div>
+            <h2 class="text-3xl md:text-4xl font-cinzel font-bold mb-4">Introducing Our Fit-Out Services</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">Leveraging our years of experience in design and construction from creating premium signage, we are now expanding our services to offer comprehensive fit-out solutions for your entire space. Our team of experts will handle every aspect of your project, ensuring a seamless and efficient process.</p>
+            <a href="gallery.html#interiors" class="inline-flex items-center px-6 py-3 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors shadow-lg">
+              View Interior Projects
+              <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
+            </a>
+          </div>
         </div>
         <div
           class="grid grid-cols-1 md:grid-cols-3 gap-8 opacity-0"
@@ -1362,17 +1382,15 @@
             <div class="flip-card-inner">
               <div class="flip-card-front bg-white rounded-lg overflow-hidden shadow-md">
                 <div class="h-56 relative overflow-hidden">
-                  <img src="assets/projects/corporate-signage.webp" alt="Corporate Headquarters" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110" loading="lazy" decoding="async">
+                  <img src="assets/projects/corporate-hq-turnkey-fitout.webp" alt="Corporate HQ turnkey interior fit-out with glass partitions and joinery" class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110" loading="lazy" decoding="async">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 showcase-overlay"></div>
                 </div>
                 <div class="p-5">
-                  <h3 class="font-semibold text-lg mb-1">Corporate Headquarters</h3>
-                  <p class="text-sm text-gray-500 mb-3">
-                    Modern acrylic lobby sign with 3D dimensional elements
-                  </p>
+                  <h3 class="font-semibold text-lg mb-1">Corporate HQ Turnkey Fit-Out</h3>
+                  <p class="text-sm text-gray-500 mb-3">Full interior renovation including MEP, glass partitions, and custom joinery</p>
                   <div class="flex gap-2">
                     <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">Corporate</span>
-                    <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">Interior</span>
+                    <span class="text-xs bg-bronze/10 text-bronze px-2 py-1 rounded">Fit-Out</span>
                   </div>
                 </div>
               </div>
@@ -1772,11 +1790,15 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness","GeneralContractor"],
       "name": "Al-furqan International Business LLC",
       "url": "https://alfurqanint.com",
       "logo": "https://alfurqanint.com/assets/images/logo.webp",
       "description": "Your premier destination for custom signs and signboards in Oman. We specialize in premium LED displays, acrylic signage, neon signs, and complete fit-out solutions.",
+      "makesOffer": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Signage"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Interior Fit-Out"}}
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "2nd Floor, 4376 Way",

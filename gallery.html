@@ -337,6 +337,12 @@
             will-change: transform;
         }
 
+        /* Gallery masonry helpers for Interiors section */
+        .masonry { column-gap: 1rem; }
+        @media (min-width: 640px) { .masonry { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry { column-count: 3; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 1rem; }
+
         /* Responsive Media Queries */
         @media (max-width: 768px) {
             .hero-content h1 {
@@ -566,6 +572,53 @@
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interiors & Fit-Out Section -->
+    <section id="interiors" class="py-16 px-4 bg-white relative overflow-hidden" aria-labelledby="interiors-title">
+        <div class="container mx-auto max-w-6xl">
+            <header class="text-center mb-8">
+                <span class="text-bronze font-medium">Our Work</span>
+                <h2 class="text-3xl font-cinzel font-bold mt-2 mb-4" id="interiors-title">Interiors & Fit-Out</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Showcasing turnkey interior fit-outs across commercial, retail, and hospitality.</p>
+            </header>
+
+            <!-- Filter controls (local to Interiors section) -->
+            <div class="flex flex-wrap gap-3 justify-center mb-6">
+                <button class="px-4 py-2 rounded-md border text-sm hover:bg-bronze hover:text-white transition-colors" data-filter="*">All</button>
+                <button class="px-4 py-2 rounded-md border text-sm hover:bg-bronze hover:text-white transition-colors" data-filter=".fit-out">Interiors & Fit-Out</button>
+            </div>
+
+            <!-- Masonry grid -->
+            <div id="interiors-grid" class="masonry">
+                <!-- Commercial: Open Plan Office - Muscat -->
+                <figure class="masonry-item fit-out">
+                    <img src="assets/gallery/interiors/open-plan-office-muscat.webp" alt="Open plan office fit-out in Muscat with ceiling grids and glass partitions" loading="lazy" class="w-full h-auto rounded-lg shadow-md" width="1600" height="1000" decoding="async">
+                    <figcaption class="mt-2 text-sm text-gray-700">
+                        <span class="font-semibold">Open Plan Office - Muscat</span>
+                        <span class="ml-2 text-xs bg-bronze/10 text-bronze px-2 py-0.5 rounded">Commercial</span>
+                    </figcaption>
+                </figure>
+
+                <!-- Retail: Boutique Showroom -->
+                <figure class="masonry-item fit-out">
+                    <img src="assets/gallery/interiors/boutique-showroom.webp" alt="Retail boutique showroom fit-out with accent lighting and shelving" loading="lazy" class="w-full h-auto rounded-lg shadow-md" width="1400" height="1750" decoding="async">
+                    <figcaption class="mt-2 text-sm text-gray-700">
+                        <span class="font-semibold">Boutique Showroom</span>
+                        <span class="ml-2 text-xs bg-bronze/10 text-bronze px-2 py-0.5 rounded">Retail</span>
+                    </figcaption>
+                </figure>
+
+                <!-- Hospitality: Hotel Lobby Renovation -->
+                <figure class="masonry-item fit-out">
+                    <img src="assets/gallery/interiors/hotel-lobby-renovation.webp" alt="Hotel lobby renovation with reception desk and wall cladding" loading="lazy" class="w-full h-auto rounded-lg shadow-md" width="1600" height="1000" decoding="async">
+                    <figcaption class="mt-2 text-sm text-gray-700">
+                        <span class="font-semibold">Hotel Lobby Renovation</span>
+                        <span class="ml-2 text-xs bg-bronze/10 text-bronze px-2 py-0.5 rounded">Hospitality</span>
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -1218,6 +1271,19 @@
             initializeGalleries(); // Make sure this runs first
             optimizeImageLoading();
             setupLoadMore(); // Then setup load more
+
+            // Simple filter behavior for Interiors section
+            document.addEventListener('click', function(e){
+                const btn = e.target.closest('#interiors [data-filter]');
+                if(!btn) return;
+                const selector = btn.getAttribute('data-filter');
+                const grid = document.querySelector('#interiors-grid');
+                if (!grid) return;
+                const items = grid.querySelectorAll(':scope > *');
+                items.forEach(el => {
+                    el.style.display = (selector === '*' || el.matches(selector)) ? '' : 'none';
+                });
+            });
         });
 
         // Gallery data

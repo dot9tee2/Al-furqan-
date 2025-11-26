@@ -124,7 +124,7 @@ User-agent: BLEXBot
 Disallow: /
 
 User-agent: Screaming Frog SEO Spider
-Disallow: /
+Allow: /
 
 # Block image scrapers
 User-agent: ImageScraper

@@ -128,43 +128,61 @@
 
     <!-- Hero -->
     <div id="main" tabindex="-1"></div>
-    <section class="hero-parallax text-light py-20 px-4 relative min-h-[60vh] flex items-center">
+    <section class="hero-parallax text-light py-20 px-4 relative min-h-[40vh] flex items-center justify-center">
       <div class="parallax-layer hero-overlay"></div>
       <div class="signboard-glow"></div>
       <div class="container mx-auto max-w-4xl text-center hero-content">
         <h1 class="font-cinzel font-bold mb-6">
-          <span class="title-mask block opacity-0 text-3xl md:text-5xl" id="title-line1">
+          <span class="title-mask block opacity-0 text-4xl md:text-6xl leading-tight" id="title-line1">
             <span class="bronze-text">Insights from Al‑Furqan</span>
             <span class="bronze-shimmer"></span>
           </span>
         </h1>
-        <p class="text-white/80 max-w-3xl mx-auto opacity-0" id="hero-subtext">
+        <p class="text-white/90 max-w-2xl mx-auto opacity-0 text-lg font-light tracking-wide" id="hero-subtext">
           Practical guidance on signage permits, municipal compliance, fabrication, and interior fit‑outs across Oman.
         </p>
       </div>
     </section>
 
     <!-- Blog List -->
-    <section class="py-12 px-4 bg-gray-50">
-      <div class="container mx-auto max-w-6xl">
+    <section class="py-16 px-4 bg-gray-50 relative">
+       <!-- Decorative background elements -->
+       <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-bronze/20 to-transparent"></div>
+       <div class="absolute -left-20 top-40 w-64 h-64 bg-bronze/5 rounded-full blur-3xl pointer-events-none"></div>
+       <div class="absolute -right-20 bottom-20 w-64 h-64 bg-bronze/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="container mx-auto max-w-6xl relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Post Card: Muscat Signage Rules 2025 -->
-          <article class="bg-white rounded-2xl shadow-md overflow-hidden premium-frame flex flex-col">
-            <a href="muscat-municipality-signage-rules-2025.html" class="block">
-              <img src="../assets/images/blog/muscat-signage-2025-featured.webp" alt="Muscat Municipality signage rules guide 2025 - featured" class="w-full h-56 object-cover" loading="lazy" decoding="async" width="1600" height="900">
+          <article class="bg-white rounded-2xl shadow-lg overflow-hidden premium-frame flex flex-col group hover:-translate-y-2 transition-all duration-300 h-full border border-gray-100">
+            <a href="muscat-municipality-signage-rules-2025.html" class="block relative overflow-hidden h-60">
+              <img src="../assets/images/blog/muscat-signage-2025-featured.webp" alt="Muscat Municipality signage rules guide 2025 - featured" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" width="1600" height="900">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+              <span class="absolute top-4 left-4 bg-bronze text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">Regulations</span>
             </a>
-            <div class="p-6 flex-1 flex flex-col">
-              <a href="muscat-municipality-signage-rules-2025.html" class="text-xl font-semibold hover:text-bronze transition-colors">Muscat Municipality Signage Rules 2025: Complete Guide to Fees, Permits & Fines</a>
-              <div class="mt-2 text-sm text-gray-600 flex flex-wrap gap-3">
-                <span class="flex items-center gap-1"><i class="bx bx-user text-bronze"></i> Al‑Furqan International Business Team</span>
-                <span class="flex items-center gap-1"><i class="bx bx-time-five text-bronze"></i> 15 min read</span>
-                <span class="flex items-center gap-1"><i class="bx bx-calendar text-bronze"></i> 2025‑11‑28</span>
+            <div class="p-6 flex-1 flex flex-col relative">
+              <div class="mb-4 text-xs text-gray-500 flex flex-wrap gap-y-2 gap-x-4 items-center font-medium uppercase tracking-wide">
+                <span class="flex items-center gap-1"><i class="bx bx-calendar text-bronze text-base"></i> Nov 28, 2025</span>
+                <span class="flex items-center gap-1"><i class="bx bx-time-five text-bronze text-base"></i> 15 min read</span>
               </div>
-              <p class="mt-3 text-gray-700">Opening a shop in Oman? Understand the new OMR 15 fee, 18‑meter rooftop restriction, Invest Easy steps, and how to avoid fines to get approved fast.</p>
-              <div class="mt-4">
-                <a href="muscat-municipality-signage-rules-2025.html" class="inline-flex items-center px-4 py-2 bg-bronze text-white rounded-lg hover:bg-bronze-dark transition-colors">
-                  Read more
-                  <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
+              <h2 class="text-xl font-cinzel font-bold mb-3 leading-snug">
+                <a href="muscat-municipality-signage-rules-2025.html" class="text-gray-900 hover:text-bronze transition-colors line-clamp-2">
+                  Muscat Municipality Signage Rules 2025: Complete Guide to Fees, Permits & Fines
+                </a>
+              </h2>
+              <p class="text-gray-600 mb-6 line-clamp-3 leading-relaxed flex-1">
+                Opening a shop in Oman? Understand the new OMR 15 fee, 18‑meter rooftop restriction, Invest Easy steps, and how to avoid fines to get approved fast.
+              </p>
+              <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-bronze/10 flex items-center justify-center text-bronze">
+                        <i class="bx bxs-user"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-gray-700">Al‑Furqan Team</span>
+                </div>
+                <a href="muscat-municipality-signage-rules-2025.html" class="text-bronze font-semibold text-sm hover:text-bronze-dark transition-colors group-hover:underline decoration-2 underline-offset-4 flex items-center">
+                  Read Article
+                  <i class="bx bx-right-arrow-alt ml-1 text-lg transform group-hover:translate-x-1 transition-transform"></i>
                 </a>
               </div>
             </div>

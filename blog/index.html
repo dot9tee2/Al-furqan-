@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFELY6SPP4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YFELY6SPP4');
+    </script>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Read Al‑Furqan’s latest articles on signage, licensing, and interior fit‑outs in Oman. Guidance on fees, permits, compliance and best practices." />
+    <meta name="keywords" content="Al-Furqan blog, Oman signage blog, Muscat signage rules, Invest Easy, signboard license Oman" />
+    <meta name="author" content="Al-Furqan International Business Team" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog | Al‑Furqan | Signage Guidance & Compliance in Oman" />
+    <meta property="og:description" content="Expert articles on signage, permits, and interior fit‑outs in Oman. Stay compliant and launch faster with Al‑Furqan." />
+    <meta property="og:url" content="https://alfurqanint.com/blog" />
+    <meta property="og:site_name" content="Al-furqan International Business LLC" />
+    <meta property="og:image" content="https://alfurqanint.com/assets/images/blog/muscat-signage-2025-featured.webp" />
+    <meta property="og:image:alt" content="Al‑Furqan blog on Muscat signage rules" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog | Al‑Furqan | Signage Guidance & Compliance in Oman" />
+    <meta name="twitter:description" content="Expert articles on signage, permits, and interior fit‑outs in Oman." />
+    <meta name="twitter:image" content="https://alfurqanint.com/assets/images/blog/muscat-signage-2025-featured.webp" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alfurqanint.com/blog" />
+    <title>Blog | Al‑Furqan | Signage Guidance & Compliance in Oman</title>
+    <!-- Icons -->
+    <link rel="icon" type="image/webp" href="../assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="../assets/images/logo.webp">
+    <!-- Preload -->
+    <link rel="preload" href="../assets/images/logo.webp" as="image">
+    <!-- Boxicons & Fonts -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7F5434",
+              secondary: "#10B981",
+              dark: "#1F2937",
+              light: "#F9FAFB",
+              gray: "#E5E7EB",
+              bronze: { light: "#DAA468", DEFAULT: "#A96C36", dark: "#7F5434" }
+            },
+            fontFamily: { cinzel: ["Cinzel","serif"], sans: ["Montserrat","sans-serif"] }
+          }
+        }
+      }
+    </script>
+    <!-- GSAP -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <style>
+      .hero-parallax { position: relative; overflow: hidden; background-color: #121212; }
+      .parallax-layer { position: absolute; inset: 0; will-change: transform; }
+      .hero-overlay { background: rgba(0,0,0,0.75); z-index: 1; }
+      .hero-content { position: relative; z-index: 2; }
+      .signboard-glow { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(169,108,54,0.25), transparent 70%); opacity: 0; z-index: 0; }
+      .title-mask { position: relative; display: inline-block; overflow: hidden; }
+      .bronze-text { display: inline-block; background: linear-gradient(to right,#614022 0%,#DAA468 25%,#F6E6C2 50%,#DAA468 75%,#614022 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:transparent; background-size:200% auto; }
+      .bronze-shimmer { position:absolute; top:0; left:-100%; width:50%; height:100%; background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.3) 85%,rgba(255,255,255,0) 100%); animation: shimmer 5s infinite; transform: skewX(-20deg); }
+      @keyframes shimmer { 0%{left:-100%} 100%{left:200%} }
+      .premium-frame { box-shadow: 0 15px 35px rgba(31,41,55,0.18); }
+      .mobile-menu { position:absolute; top:100%; left:0; width:100%; background:#fff; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); padding:1rem; z-index:50; transform:translateY(-10px); opacity:0; visibility:hidden; transition:all .3s ease; }
+      .mobile-menu.active { transform:translateY(0); opacity:1; visibility:visible; }
+      .mobile-menu a { display:block; padding:.75rem 1rem; border-bottom:1px solid #f3f4f6; color:#4b5563; transition:all .2s ease; }
+      .mobile-menu a:last-child { border-bottom:none; }
+      .mobile-menu a:hover { color:#7F5434; background:#f9fafb; }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded shadow">Skip to content</a>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="../index.html" class="text-2xl font-cinzel font-bold flex items-center gap-2">
+          <img src="../assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512" decoding="async">
+          Al-<span class="text-bronze">furqan</span>
+        </a>
+        <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
+          <i class="bx bx-menu text-2xl"></i>
+        </div>
+        <ul class="hidden lg:flex space-x-8">
+          <li><a href="../index.html" class="hover:text-bronze transition-colors">Home</a></li>
+          <li><a href="../products.html" class="hover:text-bronze transition-colors">Products</a></li>
+          <li><a href="../about.html" class="hover:text-bronze transition-colors">About</a></li>
+          <li><a href="../services.html" class="hover:text-bronze transition-colors">Services</a></li>
+          <li><a href="../gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
+          <li><a href="../faqs.html" class="hover:text-bronze transition-colors">FAQs</a></li>
+          <li><a href="index.html" aria-current="page" class="hover:text-bronze transition-colors font-semibold">Blog</a></li>
+          <li><a href="../contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
+          <li><a href="tel:+96892949051" class="text-bronze font-semibold">+968 9294 9051</a></li>
+        </ul>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="../index.html">Home</a>
+          <a href="../products.html">Products</a>
+          <a href="../about.html">About</a>
+          <a href="../services.html">Services</a>
+          <a href="../gallery.html">Gallery</a>
+          <a href="../faqs.html">FAQs</a>
+          <a href="index.html" class="font-semibold text-bronze">Blog</a>
+          <a href="../contact.html">Contact</a>
+          <a href="tel:+96892949051" class="text-bronze font-semibold mt-2">Call: +968 9294 9051</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <div id="main" tabindex="-1"></div>
+    <section class="hero-parallax text-light py-20 px-4 relative min-h-[60vh] flex items-center">
+      <div class="parallax-layer hero-overlay"></div>
+      <div class="signboard-glow"></div>
+      <div class="container mx-auto max-w-4xl text-center hero-content">
+        <h1 class="font-cinzel font-bold mb-6">
+          <span class="title-mask block opacity-0 text-3xl md:text-5xl" id="title-line1">
+            <span class="bronze-text">Insights from Al‑Furqan</span>
+            <span class="bronze-shimmer"></span>
+          </span>
+        </h1>
+        <p class="text-white/80 max-w-3xl mx-auto opacity-0" id="hero-subtext">
+          Practical guidance on signage permits, municipal compliance, fabrication, and interior fit‑outs across Oman.
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog List -->
+    <section class="py-12 px-4 bg-gray-50">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Post Card: Muscat Signage Rules 2025 -->
+          <article class="bg-white rounded-2xl shadow-md overflow-hidden premium-frame flex flex-col">
+            <a href="muscat-municipality-signage-rules-2025.html" class="block">
+              <img src="../assets/images/blog/muscat-signage-2025-featured.webp" alt="Muscat Municipality signage rules guide 2025 - featured" class="w-full h-56 object-cover" loading="lazy" decoding="async" width="1600" height="900">
+            </a>
+            <div class="p-6 flex-1 flex flex-col">
+              <a href="muscat-municipality-signage-rules-2025.html" class="text-xl font-semibold hover:text-bronze transition-colors">Muscat Municipality Signage Rules 2025: Complete Guide to Fees, Permits & Fines</a>
+              <div class="mt-2 text-sm text-gray-600 flex flex-wrap gap-3">
+                <span class="flex items-center gap-1"><i class="bx bx-user text-bronze"></i> Al‑Furqan International Business Team</span>
+                <span class="flex items-center gap-1"><i class="bx bx-time-five text-bronze"></i> 15 min read</span>
+                <span class="flex items-center gap-1"><i class="bx bx-calendar text-bronze"></i> 2025‑11‑28</span>
+              </div>
+              <p class="mt-3 text-gray-700">Opening a shop in Oman? Understand the new OMR 15 fee, 18‑meter rooftop restriction, Invest Easy steps, and how to avoid fines to get approved fast.</p>
+              <div class="mt-4">
+                <a href="muscat-municipality-signage-rules-2025.html" class="inline-flex items-center px-4 py-2 bg-bronze text-white rounded-lg hover:bg-bronze-dark transition-colors">
+                  Read more
+                  <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bronze text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <a href="../index.html" class="text-2xl font-bold mb-4 inline-block">
+              Al-<span class="text-white">Furqan International Business LLC</span>
+            </a>
+            <p class="mb-4">Premium Custom Signs & Signboards for Businesses That Demand Excellence</p>
+            <div class="flex gap-4 mt-4">
+              <a href="#" class="hover:text-white/70 transition-colors" aria-label="Facebook"><i class="bx bxl-facebook text-2xl"></i></a>
+              <a href="#" class="hover:text-white/70 transition-colors" aria-label="Instagram"><i class="bx bxl-instagram text-2xl"></i></a>
+              <a href="#" class="hover:text-white/70 transition-colors" aria-label="LinkedIn"><i class="bx bxl-linkedin text-2xl"></i></a>
+              <a href="#" class="hover:text-white/70 transition-colors" aria-label="Twitter"><i class="bx bxl-twitter text-2xl"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="../index.html" class="hover:text-white/70 transition-colors">Home</a></li>
+              <li><a href="../products.html" class="hover:text-white/70 transition-colors">Products</a></li>
+              <li><a href="../about.html" class="hover:text-white/70 transition-colors">About</a></li>
+              <li><a href="../services.html" class="hover:text-white/70 transition-colors">Services</a></li>
+              <li><a href="index.html" class="hover:text-white/70 transition-colors">Blog</a></li>
+              <li><a href="../gallery.html" class="hover:text-white/70 transition-colors">Gallery</a></li>
+              <li><a href="../contact.html" class="hover:text-white/70 transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Our Services</h3>
+            <ul class="space-y-2">
+              <li><a href="../services.html" class="hover:text-white/70 transition-colors">Custom Signage</a></li>
+              <li><a href="../services.html#led-screening" class="hover:text-white/70 transition-colors">LED Signs</a></li>
+              <li><a href="../products.html#acrylic-signs" class="hover:text-white/70 transition-colors">Acrylic Signs</a></li>
+              <li><a href="../products.html#metal-signs" class="hover:text-white/70 transition-colors">Metal Signs</a></li>
+              <li><a href="../services.html" class="hover:text-white/70 transition-colors">Installation</a></li>
+              <li><a href="../services.html#led-screening" class="hover:text-white/70 transition-colors">LED Screening</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i class="bx bx-map text-xl mt-0.5"></i>
+                <span>2nd Floor, 4376 Way, Wadi Kabir, Muscat, Sultanate of Oman<br/>P.O. Box 1477392, P.C. 112</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="bx bxl-whatsapp text-xl"></i>
+                <a href="https://wa.me/96892949051" target="_blank" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="bx bx-phone text-xl"></i>
+                <a href="tel:+96896967601" class="hover:text-white/70 transition-colors">+968 9696 7601</a>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="bx bx-buildings text-xl"></i>
+                <a href="tel:+96824702723" class="hover:text-white/70 transition-colors">+968 24702723</a>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="bx bx-envelope text-xl"></i>
+                <a href="mailto:alfurqanint.business@gmail.com" class="hover:text-white/70 transition-colors">alfurqanint.business@gmail.com</a>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="bx bx-envelope text-xl"></i>
+                <a href="mailto:business@alfurqanint.com" class="hover:text-white/70 transition-colors">business@alfurqanint.com</a>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="bx bx-time text-xl"></i>
+                <span>Mon–Thu, Sat–Sun: 8:00 AM – 7:00 PM; Fri: Closed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center pt-8 border-t border-white/10">
+          <p>&copy; 2025 Al Furqan International Business LLC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <script src="../js/whatsapp.js"></script>
+
+    <!-- Schema: Blog + ItemList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Al‑Furqan Blog",
+      "description": "Signage, licensing, and interior fit‑out insights for Oman.",
+      "url": "https://alfurqanint.com/blog",
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Muscat Municipality Signage Rules 2025: Complete Guide to Fees, Permits & Fines",
+          "url": "https://alfurqanint.com/blog/muscat-municipality-signage-rules-2025.html",
+          "image": "https://alfurqanint.com/assets/images/blog/muscat-signage-2025-featured.webp",
+          "datePublished": "2025-11-28",
+          "author": { "@type": "Organization", "name": "Al-Furqan International Business Team" }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://alfurqanint.com/blog/muscat-municipality-signage-rules-2025.html"
+        }
+      ]
+    }
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof gsap !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger, TextPlugin);
+          const tl = gsap.timeline();
+          tl.to('.signboard-glow', { opacity: 0.8, duration: 1.2, ease: 'power2.inOut' }, 0);
+          tl.to('#title-line1', { opacity: 1, duration: 1.0, ease: 'power3.out' }, 0.2);
+          tl.to('#hero-subtext', { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.8);
+        }
+        const navToggle = document.querySelector('#mobile-menu-toggle');
+        const navMenu = document.querySelector('#mobile-menu');
+        if (navToggle && navMenu) {
+          navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+          document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+              navMenu.classList.remove('active');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+

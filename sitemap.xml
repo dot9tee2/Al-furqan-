@@ -98,4 +98,26 @@
       <image:caption>Get answers about custom signs and signboards in Oman</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://alfurqanint.com/blog/muscat-municipality-signage-rules-2025.html</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://alfurqanint.com/assets/images/blog/muscat-signage-2025-featured.webp</image:loc>
+      <image:title>Muscat Municipality Signage Rules 2025 Guide</image:title>
+      <image:caption>Complete 2025 guide to signage permits, fees, rooftop limits and fines in Muscat</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alfurqanint.com/blog</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://alfurqanint.com/assets/images/blog/muscat-signage-2025-featured.webp</image:loc>
+      <image:title>Al‑Furqan Blog</image:title>
+      <image:caption>Insights on signage licensing, fabrication, and compliance in Oman</image:caption>
+    </image:image>
+  </url>
 </urlset>

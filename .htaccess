@@ -10,16 +10,16 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # --- Redirect /index.html to root ---
 RewriteCond %{THE_REQUEST} /index\.html [NC]
-RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
 
 # --- Remove .html extension from URL ---
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^([^/]+)$ $1.html [L]
+RewriteRule ^(.*)$ $1.html [L]
 
 # --- Redirect .html to clean version (SEO-friendly) ---
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^/]+)\.html [NC]
-RewriteRule ^([^/]+)\.html$ https://alfurqanint.com/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/(.*?)\.html [NC]
+RewriteRule ^(.*?)\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 # --- Redirect misnamed acrylics folder to new hyphenated path ---
 RewriteRule ^assets/gallery/arcylics%20signs/(.*)$ /assets/gallery/acrylic-signs/$1 [R=301,L]
@@ -52,7 +52,7 @@ RewriteRule ^assets/gallery/arcylics\ signs/(.*)$ /assets/gallery/acrylic-signs/
 <IfModule mod_headers.c>
   Header set Cache-Control "public, max-age=31536000, immutable"
   <FilesMatch "\.(html)$">
-    Header set Cache-Control "no-store"
+    Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
 
@@ -68,7 +68,7 @@ RewriteRule ^assets/gallery/arcylics\ signs/(.*)$ /assets/gallery/acrylic-signs/
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   Header set Permissions-Policy "geolocation=(), camera=(), microphone=()"
-  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://cdn.tailwindcss.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com data:; connect-src 'self' https:; frame-ancestors 'self';"
+  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://unpkg.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://cdn.tailwindcss.com https://www.googletagmanager.com https://quge5.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com data:; connect-src 'self' https:; frame-src 'self' https://www.google.com; frame-ancestors 'self';"
 </IfModule>
 
 # --- Error document ---

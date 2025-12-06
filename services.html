@@ -303,13 +303,19 @@
             }
         }
     </style>
-</head>
+    <noscript>
+      <style>
+        .opacity-0, .invisible { opacity: 1 !important; visibility: visible !important; }
+        .translate-y-4, .translate-x-1\/2, .-translate-x-1\/2 { transform: none !important; }
+      </style>
+    </noscript>
+  </head>
 <body class="font-sans text-gray-800">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded shadow">Skip to content</a>
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-cinzel font-bold flex items-center gap-2">
+            <a href="./" class="text-2xl font-cinzel font-bold flex items-center gap-2">
                 <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512" decoding="async">
                 Al-<span class="text-bronze">Furqan</span>
             </a>
@@ -317,24 +323,24 @@
                 <i class='bx bx-menu text-2xl'></i>
             </div>
             <ul class="hidden lg:flex space-x-8">
-                <li><a href="index.html" class="hover:text-bronze transition-colors">Home</a></li>
-                <li><a href="products.html" class="hover:text-bronze transition-colors">Products</a></li>
-                <li><a href="about.html" class="hover:text-bronze transition-colors">About</a></li>
-                <li><a href="services.html" aria-current="page" class="hover:text-bronze transition-colors">Services</a></li>
-                <li><a href="gallery.html" class="hover:text-bronze transition-colors">Gallery</a></li>
-                <li><a href="faqs.html" class="hover:text-bronze transition-colors">FAQs</a></li>
-                <li><a href="contact.html" class="hover:text-bronze transition-colors">Contact</a></li>
+                <li><a href="./" class="hover:text-bronze transition-colors">Home</a></li>
+                <li><a href="products" class="hover:text-bronze transition-colors">Products</a></li>
+                <li><a href="about" class="hover:text-bronze transition-colors">About</a></li>
+                <li><a href="services" aria-current="page" class="hover:text-bronze transition-colors">Services</a></li>
+                <li><a href="gallery" class="hover:text-bronze transition-colors">Gallery</a></li>
+                <li><a href="faqs" class="hover:text-bronze transition-colors">FAQs</a></li>
+                <li><a href="contact" class="hover:text-bronze transition-colors">Contact</a></li>
                 <li><a href="tel:+96892949051" class="text-bronze font-semibold">+968 9294 9051</a></li>
             </ul>
             <!-- Mobile Menu -->
             <div class="mobile-menu" id="mobile-menu">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="faqs.html">FAQs</a>
-                <a href="contact.html">Contact</a>
+                <a href="./">Home</a>
+                <a href="products">Products</a>
+                <a href="about">About</a>
+                <a href="services">Services</a>
+                <a href="gallery">Gallery</a>
+                <a href="faqs">FAQs</a>
+                <a href="contact">Contact</a>
                 <a href="tel:+96892949051" class="text-bronze font-semibold mt-2">Call: +968 9294 9051</a>
             </div>
         </nav>
@@ -344,7 +350,7 @@
     <nav class="bg-gray-100 py-3 px-4">
       <div class="container mx-auto">
         <div class="flex items-center space-x-2 text-sm">
-          <a href="index.html" class="text-gray-600 hover:text-bronze transition-colors">Home</a>
+          <a href="./" class="text-gray-600 hover:text-bronze transition-colors">Home</a>
           <i class="bx bx-chevron-right text-gray-400"></i>
           <span class="text-bronze font-medium">Services</span>
         </div>
@@ -752,7 +758,7 @@
             </div>
             <h3 class="text-xl font-semibold mb-2">LED Signs</h3>
             <p class="text-gray-600 mb-4">Energy-efficient LED displays perfect for outdoor advertising and indoor displays.</p>
-            <a href="products.html" class="text-bronze hover:underline font-medium">View Products →</a>
+            <a href="products" class="text-bronze hover:underline font-medium">View Products →</a>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
             <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
@@ -760,7 +766,7 @@
             </div>
             <h3 class="text-xl font-semibold mb-2">3D Letters</h3>
             <p class="text-gray-600 mb-4">Three-dimensional letters that create depth and visual impact for your brand.</p>
-            <a href="products.html" class="text-bronze hover:underline font-medium">View Products →</a>
+            <a href="products" class="text-bronze hover:underline font-medium">View Products →</a>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
             <div class="w-12 h-12 bg-bronze/10 rounded-lg flex items-center justify-center mb-4">
@@ -768,11 +774,11 @@
             </div>
             <h3 class="text-xl font-semibold mb-2">Acrylic Signs</h3>
             <p class="text-gray-600 mb-4">Modern acrylic signage with elegant design and durability for long-lasting appeal.</p>
-            <a href="products.html" class="text-bronze hover:underline font-medium">View Products →</a>
+            <a href="products" class="text-bronze hover:underline font-medium">View Products →</a>
           </div>
         </div>
         <div class="text-center mt-8">
-          <a href="products.html" class="inline-flex items-center px-6 py-3 bg-bronze text-white rounded-lg hover:bg-bronze-dark transition-colors">
+          <a href="products" class="inline-flex items-center px-6 py-3 bg-bronze text-white rounded-lg hover:bg-bronze-dark transition-colors">
             View All Products
             <i class="bx bx-right-arrow-alt ml-2"></i>
           </a>
@@ -810,7 +816,7 @@
         <div class="container mx-auto px-4">
           <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
             <div>
-              <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
+              <a href="./" class="text-2xl font-bold mb-4 inline-block">
                 Al-<span class="text-white">Furqan International Business LLC</span>
               </a>
               <p class="mb-4">
@@ -853,35 +859,35 @@
               <ul class="space-y-2">
                 <li>
                   <a
-                    href="index.html"
+                    href="./"
                     class="hover:text-white/70 transition-colors"
                     >Home</a
                   >
                 </li>
                 <li>
                   <a
-                    href="products.html"
+                    href="products"
                     class="hover:text-white/70 transition-colors"
                     >Products</a
                   >
                 </li>
                 <li>
                   <a
-                    href="about.html"
+                    href="about"
                     class="hover:text-white/70 transition-colors"
                     >About</a
                   >
                 </li>
                 <li>
                   <a
-                    href="services.html"
+                    href="services"
                     class="hover:text-white/70 transition-colors"
                     >Services</a
                   >
                 </li>
                 <li>
                   <a
-                    href="gallery.html"
+                    href="gallery"
                     class="hover:text-white/70 transition-colors"
                     >Gallery</a
                   >
@@ -895,7 +901,7 @@
                 </li>
                 <li>
                   <a
-                    href="contact.html"
+                    href="contact"
                     class="hover:text-white/70 transition-colors"
                     >Contact</a
                   >
@@ -907,42 +913,42 @@
               <ul class="space-y-2">
                 <li>
                   <a
-                    href="services.html"
+                    href="services"
                     class="hover:text-white/70 transition-colors"
                     >Custom Signage</a
                   >
                 </li>
                 <li>
                   <a
-                    href="services.html"
+                    href="services"
                     class="hover:text-white/70 transition-colors"
                     >LED Signs</a
                   >
                 </li>
                 <li>
                   <a
-                    href="services.html"
+                    href="services"
                     class="hover:text-white/70 transition-colors"
                     >Acrylic Signs</a
                   >
                 </li>
                 <li>
                   <a
-                    href="services.html"
+                    href="services"
                     class="hover:text-white/70 transition-colors"
                     >Metal Signs</a
                   >
                 </li>
                 <li>
                   <a
-                    href="services.html"
+                    href="services"
                     class="hover:text-white/70 transition-colors"
                     >Installation</a
                   >
                 </li>
                 <li>
                   <a
-                    href="services.html#led-screening"
+                    href="services#led-screening"
                     class="hover:text-white/70 transition-colors"
                     >LED Screening</a>
                 </li>
@@ -957,7 +963,7 @@
                 </li>
                 <li class="flex items-center gap-3">
                   <i class="bx bxl-whatsapp text-xl"></i>
-                  <a href="https://wa.me/96892949051" target="_blank" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
+                  <a href="https://wa.me/96892949051" target="_blank" rel="noopener noreferrer" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
                 </li>
                 <li class="flex items-center gap-3">
                   <i class="bx bx-phone text-xl"></i>

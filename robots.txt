@@ -51,13 +51,8 @@ Allow: /*.svg$
 Disallow: /js/email-handler.js
 
 # Allow crawling of main pages
-Allow: /index.html
-Allow: /about.html
-Allow: /contact.html
-Allow: /products.html
-Allow: /services.html
-Allow: /gallery.html
-Allow: /faqs.html
+Allow: /
+
 
 # Sitemap location
 Sitemap: https://alfurqanint.com/sitemap.xml

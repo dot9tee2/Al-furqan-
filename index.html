@@ -460,6 +460,12 @@
       /* subtle premium frame around feature images */
       .premium-frame { box-shadow: 0 15px 35px rgba(31, 41, 55, 0.18); }
     </style>
+    <noscript>
+      <style>
+        .opacity-0, .invisible { opacity: 1 !important; visibility: visible !important; }
+        .translate-y-4, .translate-x-1\/2, .-translate-x-1\/2 { transform: none !important; }
+      </style>
+    </noscript>
   </head>
   <body class="font-sans text-gray-800">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded shadow">Skip to content</a>
@@ -468,7 +474,7 @@
       <nav
         class="container mx-auto px-4 py-4 flex justify-between items-center"
       >
-        <a href="index.html" class="text-2xl font-cinzel font-bold flex items-center gap-2">
+        <a href="./" class="text-2xl font-cinzel font-bold flex items-center gap-2">
             <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512" decoding="async">
             Al-<span class="text-bronze">furqan</span>
         </a>
@@ -477,35 +483,35 @@
         </div>
         <ul class="hidden lg:flex space-x-8">
           <li>
-            <a href="index.html" aria-current="page" class="hover:text-bronze transition-colors font-medium"
+            <a href="./" aria-current="page" class="hover:text-bronze transition-colors font-medium"
               >Home</a
             >
           </li>
           <li>
-            <a href="products.html" class="hover:text-bronze transition-colors"
+            <a href="products" class="hover:text-bronze transition-colors"
               >Products</a
             >
           </li>
           <li>
-            <a href="about.html" class="hover:text-bronze transition-colors"
+            <a href="about" class="hover:text-bronze transition-colors"
               >About</a
             >
           </li>
           <li>
-            <a href="services.html" class="hover:text-bronze transition-colors"
+            <a href="services" class="hover:text-bronze transition-colors"
               >Services</a
             >
           </li>
           <li>
-            <a href="services.html#fit-out" class="hover:text-bronze transition-colors font-semibold">Interior Fit-Outs</a>
+            <a href="services#fit-out" class="hover:text-bronze transition-colors font-semibold">Interior Fit-Outs</a>
           </li>
           <li>
-            <a href="gallery.html" class="hover:text-bronze transition-colors"
+            <a href="gallery" class="hover:text-bronze transition-colors"
               >Gallery</a
             >
           </li>
           <li>
-            <a href="faqs.html" class="hover:text-bronze transition-colors"
+            <a href="faqs" class="hover:text-bronze transition-colors"
               >FAQs</a
             >
           </li>
@@ -514,7 +520,7 @@
               >Blog</a>
           </li>
           <li>
-            <a href="contact.html" class="hover:text-bronze transition-colors"
+            <a href="contact" class="hover:text-bronze transition-colors"
               >Contact</a
             >
           </li>
@@ -524,15 +530,15 @@
         </ul>
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
-          <a href="index.html" class="font-medium">Home</a>
-          <a href="products.html">Products</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="services.html#fit-out" class="font-semibold text-bronze">Interior Fit-Outs</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="faqs.html">FAQs</a>
+          <a href="./" class="font-medium">Home</a>
+          <a href="products">Products</a>
+          <a href="about">About</a>
+          <a href="services">Services</a>
+          <a href="services#fit-out" class="font-semibold text-bronze">Interior Fit-Outs</a>
+          <a href="gallery">Gallery</a>
+          <a href="faqs">FAQs</a>
           <a href="blog/">Blog</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact">Contact</a>
           <a href="tel:+96892949051" class="text-bronze font-semibold mt-2">Call: +968 9294 9051</a>
         </div>
       </nav>
@@ -567,7 +573,7 @@
               class="title-mask block opacity-0 text-3xl md:text-4xl"
               id="title-line2"
             >
-              <span class="bronze-text">International Business LLC</span>
+              <span class="bronze-text">Custom Signs & Fit-Out Services in Oman</span>
               <span class="bronze-shimmer"></span>
             </span>
           </span>
@@ -586,13 +592,13 @@
         </p>
         <div class="flex flex-wrap justify-center gap-4 mb-12">
           <a
-            href="products.html"
+            href="products"
             class="bg-bronze hover:bg-bronze-dark text-white px-6 py-3 rounded-md font-medium transition-all opacity-0"
             id="btn-products"
             >Explore Our Collection</a
           >
           <a
-            href="contact.html"
+            href="contact"
             class="bg-transparent border border-bronze-light hover:bg-bronze/10 text-white px-6 py-3 rounded-md font-medium transition-all opacity-0"
             id="btn-contact"
             >Get a Free Quote</a
@@ -659,7 +665,7 @@
               <li>Quality materials, HSE compliance and workmanship warranty</li>
               <li>Serving Muscat and wider Oman</li>
             </ul>
-            <a href="gallery.html#interiors" class="inline-flex items-center px-6 py-3 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors shadow-lg">
+            <a href="gallery#interiors" class="inline-flex items-center px-6 py-3 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors shadow-lg">
               View Interior Projects
               <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
             </a>
@@ -712,7 +718,7 @@
           </div>
         </div>
         <div class="text-center mt-12 opacity-0" id="fitout-service-cta">
-          <a href="contact.html#contact-form" class="inline-flex items-center px-8 py-4 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors duration-300 shadow-lg hover:shadow-xl">
+          <a href="contact#contact-form" class="inline-flex items-center px-8 py-4 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors duration-300 shadow-lg hover:shadow-xl">
             Get a Free Quote
             <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
           </a>
@@ -975,7 +981,7 @@
               <p class="text-gray-600 mb-4">
                 Elegant, durable custom signs that make your business stand out with sophisticated styling and premium materials.
               </p>
-              <a href="contact.html" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
+              <a href="contact" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
             </div>
           </div>
           <!-- Product 2 -->
@@ -990,7 +996,7 @@
               <p class="text-gray-600 mb-4">
                 Eye-catching LED signboards with programmable effects that attract attention day and night while reducing energy costs.
               </p>
-              <a href="contact.html" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
+              <a href="contact" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
             </div>
           </div>
           <!-- Product 3 -->
@@ -1005,7 +1011,7 @@
               <p class="text-gray-600 mb-4">
                 Modern, sophisticated acrylic signs with depth and dimension that create a premium impression for high-end establishments.
               </p>
-              <a href="contact.html" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
+              <a href="contact" class="block text-center bg-transparent hover:bg-primary border border-primary hover:text-white text-primary px-4 py-2 rounded transition-colors product-btn">Request a Quote</a>
             </div>
           </div>
         </div>
@@ -1141,7 +1147,7 @@
                         <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
                       </div>
                       <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
-                        The <a href="products.html#business-signs" class="text-bronze hover:underline font-medium">custom signage</a> that Al-furqan created for our restaurant in Muttrah completely transformed our storefront. The quality and craftsmanship exceeded our expectations, and we've received countless compliments from customers. <a href="contact.html" class="text-bronze hover:underline font-medium">Get your custom sign today!</a>
+                        The <a href="products#business-signs" class="text-bronze hover:underline font-medium">custom signage</a> that Al-furqan created for our restaurant in Muttrah completely transformed our storefront. The quality and craftsmanship exceeded our expectations, and we've received countless compliments from customers. <a href="contact" class="text-bronze hover:underline font-medium">Get your custom sign today!</a>
                       </p>
                     </div>
                   </div>
@@ -1170,7 +1176,7 @@
                         <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
                       </div>
                       <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
-                        Working with Al-furqan was a seamless experience from start to finish. Their team took our vision and elevated it beyond what we imagined. The <a href="products.html#led-signs" class="text-bronze hover:underline font-medium">LED signboard</a> they created has significantly increased our foot traffic in our store in Al-Khuwair. <a href="services.html#led-screening" class="text-bronze hover:underline font-medium">Explore our LED solutions</a>.
+                        Working with Al-furqan was a seamless experience from start to finish. Their team took our vision and elevated it beyond what we imagined. The <a href="products#led-signs" class="text-bronze hover:underline font-medium">LED signboard</a> they created has significantly increased our foot traffic in our store in Al-Khuwair. <a href="services#led-screening" class="text-bronze hover:underline font-medium">Explore our LED solutions</a>.
                       </p>
                     </div>
                   </div>
@@ -1199,7 +1205,7 @@
                         <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
                       </div>
                       <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
-                        The attention to detail and customer service provided by Al-furqan is unmatched. They went above and beyond to ensure our <a href="products.html#corporate-signs" class="text-bronze hover:underline font-medium">corporate signage</a> was perfect for our office in Muscat Grand Mall, delivering on time and within budget. <a href="services.html#installation" class="text-bronze hover:underline font-medium">Learn about our installation services</a>.
+                        The attention to detail and customer service provided by Al-furqan is unmatched. They went above and beyond to ensure our <a href="products#corporate-signs" class="text-bronze hover:underline font-medium">corporate signage</a> was perfect for our office in Muscat Grand Mall, delivering on time and within budget. <a href="services#installation" class="text-bronze hover:underline font-medium">Learn about our installation services</a>.
                       </p>
                     </div>
                   </div>
@@ -1228,7 +1234,7 @@
                         <i class="bx bxs-star text-bronze text-sm sm:text-base"></i>
                       </div>
                       <p class="italic text-gray-800 text-base sm:text-lg leading-relaxed">
-                        The <a href="products.html#3d-signs" class="text-bronze hover:underline font-medium">3D signage</a> they created for our shopping mall entrance in Mall of Oman is absolutely stunning. The attention to detail and the way it catches light at different times of day creates a truly memorable first impression. <a href="gallery.html#3d-projects" class="text-bronze hover:underline font-medium">View more 3D projects</a>.
+                        The <a href="products#3d-signs" class="text-bronze hover:underline font-medium">3D signage</a> they created for our shopping mall entrance in Mall of Oman is absolutely stunning. The attention to detail and the way it catches light at different times of day creates a truly memorable first impression. <a href="gallery#3d-projects" class="text-bronze hover:underline font-medium">View more 3D projects</a>.
                       </p>
                     </div>
                   </div>
@@ -1268,7 +1274,7 @@
         </div>
         <div class="text-center mt-8 sm:mt-12">
           <a
-            href="contact.html#contact-form"
+            href="contact#contact-form"
             class="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-bronze text-white rounded-lg hover:bg-bronze-dark transition-colors duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
           >
             Share Your Experience
@@ -1443,7 +1449,7 @@
         </div>
         <div class="text-center mt-8">
           <a
-            href="gallery.html"
+            href="gallery"
             class="inline-flex items-center text-bronze hover:text-bronze-dark transition-colors opacity-0"
             id="view-more-projects"
           >
@@ -1451,10 +1457,10 @@
             <i class="bx bx-right-arrow-alt ml-1"></i>
           </a>
           <div class="mt-4 flex flex-wrap justify-center gap-4 text-sm">
-            <a href="products.html#hotel-signs" class="text-bronze hover:underline">Hotel Signage</a>
-            <a href="products.html#retail-signs" class="text-bronze hover:underline">Retail Signs</a>
-            <a href="products.html#corporate-signs" class="text-bronze hover:underline">Corporate Signs</a>
-            <a href="services.html#installation" class="text-bronze hover:underline">Installation Services</a>
+            <a href="products#hotel-signs" class="text-bronze hover:underline">Hotel Signage</a>
+            <a href="products#retail-signs" class="text-bronze hover:underline">Retail Signs</a>
+            <a href="products#corporate-signs" class="text-bronze hover:underline">Corporate Signs</a>
+            <a href="services#installation" class="text-bronze hover:underline">Installation Services</a>
           </div>
         </div>
       </div>
@@ -1499,7 +1505,7 @@
                 business days depending on complexity, materials, and current
                 production volume. For urgent needs, we also offer expedited
                 services that can deliver in as little as 3-5 business days for
-                an additional fee. <a href="contact.html" class="text-bronze hover:underline font-medium">Contact us for urgent orders</a> or <a href="products.html" class="text-bronze hover:underline font-medium">browse our product range</a>.
+                an additional fee. <a href="contact" class="text-bronze hover:underline font-medium">Contact us for urgent orders</a> or <a href="products" class="text-bronze hover:underline font-medium">browse our product range</a>.
               </p>
             </div>
           </div>
@@ -1522,7 +1528,7 @@
                 acrylic, aluminum, brass, bronze, stainless steel, wood, and
                 various composites. Our team will recommend the best material
                 based on your specific requirements, location (indoor/outdoor),
-                budget, and aesthetic preferences. <a href="products.html#acrylic-signs" class="text-bronze hover:underline font-medium">View acrylic signs</a>, <a href="products.html#led-signs" class="text-bronze hover:underline font-medium">LED displays</a>, or <a href="products.html#metal-signs" class="text-bronze hover:underline font-medium">metal signage</a>.
+                budget, and aesthetic preferences. <a href="products#acrylic-signs" class="text-bronze hover:underline font-medium">View acrylic signs</a>, <a href="products#led-signs" class="text-bronze hover:underline font-medium">LED displays</a>, or <a href="products#metal-signs" class="text-bronze hover:underline font-medium">metal signage</a>.
               </p>
             </div>
           </div>
@@ -1544,14 +1550,14 @@
                 sign is securely and properly mounted according to local
                 regulations. For clients outside our service area, we provide
                 detailed installation instructions and can recommend trusted
-                local installers. <a href="services.html#installation" class="text-bronze hover:underline font-medium">Learn about our installation services</a> or <a href="contact.html" class="text-bronze hover:underline font-medium">request a quote</a>.
+                local installers. <a href="services#installation" class="text-bronze hover:underline font-medium">Learn about our installation services</a> or <a href="contact" class="text-bronze hover:underline font-medium">request a quote</a>.
               </p>
             </div>
           </div>
         </div>
         <div class="text-center mt-8">
           <a
-            href="faqs.html"
+            href="faqs"
             class="inline-flex items-center text-bronze hover:text-bronze-dark transition-colors opacity-0"
             id="view-more-faq"
           >
@@ -1588,13 +1594,13 @@
         </div>
         <div class="flex flex-wrap justify-center gap-4">
           <a
-            href="contact.html#contact-form"
+            href="contact#contact-form"
             class="bg-white text-primary hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition-colors opacity-0 transform translate-y-4"
             id="cta-btn-1"
             >Start Your Project</a
           >
           <a
-            href="products.html"
+            href="products"
             class="bg-transparent border border-white hover:bg-white/10 text-white px-6 py-3 rounded-md font-medium transition-all opacity-0 transform translate-y-4"
             id="cta-btn-2"
             >Browse Our Work</a
@@ -1608,7 +1614,7 @@
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <a href="index.html" class="text-2xl font-bold mb-4 inline-block">
+            <a href="./" class="text-2xl font-bold mb-4 inline-block">
               Al-<span class="text-white">Furqan International Business LLC</span>
             </a>
             <p class="mb-4">
@@ -1651,35 +1657,35 @@
             <ul class="space-y-2">
               <li>
                 <a
-                  href="index.html"
+                  href="./"
                   class="hover:text-white/70 transition-colors"
                   >Home</a
                 >
               </li>
               <li>
                 <a
-                  href="products.html"
+                  href="products"
                   class="hover:text-white/70 transition-colors"
                   >Products</a
                 >
               </li>
               <li>
                 <a
-                  href="about.html"
+                  href="about"
                   class="hover:text-white/70 transition-colors"
                   >About</a
                 >
               </li>
               <li>
                 <a
-                  href="services.html"
+                  href="services"
                   class="hover:text-white/70 transition-colors"
                   >Services</a
                 >
               </li>
               <li>
                 <a
-                  href="gallery.html"
+                  href="gallery"
                   class="hover:text-white/70 transition-colors"
                   >Gallery</a
                 >
@@ -1693,14 +1699,14 @@
               </li>
               <li>
                 <a
-                  href="faqs.html"
+                  href="faqs"
                   class="hover:text-white/70 transition-colors"
                   >FAQs</a
                 >
               </li>
               <li>
                 <a
-                  href="contact.html"
+                  href="contact"
                   class="hover:text-white/70 transition-colors"
                   >Contact</a
                 >
@@ -1712,42 +1718,42 @@
             <ul class="space-y-2">
               <li>
                 <a
-                  href="services.html"
+                  href="services"
                   class="hover:text-white/70 transition-colors"
                   >Custom Signage</a
                 >
               </li>
               <li>
                 <a
-                  href="services.html#led-screening"
+                  href="services#led-screening"
                   class="hover:text-white/70 transition-colors"
                   >LED Signs</a
                 >
               </li>
               <li>
                 <a
-                  href="products.html#acrylic-signs"
+                  href="products#acrylic-signs"
                   class="hover:text-white/70 transition-colors"
                   >Acrylic Signs</a
                 >
               </li>
               <li>
                 <a
-                  href="products.html#metal-signs"
+                  href="products#metal-signs"
                   class="hover:text-white/70 transition-colors"
                   >Metal Signs</a
                 >
               </li>
               <li>
                 <a
-                  href="services.html"
+                  href="services"
                   class="hover:text-white/70 transition-colors"
                   >Installation</a
                 >
               </li>
               <li>
                 <a
-                  href="services.html"
+                  href="services"
                   class="hover:text-white/70 transition-colors"
                   >LED Screening</a
                 >
@@ -1763,7 +1769,7 @@
               </li>
               <li class="flex items-center gap-3">
                 <i class="bx bxl-whatsapp text-xl"></i>
-                <a href="https://wa.me/96892949051" target="_blank" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
+                <a href="https://wa.me/96892949051" target="_blank" rel="noopener noreferrer" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
               </li>
               <li class="flex items-center gap-3">
                 <i class="bx bx-phone text-xl"></i>

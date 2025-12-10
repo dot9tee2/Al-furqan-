@@ -25,6 +25,10 @@ RewriteRule ^(.*?)\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
 RewriteRule ^assets/gallery/arcylics%20signs/(.*)$ /assets/gallery/acrylic-signs/$1 [R=301,L]
 RewriteRule ^assets/gallery/arcylics\ signs/(.*)$ /assets/gallery/acrylic-signs/$1 [R=301,L]
 
+# --- Redirect Typo Blog URL ---
+RewriteRule ^blog/3d-arcylic-vs-neon$ /blog/3d-acrylic-vs-led-neon [R=301,L]
+RewriteRule ^blog/3d-arcylic-vs-neon\.html$ /blog/3d-acrylic-vs-led-neon [R=301,L]
+
 # --- Caching (static assets long cache; HTML no-store) ---
 <IfModule mod_expires.c>
   ExpiresActive On

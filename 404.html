@@ -27,6 +27,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
     <!-- Tailwind -->
+    <script>
+        window.basePath = './';
+    </script>
+    <script src="js/components.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -90,40 +94,7 @@
   </head>
   <body class="font-sans text-gray-800 flex flex-col min-h-screen">
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-      <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="./" class="text-2xl font-cinzel font-bold flex items-center gap-2">
-            <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512">
-            Al-<span class="text-bronze">furqan</span>
-        </a>
-        <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
-          <i class="bx bx-menu text-2xl"></i>
-        </div>
-        <ul class="hidden lg:flex space-x-8">
-          <li><a href="./" class="hover:text-bronze transition-colors">Home</a></li>
-          <li><a href="products" class="hover:text-bronze transition-colors">Products</a></li>
-          <li><a href="about" class="hover:text-bronze transition-colors">About</a></li>
-          <li><a href="services" class="hover:text-bronze transition-colors">Services</a></li>
-          <li><a href="gallery" class="hover:text-bronze transition-colors">Gallery</a></li>
-          <li><a href="faqs" class="hover:text-bronze transition-colors">FAQs</a></li>
-          <li><a href="blog/" class="hover:text-bronze transition-colors">Blog</a></li>
-          <li><a href="contact" class="hover:text-bronze transition-colors">Contact</a></li>
-          <li><a href="tel:+96892949051" class="text-bronze font-semibold">+968 9294 9051</a></li>
-        </ul>
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-          <a href="./">Home</a>
-          <a href="products">Products</a>
-          <a href="about">About</a>
-          <a href="services">Services</a>
-          <a href="gallery">Gallery</a>
-          <a href="faqs">FAQs</a>
-          <a href="blog/">Blog</a>
-          <a href="contact">Contact</a>
-          <a href="tel:+96892949051" class="text-bronze font-semibold mt-2">Call: +968 9294 9051</a>
-        </div>
-      </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main class="flex-grow flex items-center justify-center bg-gray-50 px-4 py-20">
       <div class="text-center max-w-lg mx-auto">
@@ -149,33 +120,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-bronze text-white pt-12 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="text-center border-t border-white/10 pt-8">
-                <p>&copy; 2025 Al Furqan International Business LLC. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script>
-      // Mobile Navigation Toggle
-      const navToggle = document.querySelector('#mobile-menu-toggle');
-      const navMenu = document.querySelector('#mobile-menu');
-
-      if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-          navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-          if (navMenu.classList.contains('active') && 
-            !navMenu.contains(e.target) && 
-            !navToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
-          }
-        });
-      }
+      // Mobile Navigation Toggle handled by components.js
     </script>
   </body>
 </html>

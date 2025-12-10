@@ -243,44 +243,15 @@
         .translate-y-4, .translate-x-1\/2, .-translate-x-1\/2 { transform: none !important; }
       </style>
     </noscript>
+    <script>
+        // Define base path for root pages
+        window.basePath = './';
+    </script>
   </head>
   <body class="font-sans text-gray-800">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded shadow">Skip to content</a>
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-      <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="./" class="text-2xl font-cinzel font-bold flex items-center gap-2">
-            <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512" decoding="async">
-            Al-<span class="text-bronze">furqan</span>
-        </a>
-        <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
-          <i class='bx bx-menu text-2xl'></i>
-        </div>
-        <ul class="hidden lg:flex space-x-8">
-          <li><a href="./" class="hover:text-bronze transition-colors">Home</a></li>
-          <li><a href="products" aria-current="page" class="hover:text-bronze transition-colors">Products</a></li>
-          <li><a href="about" class="hover:text-bronze transition-colors">About</a></li>
-          <li><a href="services" class="hover:text-bronze transition-colors">Services</a></li>
-          <li><a href="gallery" class="hover:text-bronze transition-colors">Gallery</a></li>
-          <li><a href="faqs" class="hover:text-bronze transition-colors">FAQs</a></li>
-          <li><a href="blog/" class="hover:text-bronze transition-colors">Blog</a></li>
-          <li><a href="contact" class="hover:text-bronze transition-colors">Contact</a></li>
-          <li><a href="tel:+96892949051" class="text-bronze font-semibold">+968 9294 9051</a></li>
-        </ul>
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-          <a href="./">Home</a>
-          <a href="products">Products</a>
-          <a href="about">About</a>
-          <a href="services">Services</a>
-          <a href="gallery">Gallery</a>
-          <a href="faqs">FAQs</a>
-          <a href="blog/">Blog</a>
-          <a href="contact">Contact</a>
-          <a href="tel:+96892949051" class="text-bronze font-semibold mt-2">Call: +968 9294 9051</a>
-        </div>
-      </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Breadcrumb Navigation -->
     <nav class="bg-gray-100 py-3 px-4">
@@ -500,200 +471,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-bronze text-white pt-16 pb-8">
-        <div class="container mx-auto px-4">
-          <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
-            <div>
-              <a href="./" class="text-2xl font-bold mb-4 inline-block">
-                Al-<span class="text-white">Furqan International Business LLC</span>
-              </a>
-              <p class="mb-4">
-                Premium Custom Signs & Signboards for Businesses That Demand
-                Excellence
-              </p>
-              <div class="flex gap-4 mt-4">
-                <a
-                  href="#"
-                  class="hover:text-white/70 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <i class="bx bxl-facebook text-2xl"></i>
-                </a>
-                <a
-                  href="#"
-                  class="hover:text-white/70 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <i class="bx bxl-instagram text-2xl"></i>
-                </a>
-                <a
-                  href="#"
-                  class="hover:text-white/70 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <i class="bx bxl-linkedin text-2xl"></i>
-                </a>
-                <a
-                  href="#"
-                  class="hover:text-white/70 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <i class="bx bxl-twitter text-2xl"></i>
-                </a>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-              <ul class="space-y-2">
-                <li>
-                  <a
-                    href="./"
-                    class="hover:text-white/70 transition-colors"
-                    >Home</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="products"
-                    class="hover:text-white/70 transition-colors"
-                    >Products</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="about"
-                    class="hover:text-white/70 transition-colors"
-                    >About</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services"
-                    class="hover:text-white/70 transition-colors"
-                    >Services</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="gallery"
-                    class="hover:text-white/70 transition-colors"
-                    >Gallery</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="blog/"
-                    class="hover:text-white/70 transition-colors"
-                    >Blog</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="faqs"
-                    class="hover:text-white/70 transition-colors"
-                    >FAQs</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="contact"
-                    class="hover:text-white/70 transition-colors"
-                    >Contact</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold mb-4">Our Services</h3>
-              <ul class="space-y-2">
-                <li>
-                  <a
-                    href="services"
-                    class="hover:text-white/70 transition-colors"
-                    >Custom Signage</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services"
-                    class="hover:text-white/70 transition-colors"
-                    >LED Signs</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services"
-                    class="hover:text-white/70 transition-colors"
-                    >Acrylic Signs</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services"
-                    class="hover:text-white/70 transition-colors"
-                    >Metal Signs</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services"
-                    class="hover:text-white/70 transition-colors"
-                    >Installation</a
-                  >
-                </li>
-                <li>
-                <a
-                  href="services"
-                  class="hover:text-white/70 transition-colors"
-                  >LED Screening</a
-                >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                  <i class="bx bx-map text-xl mt-0.5"></i>
-                  <span>2nd Floor, 4376 Way, Wadi Kabir, Muscat, Sultanate of Oman<br/>P.O. Box 1477392, P.C. 112</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <i class="bx bxl-whatsapp text-xl"></i>
-                  <a href="https://wa.me/96892949051" target="_blank" rel="noopener noreferrer" class="hover:text-white/70 transition-colors">+968 9294 9051</a>
-                </li>
-                <li class="flex items-center gap-3">
-                  <i class="bx bx-phone text-xl"></i>
-                  <a href="tel:+96896967601" class="hover:text-white/70 transition-colors">+968 9696 7601</a>
-                </li>
-                <li class="flex items-center gap-3">
-                  <i class="bx bx-buildings text-xl"></i>
-                  <a href="tel:+96824702723" class="hover:text-white/70 transition-colors">+968 24702723</a>
-                </li>
-                <li class="flex items-center gap-3">
-                  <i class="bx bx-envelope text-xl"></i>
-                  <a href="mailto:alfurqanint.business@gmail.com" class="hover:text-white/70 transition-colors">alfurqanint.business@gmail.com</a>
-                </li>
-                <li class="flex items-center gap-3">
-                  <i class="bx bx-envelope text-xl"></i>
-                  <a href="mailto:business@alfurqanint.com" class="hover:text-white/70 transition-colors">business@alfurqanint.com</a>
-                </li>
-                <li class="flex items-center gap-3">
-                  <i class="bx bx-time text-xl"></i>
-                  <span>Mon–Thu, Sat–Sun: 8:00 AM – 7:00 PM; Fri: Closed</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="text-center pt-8 border-t border-white/10">
-            <p>
-              &copy; 2024 Al Furqan International Business LLC. All rights reserved.
-            </p>
-            <p class="mt-4 text-white/70 text-sm">
-              Made with <span class="text-red-400">♡</span> by Mehroz
-            </p>
-          </div>
-        </div>
-      </footer>
+    <div id="footer-placeholder"></div>
 
 
     <!-- Scroll to Top -->
@@ -701,6 +479,7 @@
       <i class="bx bx-up-arrow-alt text-2xl"></i>
     </button>
 
+    <script src="js/components.js"></script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
       // Mobile Navigation Toggle

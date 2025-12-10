@@ -5,27 +5,6 @@
  * @version 1.0.0
  */
 
-/**
- * Mobile Navigation Toggle
- * Handles the mobile menu toggle functionality and click-outside behavior
- */
-const navToggle = document.querySelector('#mobile-menu-toggle');
-const navMenu = document.querySelector('#mobile-menu');
-
-if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (navMenu.classList.contains('active') && 
-            !navMenu.contains(e.target) && 
-            !navToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
-        }
-    });
-}
 
 /**
  * Device Capability Detection

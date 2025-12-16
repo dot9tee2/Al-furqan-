@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFELY6SPP4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFELY6SPP4');
+    </script>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Learn how to clean and maintain your outdoor signage in Oman's dusty climate. A step-by-step guide to washing acrylic and metal signs without damaging them." />
+    <meta name="keywords"
+        content="Signage cleaning services Muscat, maintain acrylic signs, outdoor sign repair Oman, cleaning LED signs, remove dust from signage, Al-Furqan maintenance" />
+    <meta name="author" content="Al-Furqan International Business Team" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Clean & Maintain Outdoor Signage in Oman: A Step-by-Step Guide" />
+    <meta property="og:description"
+        content="Don't let dust ruin your brand image. Here is the professional guide to cleaning and maintaining commercial signage in the Gulf climate." />
+    <meta property="og:url" content="https://alfurqanint.com/blog/signage-maintenance-guide" />
+    <meta property="og:site_name" content="Al-furqan International Business LLC" />
+    <meta property="og:image" content="https://alfurqanint.com/assets/images/blog/signage-maintenance-featured.png" />
+    <meta property="og:image:alt" content="Before and after cleaning a dusty outdoor sign in Muscat" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Clean & Maintain Outdoor Signage in Oman: A Step-by-Step Guide" />
+    <meta name="twitter:description"
+        content="Expert tips on cleaning acrylic and LED signs in Muscat's harsh weather. Keep your brand shining." />
+    <meta name="twitter:image" content="https://alfurqanint.com/assets/images/blog/signage-maintenance-featured.png" />
+    <meta name="twitter:image:alt" content="Signage maintenance guide featured image" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alfurqanint.com/blog/signage-maintenance-guide" />
+
+    <!-- Page Title -->
+    <title>How to Clean & Maintain Outdoor Signage in Oman: A Step-by-Step Guide | Al-Furqan</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="../assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="../assets/images/logo.webp">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../assets/images/logo.webp" as="image">
+    <link rel="preload" href="../assets/images/blog/signage-maintenance-featured.png" as="image">
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script>
+        window.basePath = '../';
+    </script>
+    <script src="../js/components.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#7F5434",
+                        secondary: "#10B981",
+                        dark: "#1F2937",
+                        light: "#F9FAFB",
+                        gray: "#E5E7EB",
+                        bronze: {
+                            light: "#DAA468",
+                            DEFAULT: "#A96C36",
+                            dark: "#7F5434",
+                        },
+                    },
+                    fontFamily: {
+                        cinzel: ["Cinzel", "serif"],
+                        sans: ["Montserrat", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+    <style>
+        .hero-parallax {
+            position: relative;
+            overflow: hidden;
+            background-color: #121212;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .signboard-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(169, 108, 54, 0.25), transparent 70%);
+            opacity: 0;
+            z-index: 0;
+        }
+
+        .title-mask {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .bronze-text {
+            display: inline-block;
+            background: linear-gradient(to right, #614022 0%, #daa468 25%, #f6e6c2 50%, #daa468 75%, #614022 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+        }
+
+        .bronze-shimmer {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3) 85%, rgba(255, 255, 255, 0) 100%);
+            animation: shimmer 5s infinite;
+            transform: skewX(-20deg);
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 200%;
+            }
+        }
+
+        .prose h2 {
+            scroll-margin-top: 100px;
+        }
+
+        .toc a:hover {
+            color: #7F5434
+        }
+
+        .premium-frame {
+            box-shadow: 0 15px 35px rgba(31, 41, 55, 0.18);
+        }
+
+        .tip-box {
+            background-color: #FDF8F3;
+            border-left: 4px solid #A96C36;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+
+        .warning-box {
+            background-color: #FEF2F2;
+            border-left: 4px solid #EF4444;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+    </style>
+    <noscript>
+        <style>
+            .opacity-0,
+            .invisible {
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+
+            .translate-y-4,
+            .translate-x-1\/2,
+            .-translate-x-1\/2 {
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body class="font-sans text-gray-800">
+    <a href="#main"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded shadow">Skip
+        to content</a>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-gray-100 py-3 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="../" class="text-gray-600 hover:text-bronze transition-colors">Home</a>
+                <i class="bx bx-chevron-right text-gray-400"></i>
+                <a href="./" class="text-gray-600 hover:text-bronze transition-colors">Blog</a>
+                <i class="bx bx-chevron-right text-gray-400"></i>
+                <span class="text-bronze font-medium">Signage Maintenance Guide</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div id="main" tabindex="-1"></div>
+    <section class="hero-parallax text-light py-20 px-4 relative min-h-[50vh] flex items-center justify-center">
+        <div class="parallax-layer hero-overlay"></div>
+        <div class="signboard-glow"></div>
+        <div class="container mx-auto max-w-4xl text-center hero-content">
+            <h1 class="font-cinzel font-bold mb-6">
+                <span class="title-mask block opacity-0 text-3xl md:text-5xl leading-tight" id="title-line1">
+                    <span class="bronze-text">How to Clean & Maintain Outdoor Signage in Oman</span>
+                    <span class="bronze-shimmer"></span>
+                </span>
+            </h1>
+            <p class="text-white/90 max-w-3xl mx-auto opacity-0 text-lg font-light tracking-wide leading-relaxed"
+                id="hero-subtext">
+                Muscat's dust and heat can age your brand overnight. Learn the professional way to clean acrylic, metal,
+                and LED signs without damaging them.
+            </p>
+        </div>
+    </section>
+
+    <!-- Meta Row -->
+    <section class="py-6 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-4xl flex flex-wrap items-center gap-4 text-sm text-gray-600">
+            <div class="flex items-center gap-2"><i class="bx bx-time-five text-bronze"></i><span>Read time: 8
+                    minutes</span></div>
+            <div class="flex items-center gap-2"><i class="bx bx-user text-bronze"></i><span>Author: Al-Furqan Technical
+                    Team</span></div>
+            <div class="flex items-center gap-2"><i class="bx bx-wrench text-bronze"></i><span>Category: Maintenance &
+                    Tutorials</span></div>
+        </div>
+    </section>
+
+    <!-- Featured Image -->
+    <section class="py-6 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <img src="../assets/images/blog/signage-maintenance-featured.png"
+                alt="Comparison of a dirty vs clean 3D sign in Oman"
+                class="w-full h-auto rounded-2xl shadow-xl ring-1 ring-bronze/10 premium-frame" loading="lazy"
+                decoding="async" width="1600" height="900">
+        </div>
+    </section>
+
+    <!-- TOC -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl bg-gray-50 border-l-4 border-bronze rounded-r-xl p-8 shadow-sm">
+            <h2 class="text-xl font-cinzel font-bold mb-4 text-gray-900">Table of Contents</h2>
+            <ol class="toc list-decimal list-inside space-y-3 text-gray-700 font-medium">
+                <li><a href="#why-clean" class="hover:text-bronze hover:translate-x-1 transition-all inline-block">The
+                        "Sandpaper Effect": Why Maintenance Matters</a></li>
+                <li><a href="#preparation"
+                        class="hover:text-bronze hover:translate-x-1 transition-all inline-block">Preparation: The Safe
+                        Cleaning Kit</a></li>
+                <li><a href="#step-by-step"
+                        class="hover:text-bronze hover:translate-x-1 transition-all inline-block">Step-by-Step Cleaning
+                        Tutorial</a></li>
+                <li><a href="#warnings" class="hover:text-bronze hover:translate-x-1 transition-all inline-block">The
+                        "Danger Zone": What NOT To Do</a></li>
+                <li><a href="#electricals"
+                        class="hover:text-bronze hover:translate-x-1 transition-all inline-block">Checking Your LED
+                        Electricals</a></li>
+                <li><a href="#faq" class="hover:text-bronze hover:translate-x-1 transition-all inline-block">Frequently
+                        Asked Questions</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="px-4 py-8">
+        <div
+            class="container mx-auto max-w-4xl prose prose-lg prose-neutral prose-headings:font-cinzel prose-headings:text-bronze prose-a:text-bronze hover:prose-a:text-bronze-dark prose-img:rounded-xl prose-img:shadow-lg">
+            <div class="mb-6">
+                <a href="./" class="inline-flex items-center text-bronze hover:text-bronze-dark transition-colors">
+                    <i class="bx bx-left-arrow-alt mr-1 text-xl"></i>
+                    Back to Blog
+                </a>
+            </div>
+
+            <section class="mb-10">
+                <p>In Oman, we don't just deal with rain—we deal with the "Ghubra" (dust storms), high humidity in
+                    coastal areas like Muscat and Sohar, and searing UV heat. This combination creates a layer of grime
+                    that doesn't just look bad; it actively damages your sign.</p>
+                <p>Many business owners invest hundreds of Rials in premium <strong>3D signage</strong> only to let it
+                    fade within a year. The good news? A simple quarterly maintenance routine can double the lifespan of
+                    your sign. Here is how to do it safely.</p>
+            </section>
+
+            <section id="why-clean" class="mb-12">
+                <h2 class="text-2xl font-cinzel font-bold">1. The "Sandpaper Effect": Why Maintenance Matters</h2>
+                <p>When fine desert dust settles on your acrylic sign, it acts like sandpaper. If you wipe it dry, you
+                    scratch the surface. Over time, these micro-scratches make the sign look cloudy (hazy) and reduce
+                    the brightness of your LED lighting.</p>
+                <div class="tip-box">
+                    <strong>Pro Tip:</strong> In Muscat, we recommend a light cleaning every <strong>3 months</strong>.
+                    If you are in an industrial area like Ghala or Rusayl, make it every <strong>2 months</strong>.
+                </div>
+            </section>
+
+            <section id="preparation" class="mb-12">
+                <h2 class="text-2xl font-cinzel font-bold">2. Preparation: The Safe Cleaning Kit</h2>
+                <p>Before you climb that ladder, ensure you have the right tools. Using the wrong chemicals is the #1
+                    cause of signage damage.</p>
+
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800">✅ What You Need:</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Microfiber Cloths:</strong> Essential to prevent scratching.</li>
+                            <li><strong>Mild Dish Soap:</strong> Mixed with water (1:50 ratio).</li>
+                            <li><strong>Lukewarm Water:</strong> Avoid boiling hot water.</li>
+                            <li><strong>Soft Sponge:</strong> Non-abrasive only.</li>
+                            <li><strong>Ladder/Scaffolding:</strong> Ensure it's stable.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="../assets/images/blog/cleaning-supplies-kit.png"
+                            alt="Safe cleaning kit for acrylic signage" class="w-full h-auto rounded-xl shadow-md"
+                            loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </section>
+
+            <section id="step-by-step" class="mb-12">
+                <h2 class="text-2xl font-cinzel font-bold">3. Step-by-Step Cleaning Tutorial</h2>
+                <p>Follow this exact process to clean 3D Acrylic or Metal letters.</p>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-4">Step 1: The Rinse (Do NOT Wipe Yet!)</h3>
+                <p>This is crucial. Gently rinse the sign with plain water to wash away the loose layer of dust and
+                    sand. If you wipe a dry, dusty sign, you <strong>will</strong> scratch it.</p>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-4">Step 2: The Gentle Wash</h3>
+                <p>Dip your microfiber cloth or soft sponge into the soapy water mix. Gently wipe the sign in a circular
+                    motion. Do not apply heavy pressure. For metal signs (stainless steel), wipe in the direction of the
+                    grain (polish lines).</p>
+
+                <h3 class="text-xl font-semibold text-gray-800 mt-4">Step 3: The Final Rinse & Dry</h3>
+                <p>Rinse away all soap residue with clean water. <strong>Immediate drying is key</strong>. Muscat’s
+                    humidity can leave hard water spots that are difficult to remove later. Pat it dry with a fresh, dry
+                    microfiber cloth.</p>
+
+                <div class="mt-6">
+                    <img src="../assets/images/blog/professional-sign-cleaning.png"
+                        alt="Technician cleaning a sign safely" class="w-full h-auto rounded-xl shadow-md"
+                        loading="lazy" decoding="async">
+                </div>
+            </section>
+
+            <section id="warnings" class="mb-12">
+                <h2 class="text-2xl font-cinzel font-bold">4. The "Danger Zone": What NOT To Do</h2>
+                <p>We have seen many signs ruined by good intentions. Avoid these common mistakes:</p>
+
+                <div class="warning-box">
+                    <h4 class="font-bold text-red-700 mb-2">🚫 NEVER Use Ammonia or Alcohol</h4>
+                    <p>Products like Windex or heavy degreasers contain ammonia. This chemical eats into acrylic,
+                        causing "crazing" (tiny cracks that look like a spiderweb). Once crazing happens, it cannot be
+                        fixed.</p>
+                </div>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>NO Pressure Washers:</strong> High-pressure water can force its way inside the letters,
+                        short-circuiting the LEDs and rusting the internal screws.</li>
+                    <li><strong>NO Paper Towels:</strong> They are made of wood pulp and are too rough for high-gloss
+                        acrylic.</li>
+                </ul>
+            </section>
+
+            <section id="electricals" class="mb-12">
+                <h2 class="text-2xl font-cinzel font-bold">5. Checking Your LED Electricals</h2>
+                <p>While cleaning, take a moment to inspect the health of your sign:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Flickering?</strong> This usually indicates a failing power supply (driver), not the LED
+                        itself. In Oman's heat, drivers often fail after 2-3 years if not ventilated.</li>
+                    <li><strong>Dark Spots?</strong> This means a specific LED module has burned out or disconnected.
+                    </li>
+                    <li><strong>Loose Wires?</strong> Birds often nest behind signs. Ensure no wires are exposed to the
+                        sun.</li>
+                </ul>
+                <p class="mt-4">If you notice electrical issues, <strong>do not try to fix them yourself</strong>.
+                    Dealing with 240V mains power requires a licensed technician.</p>
+            </section>
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-cinzel font-bold">Conclusion</h2>
+                <p>A clean sign is a profitable sign. It shows customers that you care about details. By following this
+                    simple quarterly routine, you can keep your shop front looking premium for years.</p>
+                <p><strong>Too busy to do it yourself?</strong> Al-Furqan offers Annual Maintenance Contracts (AMC) for
+                    businesses in Muscat. We handle the cleaning, electrical checks, and repairs so you can focus on
+                    your business.</p>
+
+                <div class="mt-4 bg-bronze/5 border border-bronze/20 rounded-xl p-5">
+                    <p class="font-semibold">Need Professional Signage Maintenance?</p>
+                    <ul class="mt-2 space-y-1 text-sm text-gray-700">
+                        <li>Location: Wadi Kabir, Muscat.</li>
+                        <li>Phone: <a href="tel:+96892949051" class="text-bronze hover:underline">+968 9294 9051</a>
+                        </li>
+                        <li>Email: <a href="mailto:alfurqanint.business@gmail.com"
+                                class="text-bronze hover:underline">alfurqanint.business@gmail.com</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="faq" class="mb-12">
+                <h2 class="text-2xl font-cinzel font-bold">Frequently Asked Questions (FAQ)</h2>
+                <div class="mt-4 space-y-4">
+                    <details class="border border-gray-200 rounded-lg p-4">
+                        <summary class="cursor-pointer font-medium">My sign has scratches. Can they be polished out?
+                        </summary>
+                        <p class="mt-2 text-gray-700">Yes, light surface scratches on acrylic can often be buffed out
+                            using a specialized plastic polish (like Novus). Deep scratches might require replacing the
+                            face of the letter.</p>
+                    </details>
+                    <details class="border border-gray-200 rounded-lg p-4">
+                        <summary class="cursor-pointer font-medium">Why has my white sign turned yellow?</summary>
+                        <p class="mt-2 text-gray-700">Yellowing is caused by UV damage. This happens when low-quality
+                            acrylic is used. High-quality "cast" acrylic has UV stabilizers and should stay white for
+                            7-10 years. Unfortunately, yellowing cannot be cleaned; the acrylic must be replaced.</p>
+                    </details>
+                    <details class="border border-gray-200 rounded-lg p-4">
+                        <summary class="cursor-pointer font-medium">How often should I change the LED driver?</summary>
+                        <p class="mt-2 text-gray-700">In Oman's heat, power supplies typically last 2-4 years. We
+                            recommend installing them in an accessible location (not sealed inside the wall) for easy
+                            replacement.</p>
+                    </details>
+                </div>
+            </section>
+
+            <div class="mt-8">
+                <a href="../contact#contact-form"
+                    class="inline-flex items-center px-6 py-3 bg-bronze text-white rounded-lg font-medium hover:bg-bronze-dark transition-colors shadow-lg">
+                    Book a Maintenance Visit
+                    <i class="bx bx-right-arrow-alt ml-2 text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- WhatsApp -->
+    <script src="../js/whatsapp.js"></script>
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://alfurqanint.com/blog/signage-maintenance-guide"
+      },
+      "headline": "How to Clean & Maintain Outdoor Signage in Oman: A Step-by-Step Guide",
+      "description": "Expert guide on cleaning acrylic and LED signs in Muscat's harsh weather. Learn the do's and don'ts of sign maintenance.",
+      "image": [
+        "https://alfurqanint.com/assets/images/blog/signage-maintenance-featured.png"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Al-Furqan Technical Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Al-furqan International Business LLC",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://alfurqanint.com/assets/images/logo.webp"
+        }
+      },
+      "datePublished": "2025-11-28",
+      "dateModified": "2025-11-28"
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "My sign has scratches. Can they be polished out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, light surface scratches on acrylic can often be buffed out using a specialized plastic polish (like Novus). Deep scratches might require replacing the face of the letter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why has my white sign turned yellow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yellowing is caused by UV damage from the sun. This happens when low-quality acrylic is used. High-quality cast acrylic has UV stabilizers and should stay white for 7-10 years."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I change the LED driver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Oman's heat, power supplies typically last 2-4 years. We recommend installing them in an accessible location (not sealed inside the wall) for easy replacement."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger, TextPlugin);
+                const heroTl = gsap.timeline();
+                heroTl.to('.signboard-glow', { opacity: 0.8, duration: 1.2, ease: 'power2.inOut' }, 0);
+                heroTl.to('#title-line1', { opacity: 1, duration: 1.0, ease: 'power3.out' }, 0.2);
+                heroTl.to('#hero-subtext', { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.8);
+            }
+        });
+    </script>
+</body>
+
+</html>

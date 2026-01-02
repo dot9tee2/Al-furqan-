@@ -1,10 +1,9 @@
 <header class="bg-white shadow-sm sticky top-0 z-50">
-  <nav
-    class="container mx-auto px-4 py-4 flex justify-between items-center"
-  >
+  <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
     <a href="./" class="text-2xl font-cinzel font-bold flex items-center gap-2">
-        <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512" decoding="async">
-        Al-<span class="text-bronze">furqan</span>
+      <img src="assets/images/logo.webp" alt="Al-furqan Logo" class="h-8 w-auto" width="512" height="512"
+        decoding="async">
+      Al-<span class="text-bronze">furqan</span>
     </a>
     <div class="lg:hidden cursor-pointer" id="mobile-menu-toggle">
       <i class="bx bx-menu text-2xl"></i>
@@ -13,8 +12,24 @@
       <li>
         <a href="./" class="hover:text-bronze transition-colors font-medium">Home</a>
       </li>
-      <li>
-        <a href="products" class="hover:text-bronze transition-colors">Products</a>
+      <li class="relative group">
+        <a href="products" class="hover:text-bronze transition-colors flex items-center gap-1 pb-1">
+          Products
+          <i class="bx bx-chevron-down text-sm transition-transform group-hover:-rotate-180"></i>
+        </a>
+        <!-- Dropdown Menu -->
+        <div
+          class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 border-t-2 border-bronze overflow-hidden">
+          <a href="products"
+            class="block px-6 py-4 text-sm text-gray-600 hover:text-bronze hover:bg-gray-50 border-b border-gray-100 transition-colors">
+            <i class="bx bx-grid-alt mr-2"></i>All Products
+          </a>
+          <a href="products.html#smart-led-bar"
+            class="block px-6 py-4 text-sm font-semibold text-bronze hover:text-bronze-dark hover:bg-bronze/5 transition-colors">
+            <i class="bx bx-star mr-2"></i>Smart Event Furniture <span
+              class="ml-1 text-[10px] bg-red-500 text-white px-1.5 py-0.5 rounded-full">NEW</span>
+          </a>
+        </div>
       </li>
       <li>
         <a href="about" class="hover:text-bronze transition-colors">About</a>
@@ -45,6 +60,8 @@
     <div class="mobile-menu" id="mobile-menu">
       <a href="./" class="font-medium">Home</a>
       <a href="products">Products</a>
+      <a href="products.html#smart-led-bar" class="pl-6 text-sm py-2 text-bronze font-semibold bg-gray-50">↳ Smart Event
+        Furniture <span class="text-[10px] bg-red-500 text-white px-1 rounded ml-1">NEW</span></a>
       <a href="about">About</a>
       <a href="services">Services</a>
       <a href="services#fit-out" class="font-semibold text-bronze">Interior Fit-Outs</a>
